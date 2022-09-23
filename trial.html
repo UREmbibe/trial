@@ -1,20 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Untitled Document</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <!-- Place favicon.ico in the root directory -->
-  
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
 <body>
-  <script src=sheets.js></script> 
+
+<button type="button" onclick="loadXMLDoc()">Get my CD collection</button>
+
+<script>
+
+function loadXMLDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    const docu = xhttp.responseText;
+    console.log(docu)
+  }
+  xhttp.open("GET", "https://docs.google.com/spreadsheets/d/146bjpxiyAd-5KlFj5Q8K0O7PWNxSElv1l_I2EF6vdkI/gviz/tq?", true);
+  xhttp.send();
+}
+
+</script>
+
 </body>
 </html>
