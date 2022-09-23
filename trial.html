@@ -10,7 +10,7 @@ function loadXMLDoc() {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
     const docu = xhttp.responseText;
-    console.log(docu)
+    console.log(JSON.parse(docu.substr(47).slice(0,-2)))
   }
   xhttp.open("GET", "https://docs.google.com/spreadsheets/d/146bjpxiyAd-5KlFj5Q8K0O7PWNxSElv1l_I2EF6vdkI/gviz/tq?", true);
   xhttp.send();
