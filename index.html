@@ -1,13 +1,374 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-    <form method="POST" action="https://script.google.com/macros/s/AKfycbz0X1RwNQV8phFWuNH7MkKaYz8SQQ8q0IT65alqu_0REasbxJTzZZk4_rMmJDwjkL5f/exec">
-      <input name="Email" type="email" placeholder="Email" required>
-      <input name="Name" type="text" placeholder="Name" required>
-      <button type="submit">Send</button>
-    </form>
-</body>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Survey Form</title>
+    </head>
+    <body >
+      <div class="shadow-lg p-3 mb-5 bg-white rounded container">
+        <form class="card-body" method="POST" action="https://script.google.com/macros/s/AKfycbz0X1RwNQV8phFWuNH7MkKaYz8SQQ8q0IT65alqu_0REasbxJTzZZk4_rMmJDwjkL5f/exec"> 
+              <div class="tab-pane fade show active" id="page1" role="tabpanel" aria-labelledby="home-tab">
+            <br/>
+                <div class="row">
+                  <div class="form-inline col-sm-6">
+                    <label for="inputName">School SalesForce ID: &nbsp;&nbsp;</label>
+                    <input type="text" class="form-control" id="sf_id" name="sf_id">
+                  </div>
+                  <div class="form-group col-sm-6"></div>
+                </div>
+                <br/>
+                <div><button class="btn btn-primary" id="page2-tab" data-toggle="tab" href="#page2" role="tab" aria-controls="home" aria-selected="true">Page 2</button>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="page2" role="tabpanel" aria-labelledby="profile-tab">
+<!--SCHOOL CONTACT DETAILS--> 
+            <br/>
+            <div class="row col">
+                <b><label>SCHOOL CONTACT DETAILS</label></b>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-4">
+                <label for="inputName">Name</label>
+                <input type="text" class="form-control" id="scc_name" name="scc_name">
+              </div>
+              <div class="form-group col-sm-4">
+                <label for="inputLocation">Location (State/UT)</label>
+                <input type="text" class="form-control" id="scc_state" name="scc_state">
+              </div>
+              <div class="form-group col-sm-4">
+                <label for="inputLocation">City</label>
+                <input type="text" class="form-control" id="scc_city" name="scc_city">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label for="schoolPointOfContact">School Point of Contact</label>
+                <input type="text" class="form-control" id="scc_poc" name="scc_poc">
+              </div>
+              <div class="form-group col-sm-6">
+                <label for="designation">Designation</label>
+                <input type="text" class="form-control" id="scc_designation" name="scc_designation">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label for="number">Mobile Number</label>
+                <input type="number" class="form-control" id="scc_mobile" name="scc_mobile">
+              </div>
+              <div class="form-group col-sm-6">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="scc_email" aria-describedby="emailHelp" placeholder="Enter email" name="scc_email">
+              </div>
+            </div>
+ <!--BOARD-->            
+            <div class="row col form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label" for="board">Board: &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_board" id="scc_board_cbse" value="CBSE">
+                  <label class="form-check-label" for="inlineRadio1">CBSE</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_board" id="scc_board_icse" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">ICSE</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_board" id="scc_board_state" value="option3">
+                  <label class="form-check-label" for="inlineRadio3">State</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_board" id="scc_board_igcse" value="option1">
+                  <label class="form-check-label" for="inlineRadio1">IGCSE</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_board" id="scc_board_cambridge" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">Cambridge</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_board" id="scc_board_ib" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">IB</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_board" id="scc_board_other" >
+                  <label class="form-check-label" for="inlineRadio3">Others&nbsp;<input type="text" class="form-check form-check-inline" id="scc_board_other" name="scc_board"></label>
+                </div>
+            </div>
+            <div class="row col form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label" for="board">Exams: &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_exams" id="scc_exams_jee" value="JEE">
+                  <label class="form-check-label" for="inlineRadio1">JEE</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_exams" id="scc_exams_neet" value="NEET">
+                  <label class="form-check-label" for="inlineRadio2">NEET</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_exams" id="scc_exams_state" value="State">
+                  <label class="form-check-label" for="inlineRadio3">State Engineering</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_exams" id="scc_exams_ntse" value="NTSE">
+                  <label class="form-check-label" for="inlineRadio1">NTSE</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_exams" id="scc_exams_olympiad" value="Olympiad">
+                  <label class="form-check-label" for="inlineRadio2">Olympiad</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_exams" id="scc_exams_other">
+                  <label class="form-check-label" for="inlineRadio3">Others&nbsp;<input type="text" class="form-check form-check-inline" id="scc_exams_other" name="scc_exams"></label>
+                </div>
+            </div>
+<!--SCHOOL TYPE-->            
+             <div class="row col form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label" for="board">School/Coaching Type: &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_type" id="scc_type_sind" value="Individual School">
+                  <label class="form-check-label" for="inlineRadio1">Individual School</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_type" id="scc_type_schn" value="Chain School">
+                  <label class="form-check-label" for="inlineRadio2">Chain School</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_type" id="scc_type_cind" value="Individual Institute">
+                  <label class="form-check-label" for="inlineRadio1">Individual Institute</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="scc_type" id="scc_type_cchn" value="Chain Institute">
+                  <label class="form-check-label" for="inlineRadio2">Chain Institute</label>
+                </div>
+            </div>
+            
+<!--EMBIBE CONTACT DETAILS-->                        
+            <br/>
+            <div class="row col">
+                <b><label>EMBIBE CONTACT DETAILS</label></b>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label for="inputName">Academic Delivery POC</label>
+                <input type="text" class="form-control" id="ecd_poc">
+              </div>
+              <div class="form-group col-sm-6">
+                <label for="designation">Designation</label>
+                <input type="text" class="form-control" id="ecd_designation">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label for="number">Mobile Number</label>
+                <input type="number" class="form-control" id="ecd_mobile">
+              </div>
+              <div class="form-group col-sm-6">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="ecd_email" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label for="text">GCC Name</label>
+                <input type="text" class="form-control" id="ecd_gcc_name">
+              </div>
+              <div class="form-group col-sm-6">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="ecd_gcc_email" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+            </div>
+            
+<!--Embibe Contract Details-->
+            <br/>
+            <div class="row col">
+                <b><label>EMBIBE CONTRACT DETAILS</label></b>
+            </div>
+            <div class="row col">
+                <label>What is the total deal size of the Embibe Contract (Before taxes). Please round to the nearest rupee</label>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-3">
+                <label for="inputName">Students &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;X</label>
+                <input type="number" class="form-control" id="cd_students">
+              </div>
+              <div class="form-group col-sm-3">
+                <label for="inputLocation">Prices per student per year&emsp;&emsp;X</label>
+                <input type="number" class="form-control" id="cd_price">
+              </div>
+              <div class="form-group col-sm-3">
+                <label for="schoolPointOfContact">No of years&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;=</label>
+                <input type="number" class="form-control" id="cd_years">
+              </div>
+              <div class="form-group col-sm-3">
+                <label for="designation">Total Contract Value</label>
+                <input type="number" class="form-control" id="cd_total">
+              </div>
+            </div>
+            <!--BOARD-->
+            <br/>
+            <div class="row col form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label" for="board">Agreement Model: &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cd_model" id="cd_model_pdc" value="Partnership form With PDC">
+                  <label class="form-check-label" for="inlineRadio1">Partnership form With PDC</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cd_model" id="cd_model_cdc" value="Partnership form With CDC">
+                  <label class="form-check-label" for="inlineRadio2">Partnership form With CDC</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cd_model" id="cd_model_cheque" value="Agreement with Cheque">
+                  <label class="form-check-label" for="inlineRadio3">Agreement with Cheque</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cd_model" id="cd_model_uncheque" value="Agreement without Cheque">
+                  <label class="form-check-label" for="inlineRadio1">Agreement without Cheque</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cd_model" id="cd_model_mou" value="MOU">
+                  <label class="form-check-label" for="inlineRadio2">MOU</label>
+                </div>
+            </div>
+            <div class="row col form-group">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label" for="board">Zone:</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cd_zone" id="cd_zone_n1" value="North 1">
+                  <label class="form-check-label" for="inlineRadio1">North 1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cd_zone" id="cd_zone_n2" value="North 2">
+                  <label class="form-check-label" for="inlineRadio2">North 2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cd_zone" id="cd_zone_s1" value="South 1">
+                  <label class="form-check-label" for="inlineRadio3">South 1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cd_zone" id="cd_zone_s2" value="South 2">
+                  <label class="form-check-label" for="inlineRadio1">South 2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cd_zone" id="cd_zone_e" value="East">
+                  <label class="form-check-label" for="inlineRadio2">East</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cd_zone" id="cd_zone_w" value="West">
+                  <label class="form-check-label" for="inlineRadio3">West</label>
+                </div>
+            </div>
+            <br/>
+            <div><button class="btn btn-primary" id="page3-tab" data-toggle="tab" href="#page3" role="tab" aria-controls="home" aria-selected="true">Page 3</button>
+            </div>
+            </div>
+            <div class="tab-pane fade" id="page3" role="tabpanel" aria-labelledby="contact-tab">
+                
+<!--OVERALL CLASS AND STUDENT DETAILS FOR SCHOOL-->            
+            <br/>
+            <div class="row col">
+                <b><label>OVERALL CLASS AND STUDENT DETAILS FOR SCHOOL</label></b>
+            </div>
+            <!--GRADES AVAILABLE-->            
+            <div class="row col">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label" for="board">Grades available in the school: &nbsp;</label>
+                </div>
+            </div>
+            <div class="row col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_1" value='1' name="od_grade_1">
+                  <label class="form-check-label" for="inlineCheckbox1">1 &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_2" value="2" name="od_grade_2">
+                  <label class="form-check-label" for="inlineCheckbox2">2 &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_3" name="od_grade_3" value="3">
+                  <label class="form-check-label" for="inlineCheckbox1">3 &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_4" name="od_grade_4" value="4">
+                  <label class="form-check-label" for="inlineCheckbox2">4 &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_5" name="od_grade_5" value="5">
+                  <label class="form-check-label" for="inlineCheckbox1">5 &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_6" name="od_grade_6" value="6">
+                  <label class="form-check-label" for="inlineCheckbox2">6 &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_7" name="od_grade_7" value="7">
+                  <label class="form-check-label" for="inlineCheckbox1">7 &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_8" name="od_grade_8" value="8">
+                  <label class="form-check-label" for="inlineCheckbox2">8 &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_9" name="od_grade_9" value="9">
+                  <label class="form-check-label" for="inlineCheckbox1">9 &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_10" name="od_grade_10" value="10">
+                  <label class="form-check-label" for="inlineCheckbox2">10 &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_11" name="od_grade_11" value="11">
+                  <label class="form-check-label" for="inlineCheckbox1">11 &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_12" name="od_grade_12" value="12">
+                  <label class="form-check-label" for="inlineCheckbox2">12 &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_eng" name="od_grade_eng" value="eng">
+                  <label class="form-check-label" for="inlineCheckbox1">Engineering &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="od_grade_med" name="od_grade_med" value="med">
+                  <label class="form-check-label" for="inlineCheckbox2">Medical &nbsp;</label>
+                </div>
+            </div><br/>
+            <!--WORK IN SHIFT as an OPTION-->            
+            <div class="row col">
+              <div class="form-check form-check-inline">
+                  <label class="form-check-label" for="board">Does the School/Coaching work in shifts? &nbsp;</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="od_shifts" id="od_shifts_1" value="1">
+                  <label class="form-check-label" for="inlineRadio2">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="od_shifts" id="od_shifts_2" value="2">
+                  <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="od_shifts" id="od_shifts_3" value="3">
+                  <label class="form-check-label" for="inlineRadio2">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="od_shifts" id="od_shifts_3+" value="3+">
+                  <label class="form-check-label" for="inlineRadio2">3+</label>
+                </div>
+            </div>
+        </form>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
 </html>
