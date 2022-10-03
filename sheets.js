@@ -70,6 +70,17 @@ function disable_all_fields(id){
   }
 }
 
+function disable_labs(id){
+  var dis = document.getElementsByClassName("no_labs")
+  for (var i=0; i<dis.length; i++){
+    if (id=="no_labs"){
+      document.getElementById(dis[i].id).disabled = true
+    }else {
+      document.getElementById(dis[i].id).disabled = false
+    }
+  }
+}
+
 function disable_field(id){
   if (id == "erp"){
     document.getElementById("erp_name").disabled = false
