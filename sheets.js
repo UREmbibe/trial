@@ -30,7 +30,6 @@ function init(){
           }
         })
         jsData.table.rows.forEach((main)=>{
-          //console.log(main)
           var row = {};
           colz.forEach((ele,ind)=>{
             row[ele] = (main.c[ind] != null)?main.c[ind].v:"";
@@ -39,14 +38,8 @@ function init(){
           observations = data;
         })
         features = colz;
-        //maker(data)
     })
 }
-
-// function hide_content(id){
-//   document.getElementsByClassName("tab-pane").style.visibility = "hidden"
-//   document.getElementById(id).style.visibility = "visible"
-// }
 
 function disable_others(id){
   var dis = document.getElementsByClassName(id)
@@ -90,16 +83,11 @@ function disable_field(id){
 }
 
 function maker(json){
-  
-  //var div = document.createElement('div');
-  //div.style.display = "grid"
-  //output.append(div)
   var first = true
   json.forEach((el)=>{
     console.log(el)
     console.log(Object.keys(el));
     var keys = Object.keys(el);
-    //div.style.gridTemplateColumns = `repeat(${keys.length}, ifr)`;
     if (first){
       first = false
       keys.forEach((heading)=>{
@@ -116,69 +104,25 @@ function maker(json){
       ele.textContent = el[key];
       div.append(ele); 
     })
-    
     console.log(keys);
   })
-
 }
 
-
-/*function loadXMLDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-    var docu = xhttp.responseText;
-    console.log(JSON.parse(docu.substr(47).slice(0,-2)))
-  }
-  xhttp.open("GET", "https://docs.google.com/spreadsheets/d/146bjpxiyAd-5KlFj5Q8K0O7PWNxSElv1l_I2EF6vdkI/gviz/tq?", true);
-  xhttp.send();
-}*/
-
-
-
 function loadXMLDoc(val, id){
-    names=[]
-    console.log(features);
-    console.log(observations[0].iteration_no);
-    console.log(val, id)
-    for (var i = 0; i < observations.length; i++) {
-      if(observations[i].sf_id == val){
-        console.log("Yes", i)
-        features.forEach((n)=>{
-          names.push(document.getElementsByName(n)[0].getAttribute('id'))
-        })
+  names=[]
+  for (var i = 0; i < observations.length; i++) {
+    if(observations[i].sf_id == val){
+      features.forEach((n)=>{
+        names.push(document.getElementsByName(n)[0].getAttribute('id'))
+      })
 
-        names.forEach((n)=>{
-          document.getElementById(n).setAttribute('value', observations[i][n])
-        })
-        //document.getElementById("scc_name").setAttribute('value', observations[i]['scc_name'])
-      }
+      names.forEach((n)=>{
+        document.getElementById(n).setAttribute('value', observations[i][n])
+      })
     }
-    // for (var j = 0; j < observations.length; j++){
-    //   for (var i = 0; i < features.length; i++) {
-    //     console.log(features[i], observations[j][features[i]])
-    //     console.log(features[i])
-    //     console.log(observations[j][features[i]])
-    //   }
-    // }
-  
-    // var tbody = document.getElementById('tbody');
-    // var th = "";
-    // for (var i = 0; i < features.length; i++){
-    //   th += "<th>" + features[i] + "</th>"
-    // }
-    // tbody.innerHTML += th
-  
-    // for (var j = 0; j < observations.length; j++) {
-    //   var td="";
-    //   console.log(td)
-    //   for (var i = 0; i < features.length; i++) {
-    //     td += "<td>" + observations[j][features[i]] + "</td>";  
-    //   }
-    //   console.log(td)
-    //   if (td!=null){
-    //     console.log("Hello")
-    //     tbody.innerHTML += "<tr>" + td + "</tr>";
-    //   }
-      
-    // }
   }
+}
+
+function tab_tog(id_nav){
+  document.getElementById(id_nav).click()
+}
