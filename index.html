@@ -15,34 +15,35 @@
         <form class="card-body" method="POST" action="https://script.google.com/macros/s/AKfycbxxm0b6QCHU-DVvEU4COeVryh8O1lOVwA8EqTPfQW4MLWc-F2m-IBK0TxchkfTxZjNE/exec"> 
             <div class="row">
                 <div class="col-sm-10"><h3>EMBIBE School/Coaching Readiness &amp; Competitive landscape Form</h3></div>
-                <div class="col-sm-2"><img class="img-fluid rounded" style="height: 50px; width:auto;" src="logo.png"/></div>
+                <div class="col-sm-2"><img class="img-fluid rounded" style="max-height: 100px; width:auto;" src="logo.png"/></div>
                 <br/>
                 <div class="col-sm-9"><p>This form has to be filled by the Embibe Academic Ambassador team for each school. This form has 7 tabs with different information that will be very important to understand the health of the school. Please take the time out to fill this in as much detail as possible.</p></div>
             </div>
             <br/>
-        <ul class="nav sticky-top bg-white nav-tabs" id="myTab" role="tablist">
+        <ul class="nav sticky-top justify-content-center bg-white nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="page1-tab" data-toggle="tab" href="#page1" role="tab" aria-controls="home" aria-selected="true" onclick="hide_content('page1')">Page 1</a>
+                <a class="nav-link active" id="page1-tab" data-toggle="tab" href="#page1" role="tab" aria-controls="home" aria-selected="true">SalesForce</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="page2-tab" data-toggle="tab" href="#page2" role="tab" aria-controls="home" aria-selected="true" onclick="hide_content('page2')">Page 2</a>
+                <a class="nav-link" id="page2-tab" data-toggle="tab" href="#page2" role="tab" aria-controls="home" aria-selected="true">General</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="page3-tab" data-toggle="tab" href="#page3" role="tab" aria-controls="profile" aria-selected="false" onclick="hide_content('page3')">Page 3</a>
+                <a class="nav-link" id="page3-tab" data-toggle="tab" href="#page3" role="tab" aria-controls="profile" aria-selected="false">Class</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="page4-tab" data-toggle="tab" href="#page4" role="tab" aria-controls="contact" aria-selected="false" onclick="hide_content('page4')">Page 4</a>
+                <a class="nav-link" id="page4-tab" data-toggle="tab" href="#page4" role="tab" aria-controls="contact" aria-selected="false">Infra</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="page5-tab" data-toggle="tab" href="#page5" role="tab" aria-controls="home" aria-selected="true" onclick="hide_content('page5')">Page 5</a>
+                <a class="nav-link" id="page5-tab" data-toggle="tab" href="#page5" role="tab" aria-controls="home" aria-selected="true">Devices</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="page6-tab" data-toggle="tab" href="#page6" role="tab" aria-controls="profile" aria-selected="false" onclick="hide_content('page6')">Page 6</a>
+                <a class="nav-link" id="page6-tab" data-toggle="tab" href="#page6" role="tab" aria-controls="profile" aria-selected="false">Competition</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="page7-tab" data-toggle="tab" href="#page7" role="tab" aria-controls="contact" aria-selected="false" onclick="hide_content('page7')">Page 7</a>
+                <a class="nav-link" id="page7-tab" data-toggle="tab" href="#page7" role="tab" aria-controls="contact" aria-selected="false">Willingness</a>
             </li>
-        </ul>   
+        </ul>
+        <div class="tab-content" id="myTabContent">   
             <div class="tab-pane fade show active" id="page1" role="tabpanel" aria-labelledby="home-tab">
             <br/>
                 <div class="row">
@@ -54,7 +55,8 @@
                   <div class="form-group col-sm-6"></div>
                 </div>
                 <br/>
-                <div><button class="btn btn-primary" id="page2-tab btn-tab" data-toggle="tab" href="#page2" role="tab" aria-controls="home" aria-selected="true">Next</button>
+                <div><button class="btn btn-primary float-right" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" onclick="tab_tog('page2-tab')">Next</button>
+                  <br/>
                 </div>
             </div>
             <div class="tab-pane fade" id="page2" role="tabpanel" aria-labelledby="profile-tab">
@@ -64,7 +66,6 @@
                 <div class="row col">
                   <b><label>SCHOOL CONTACT DETAILS</label></b>
               </div>
-              .
               <div class="row">
                 <div class="form-group col-sm-4">
                   <label for="inputName">Name</label>
@@ -133,7 +134,7 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="scc_board" id="scc_board_other">
-                    <label class="form-check-label" for="inlineRadio3">Others&nbsp;<input type="text" class="form-check form-check-inline" id="scc_board_other" name="scc_board"></label>
+                    <label class="form-check-label" for="inlineRadio3">Others&nbsp;<input type="text" class="form-check form-check-inline" id="scc_board_other_blank" name="scc_board_other_blank"></label>
                   </div>
               </div>
               
@@ -163,7 +164,7 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="scc_exams" id="scc_exams_other">
-                    <label class="form-check-label" for="inlineRadio3">Others&nbsp;<input type="text" class="form-check form-check-inline" id="scc_exams_other" name="scc_exams"></label>
+                    <label class="form-check-label" for="inlineRadio3">Others&nbsp;<input type="text" class="form-check form-check-inline" id="scc_exams_other_blank" name="scc_exams_other_blank"></label>
                   </div>
               </div>
               
@@ -318,7 +319,9 @@
               
               <br/>
               <div>
-                  <button class="btn btn-primary" id="page3-tab" data-toggle="tab" href="#page3" role="tab" aria-controls="home" aria-selected="true">Page 3</button>
+                <button class="btn btn-primary float-right" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" onclick="tab_tog('page3-tab')">Next</button>
+                <br/>
+                <br/>
               </div>
               </div>
             </div>
@@ -495,7 +498,7 @@
                     <tbody>
                       <tr>
                           <td>6</td>
-                          <td><input disabled type="number" class="g6_yes  form-inline" id="gra_sec_6th" name="gra_sec_6th"></td> 
+                          <td><input disabled type="number" class="g6_yes form-inline" id="gra_sec_6th" name="gra_sec_6th"></td> 
                           <td><input disabled type="number" class="g6_yes form-inline" id="gra_std_6th" name="gra_std_6th"></td> 
                           <td><input disabled type="checkbox" class="g6_yes form-check form-check-inline" id="gra_asgn_6th" value="6" name="gra_asgn_6th"></td> 
                           <td><input disabled type="number" class="g6_yes form-inline" id="gra_std_asgn_6th" name="gra_std_asgn_6th"></td> 
@@ -551,8 +554,8 @@
                       </tr>
                       <tr>
                           <td>ENGINEERING</td>
-                          <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_std_eng" name="gra_std_eng"></td> 
                           <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_sec_eng" name="gra_sec_eng"></td> 
+                          <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_std_eng" name="gra_std_eng"></td> 
                           <td><input disabled type="checkbox" class="g_eng_yes form-check form-check-inline" id="gra_asgn_eng" value="ENGINEERING" name="gra_asgn_eng"></td> 
                           <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_std_asgn_eng" name="gra_std_asgn_eng"></td> 
                           <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_std_trn_eng" name="gra_std_trn_eng"></td>                  
@@ -584,7 +587,6 @@
                       <tr>
                         <th scope="col"></th>
                         <th scope="col">Total teachers in grade</th>
-                        <th scope="col">Grade assigned to Embibe</th>
                         <th scope="col">Teachers assigned to the Embibe program</th>
                         <th scope="col">Teacher trained by the Embibe team</th>
                       </tr>
@@ -592,64 +594,55 @@
                     <tbody>
                       <tr>
                           <td>6</td>
-                          <td><input disabled type="number" class="g6_yes form-inline" id="tea_tot_6th" name="tea_tot_6th"></td> 
-                          <td><input disabled type="checkbox" class="g6_yes form-check form-check-inline" id="tea_gra_6th" value="6" name="tea_gra_6th"></td> 
+                          <td><input disabled type="number" class="g6_yes form-inline" id="tea_tot_6th" name="tea_tot_6th"></td>
                           <td><input disabled type="number" class="g6_yes form-inline" id="tea_asign_6th" name="tea_asign_6th"></td> 
                           <td><input disabled type="number" class="g6_yes form-inline" id="tea_trained_6th" name="tea_trained_6th"></td>             
                       </tr>
                       <tr>
                           <td>7</td>
-                          <td><input disabled type="number" class="g7_yes form-inline" id="tea_tot_7th" name="tea_tot_7th"></td> 
-                          <td><input disabled type="checkbox" class="g7_yes form-check form-check-inline" id="tea_gra_7th" value="7" name="tea_gra_7th"></td> 
+                          <td><input disabled type="number" class="g7_yes form-inline" id="tea_tot_7th" name="tea_tot_7th"></td>  
                           <td><input disabled type="number" class="g7_yes form-inline" id="tea_asign_7th" name="tea_asign_7th"></td> 
                           <td><input disabled type="number" class="g7_yes form-inline" id="tea_trained_7th" name="tea_trained_7th"></td>                  
                       </tr>
                       <tr>
                           <td>8</td>
                           <td><input disabled type="number" class="g8_yes form-inline" id="tea_tot_8th" name="tea_tot_8th"></td> 
-                          <td><input disabled type="checkbox" class="g8_yes form-check form-check-inline" id="tea_gra_8th" value="8" name="tea_gra_8th"></td> 
                           <td><input disabled type="number" class="g8_yes form-inline" id="tea_asign_8th" name="tea_asign_8th"></td> 
                           <td><input disabled type="number" class="g8_yes form-inline" id="tea_trained_8th" name="tea_trained_8th"></td>                     
                       </tr>
                       <tr>
                           <td>9</td>
-                          <td><input disabled type="number" class="g9_yes form-inline" id="tea_tot_9th" name="tea_tot_9th"></td> 
-                          <td><input disabled type="checkbox" class="g9_yes form-check form-check-inline" id="tea_gra_9th" value="9" name="tea_gra_9th"></td> 
+                          <td><input disabled type="number" class="g9_yes form-inline" id="tea_tot_9th" name="tea_tot_9th"></td>
                           <td><input disabled type="number" class="g9_yes form-inline" id="tea_asign_9th" name="tea_asign_9th"></td> 
                           <td><input disabled type="number" class="g9_yes form-inline" id="tea_trained_9th" name="tea_trained_9th"></td>                     
                       </tr>
                       <tr>
                           <td>10</td>
-                          <td><input disabled type="number" class="g10_yes form-inline" id="tea_tot_10th" name="tea_tot_10th"></td> 
-                          <td><input disabled type="checkbox" class="g10_yes form-check form-check-inline" id="tea_gra_10th" value="10" name="tea_gra_10th"></td> 
+                          <td><input disabled type="number" class="g10_yes form-inline" id="tea_tot_10th" name="tea_tot_10th"></td>
                           <td><input disabled type="number" class="g10_yes form-inline" id="tea_asign_10th" name="tea_asign_10th"></td> 
                           <td><input disabled type="number" class="g10_yes form-inline" id="tea_trained_10th" name="tea_trained_10th"></td>                   
                       </tr>
                       <tr>
                           <td>11</td>
                           <td><input disabled type="number" class="g11_yes form-inline" id="tea_tot_11th" name="tea_tot_11th"></td> 
-                          <td><input disabled type="checkbox" class="g11_yes form-check form-check-inline" id="tea_gra_11th" value="11" name="tea_gra_11th"></td> 
                           <td><input disabled type="number" class="g11_yes form-inline" id="tea_asign_11th" name="tea_asign_11th"></td> 
                           <td><input disabled type="number" class="g11_yes form-inline" id="tea_trained_11th" name="tea_trained_11th"></td>                    
                       </tr>
                       <tr>
                           <td>12</td>
-                          <td><input disabled type="number" class="g12_yes form-inline" id="tea_tot_12th" name="tea_tot_12th"></td> 
-                          <td><input disabled type="checkbox" class="g12_yes form-check form-check-inline" id="tea_gra_12th" value="12" name="tea_gra_12th"></td> 
+                          <td><input disabled type="number" class="g12_yes form-inline" id="tea_tot_12th" name="tea_tot_12th"></td>  
                           <td><input disabled type="number" class="g12_yes form-inline" id="tea_asign_12th" name="tea_asign_12th"></td> 
                           <td><input disabled type="number" class="g12_yes form-inline" id="tea_trained_12th" name="tea_trained_12th"></td>                     
                       </tr>
                       <tr>
                           <td>ENGINEERING</td>
                           <td><input disabled type="number" class="g_eng_yes form-inline" id="tea_tot_Eng" name="tea_tot_Eng"></td> 
-                          <td><input disabled type="checkbox" class="g_eng_yes form-check form-check-inline" id="tea_gra_Eng" value="ENGINEERING" name="tea_gra_Eng"></td> 
                           <td><input disabled type="number" class="g_eng_yes form-inline" id="tea_asign_Eng" name="tea_asign_Eng"></td> 
                           <td><input disabled type="number" class="g_eng_yes form-inline" id="tea_trained_Eng" name="tea_trained_Eng"></td>                  
                       </tr>
                       <tr>
                           <td>MEDICAL</td>
-                          <td><input disabled type="number" class="g_med_yes form-inline" id="tea_tot_Med" name="tea_tot_Med"></td> 
-                          <td><input disabled type="checkbox" class="g_med_yes form-check form-check-inline" id="tea_gra_Med" value="MEDICAL" name="tea_gra_Med"></td> 
+                          <td><input disabled type="number" class="g_med_yes form-inline" id="tea_tot_Med" name="tea_tot_Med"></td>  
                           <td><input disabled type="number" class="g_med_yes form-inline" id="tea_asign_Med" name="tea_asign_Med"></td> 
                           <td><input disabled type="number" class="g_med_yes form-inline" id="tea_trained_Med" name="tea_trained_Med"></td>                  
                       </tr>
@@ -657,7 +650,7 @@
                   </table>
               </div>
                 <br/>
-              <div><button class="btn btn-primary" id="page4-tab" data-toggle="tab" href="#page4" role="tab" aria-controls="home" aria-selected="true">Page 4</button>
+              <div><button class="btn btn-primary float-right" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" onclick="tab_tog('page4-tab')">Next</button>
               </div>  
               </div>
               </div>
@@ -701,7 +694,7 @@ Grey Scale all standards not selected in Q4
                     </tr>
                     <tr>
                         <td>8</td>
-                        <td><input disabled type="number" class="g8_yes form-inline" id="chd_tot_clsr_8th" name=chd_tot_clsr_8th""></td> 
+                        <td><input disabled type="number" class="g8_yes form-inline" id="chd_tot_clsr_8th" name="chd_tot_clsr_8th"></td> 
                         <td><input disabled type="number" class="g8_yes form-inline" id="chd_rdy_clsr_8th" name="chd_rdy_clsr_8th"></td> 
                         <td><input disabled type="number" class="g8_yes form-inline" id="chd_wk_clsr_8th" name="chd_wk_clsr_8th"></td>                 
                     </tr>
@@ -770,8 +763,8 @@ Grey Scale all standards not selected in Q4
                       <label class="form-check-label" for="defaultCheck1">Lease Lines</label>
                     </div>
                     <div class="form-check">
-                      <input class="HW_disable form-check-input" type="checkbox" value="other" id="ht_ot" name="ht_ot">
-                      <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="form-check form-check-inline" id="state"></label>
+                      <input class="HW_disable form-check-input" type="checkbox" id="ht_ot" name="ht_ot">
+                      <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="form-check form-check-inline" id="ht_other" name="ht_other"></label>
                     </div>
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="No Internet" id="ht_no" name="ht_no" onclick="disable_others('HW_disable')">
@@ -838,7 +831,7 @@ Grey Scale all standards not selected in Q4
                     <tr>
                         <td>3</td>
                         <td><input type="number" class="no_labs form-inline" id="ht_lab3_hd" name="ht_lab3_hd"></td> 
-                        <td><input type="number" class="no_labs form-inline" id="ht_lab3_wk" name=""></td>                 
+                        <td><input type="number" class="no_labs form-inline" id="ht_lab3_wk" name="ht_lab3_wk"></td>                 
                     </tr>
                     <tr>
                         <td>4</td>
@@ -854,7 +847,8 @@ Grey Scale all standards not selected in Q4
                 </table>
            
             <br/>
-            <div><button class="btn btn-primary" id="page5-tab" data-toggle="tab" href="#page5" role="tab" aria-controls="home" aria-selected="true">Page 5</button>
+            <div><button class="btn btn-primary float-right" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" onclick="tab_tog('page5-tab')">Next</button>
+              <br/>
             </div>
             </div>
             <div class="tab-pane fade" id="page5" role="tabpanel" aria-labelledby="profile-tab">
@@ -868,7 +862,7 @@ Grey Scale all standards not selected in Q4
                 <div class="form-inline col-sm-12">
                     <label for="inputName">What percentage of teachers have access to devices (when answering consider the teacher of students who are assigned to the Embibe program ) Note: 1. C cannot be greater than B</label>
                 </div>
-                <table class="table table-bordered">
+                <table class="table table-bordered  table-responsive-sm">
                   <thead>
                     <tr>
                         <th scope="col"></th>
@@ -884,7 +878,7 @@ Grey Scale all standards not selected in Q4
                         <td><label class="form-check-label" for="defaultCheck1">0 %</label></td>
                         <td>&emsp;<input class="form-check-input" type="radio" value="0%" id="da_per_0" name="da_per_smt"></td>
                         <td>&emsp;<input class="form-check-input" type="radio" value="0%" id="da_hmsmt_0" name="da_hm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0%" id="da_hmshmt_0" name=""></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="0%" id="da_hmshmt_0" name="da_hmsh_smt"></td>
                     </tr>
                     <tr>
                         <td><label class="form-check-label" for="defaultCheck1">1-20 %</label></td>
@@ -972,7 +966,7 @@ Grey Scale all standards not selected in Q4
                 <div class="form-inline col-sm-12">
                     <label for="inputName">What percentage of students have access to devices (when answering consider the students who are assigned to the Embibe program )  Note: 1. C cannot be greater than B</label>
                 </div>
-                <table class="table table-bordered">
+                <table class="table table-bordered table-responsive-sm">
                   <thead>
                     <tr>
                         <th scope="col"></th>
@@ -1074,7 +1068,8 @@ Grey Scale all standards not selected in Q4
             </div>
             
             <br/>
-            <div><button class="btn btn-primary" id="page6-tab" data-toggle="tab" href="#page6" role="tab" aria-controls="home" aria-selected="true">Page 6</button>
+            <div><button class="btn btn-primary float-right" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" onclick="tab_tog('page6-tab')">Next</button>
+              <br/>
             </div>
             </div>
             <div class="tab-pane fade" id="page6" role="tabpanel" aria-labelledby="contact-tab">
@@ -1150,7 +1145,7 @@ Grey Scale all standards not selected in Q4
                     </div>
                     <div class="form-check">
                       <input class="cp_no_name form-check-input" type="checkbox" value="Other" id="cp_others"  name="cp_others">
-                      <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="form-check form-check-inline" id="cp_others"></label>
+                      <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="form-check form-check-inline" id="cp_other" name="cp_other"></label>
                     </div>
                 </div>
             </div>
@@ -1254,7 +1249,7 @@ Grey Scale all standards not selected in Q4
                   <label class="form-check-label" for="inlineCheckbox2">Biology &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_lan" value="Languages"  name="">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_lan" value="Languages"  name="cp_sub_lan">
                   <label class="form-check-label" for="inlineCheckbox1">Languages &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
@@ -1263,15 +1258,15 @@ Grey Scale all standards not selected in Q4
                 </div>
                 <div class="form-check form-check-inline">
                   <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_o1" value="Other 1"  name="cp_sub_o1">
-                  <label class="form-check-label" for="defaultCheck1">Other 1 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_o1"></label>
+                  <label class="form-check-label" for="defaultCheck1">Other 1 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_oth1" name="cp_sub_oth1"></label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_o2" value="Other 2"  name="cp_sub_o2">
-                  <label class="form-check-label" for="defaultCheck1">Other 2 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_o2"></label>
+                  <label class="form-check-label" for="defaultCheck1">Other 2 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_oth2" name="cp_sub_oth2"></label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_o3" value="Other 3"  name="cp_sub_o3">
-                  <label class="form-check-label" for="defaultCheck1">Other 3 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_o3"></label>
+                  <label class="form-check-label" for="defaultCheck1">Other 3 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_oth3" name="cp_sub_oth3"></label>
                 </div>
             </div>
             <br/>
@@ -1294,7 +1289,7 @@ Grey Scale all standards not selected in Q4
                     </div>
                     <div class="form-check">
                       <input class="cp_no_name form-check-input" type="checkbox" value="Other" id="cp_reason_oth" name="cp_reason_oth">
-                      <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_reason_oth"></label>
+                      <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_oth" name="cp_oth"></label>
                     </div>
                 </div>
             </div>
@@ -1349,12 +1344,13 @@ Grey Scale all standards not selected in Q4
             </div>
             
             <br/>
-            <div><button class="btn btn-primary" id="page7-tab" data-toggle="tab" href="#page7" role="tab" aria-controls="home" aria-selected="true">Page 7</button>
+            <div><button class="btn btn-primary float-right" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" onclick="tab_tog('page7-tab')">Next</button>
+              <br/>
             </div>
             </div>
             <div class="tab-pane fade" id="page7" role="tabpanel" aria-labelledby="contact-tab">
             
-<!---->
+<!--Management Questionnaire-->
             <br/>
             <div class="row">
                 <div class="col-sm-12">
@@ -1363,26 +1359,26 @@ Grey Scale all standards not selected in Q4
                 <div class="form-group col-sm-12">
                         <label for="inputName">Where do they see themselves in the next one year Technology wise? (Note : in terms of improving on infrastructure) &nbsp;&nbsp;</label>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" value="Not interested to any infra upgrade" id="mq_infra_1" name="mq_infra_1">
+                          <input class="form-check-input" type="radio" value="Not interested to any infra upgrade" id="mq_infra_1" name="mq_infra">
                           <label class="form-check-label" for="defaultCheck1">Not interested to any infra upgrade</label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" value="Interested but not shown any concrete signs" id="mq_infra_2" name="mq_infra_2">
+                          <input class="form-check-input" type="radio" value="Interested but not shown any concrete signs" id="mq_infra_2" name="mq_infra">
                           <label class="form-check-label" for="defaultCheck2">
 Interested but not shown any concrete signs </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" value="Have concrete plans to update" id="mq_infra_3" name="mq_infra_3">
+                          <input class="form-check-input" type="radio" value="Have concrete plans to update" id="mq_infra_3" name="mq_infra">
                           <label class="form-check-label" for="defaultCheck1">
 Have concrete plans to update </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" value="Have started upgrading the infrastructure" id="mq_infra_4" name="mq_infra_4">
+                          <input class="form-check-input" type="radio" value="Have started upgrading the infrastructure" id="mq_infra_4" name="mq_infra">
                           <label class="form-check-label" for="defaultCheck1">
 Have started upgrading the infrastructure </label>
                         </div>
                     <div class="form-check">
-                          <input class="form-check-input" type="radio" value="Already have a Great Infrastructure Setup" id="mq_infra_5" name="mq_infra_5">
+                          <input class="form-check-input" type="radio" value="Already have a Great Infrastructure Setup" id="mq_infra_5" name="mq_infra">
                           <label class="form-check-label" for="defaultCheck1">
 Already have a Great Infrastructure Setup </label>
                         </div>
@@ -1491,7 +1487,7 @@ Already have a Great Infrastructure Setup </label>
             <br/>
             <button type="submit" class="btn btn-primary col-sm-12">Submit</button>
             </div>
-        
+        </div>
         
         </form>
         </div>
