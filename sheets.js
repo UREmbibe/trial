@@ -125,7 +125,6 @@ function loadXMLDoc(val, id){
             names.push(document.getElementsByName(n)[0].getAttribute('id'))
           }catch(e){
           }
-       
       })
       names.forEach((n)=>{
         try{
@@ -161,5 +160,16 @@ function validateForm() {
         return false;
       }
     }
+  }
+}
+
+function contract_value(v1, v2){
+  var dis = document.getElementsByClassName(v2)
+  var nod = document.getElementsByClassName(v1)
+  for (var i=0; i<dis.length; i++){
+      document.getElementById(dis[i].id).readOnly = true
+  }
+  for (var i=0; i<nod.length; i++){
+    document.getElementById(nod[i].id).readOnly = false
   }
 }
