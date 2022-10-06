@@ -259,11 +259,11 @@
               </div>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="cd_type" id="cd_type_relative" value="Relative to Number of Students" onclick="contract_value('relative', 'absolute')" checked>
-                <label class="form-check-label" for="inlineRadio2">Relative to Number of Students</label>
+                <label class="form-check-label" for="inlineRadio2">Per Annum Per Student Model</label>
               </div>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="cd_type" id="cd_type_absolute" value="Absolute/Fixed Value" onclick="contract_value('absolute', 'relative')">
-                <label class="form-check-label" for="inlineRadio1">Absolute/Fixed Value</label>
+                <label class="form-check-label" for="inlineRadio1">Absolute/Fixed Value Model</label>
               </div>
               <br/>   
               <div class="row">
@@ -451,44 +451,64 @@
                       <tr>
                         <th scope="col">Grade</th>
                         <th scope="col">Fees</th>
+                        <th scope="col">Total number of sections in the grade</th>
+                        <th scope="col"># Total students</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th>6</th>
-                        <td><input disabled type="number" class="g6_yes form-check form-check-inline" id="fee_6th" name="fee_6th"></td>                   
+                        <td><input disabled type="number" class="g6_yes form-check form-check-inline" id="fee_6th" name="fee_6th"></td> 
+                        <td><input disabled type="number" class="g6_yes form-inline" id="gra_sec_6th" name="gra_sec_6th"></td> 
+                          <td><input disabled type="number" class="g6_yes form-inline" id="gra_std_6th" name="gra_std_6th"></td>                   
                       </tr>
                       <tr>
                         <th>7</th>
-                        <td><input disabled type="number" class="g7_yes form-check form-check-inline" id="fee_7th" name="fee_7th"></td>                   
+                        <td><input disabled type="number" class="g7_yes form-check form-check-inline" id="fee_7th" name="fee_7th"></td>  
+                        <td><input disabled type="number" class="g7_yes form-inline" id="gra_sec_7th" name="gra_sec_7th"></td> 
+                          <td><input disabled type="number" class="g7_yes form-inline" id="gra_std_7th" name="gra_std_7th"></td>                  
                       </tr>
                       <tr>
                         <th>8</th>
-                        <td><input disabled type="number" class="g8_yes form-check form-check-inline" id="fee_8th" name="fee_8th"></td>                   
+                        <td><input disabled type="number" class="g8_yes form-check form-check-inline" id="fee_8th" name="fee_8th"></td>   
+                        <td><input disabled type="number" class="g8_yes form-inline" id="gra_sec_8th" name="gra_sec_8th"></td> 
+                          <td><input disabled type="number" class="g8_yes form-inline" id="gra_std_8th" name="gra_std_8th"></td>                
                       </tr>
                       <tr>
                         <th>9</th>
-                        <td><input disabled type="number" class="g9_yes form-check form-check-inline" id="fee_9th" name="fee_9th"></td>                   
+                        <td><input disabled type="number" class="g9_yes form-check form-check-inline" id="fee_9th" name="fee_9th"></td>  
+                        <td><input disabled type="number" class="g9_yes form-inline" id="gra_sec_9th" name="gra_sec_9th"></td> 
+                          <td><input disabled type="number" class="g9_yes form-inline" id="gra_std_9th" name="gra_std_9th"></td>                 
                       </tr>
                       <tr>
                         <th>10</th>
-                        <td><input disabled type="number" class="g10_yes form-check form-check-inline" id="fee_10th" name="fee_10th"></td>                   
+                        <td><input disabled type="number" class="g10_yes form-check form-check-inline" id="fee_10th" name="fee_10th"></td>   
+                        <td><input disabled type="number" class="g10_yes form-inline" id="gra_sec_10th" name="gra_sec_10th"></td> 
+                          <td><input disabled type="number" class="g10_yes form-inline" id="gra_std_10th" name="gra_std_10th"></td>                
                       </tr>
                       <tr>
                         <th>11</th>
-                        <td><input disabled type="number" class="g11_yes form-check form-check-inline" id="fee_11th" name="fee_11th"></td>                   
+                        <td><input disabled type="number" class="g11_yes form-check form-check-inline" id="fee_11th" name="fee_11th"></td>  
+                        <td><input disabled type="number" class="g11_yes form-inline" id="gra_sec_11th" name="gra_sec_11th"></td> 
+                          <td><input disabled type="number" class="g11_yes form-inline" id="gra_std_11th" name="gra_std_11th"></td>                 
                       </tr>
                       <tr>
                         <th>12</th>
-                        <td><input disabled type="number" class="g12_yes form-check form-check-inline" id="fee_12th" name="fee_12th"></td>                   
+                        <td><input disabled type="number" class="g12_yes form-check form-check-inline" id="fee_12th" name="fee_12th"></td>     
+                        <td><input disabled type="number" class="g12_yes form-inline" id="gra_sec_12th" name="gra_sec_12th"></td> 
+                          <td><input disabled type="number" class="g12_yes  form-inline" id="gra_std_12th" name="gra_std_12th"></td>              
                       </tr>
                       <tr>
                         <th>Engineering</th>
-                        <td><input disabled type="number" class="g_eng_yes form-check form-check-inline" id="fee_eng" name="fee_eng"></td>                   
+                        <td><input disabled type="number" class="g_eng_yes form-check form-check-inline" id="fee_eng" name="fee_eng"></td>   
+                        <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_sec_eng" name="gra_sec_eng"></td> 
+                        <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_std_eng" name="gra_std_eng"></td>                
                       </tr>
                       <tr>
                         <th>Medical</th>
-                        <td><input disabled type="number" class="g_med_yes form-check form-check-inline" id="fee_med" name="fee_med"></td>                   
+                        <td><input disabled type="number" class="g_med_yes form-check form-check-inline" id="fee_med" name="fee_med"></td>   
+                        <td><input disabled type="number" class="g_med_yes form-inline" id="gra_sec_med" name="gra_sec_med"></td> 
+                          <td><input disabled type="number" class="g_med_yes form-inline" id="gra_std_med" name="gra_std_med"></td>                
                       </tr>
                     </tbody>
                   </table>
@@ -506,8 +526,7 @@
                     <thead>
                       <tr>
                         <th scope="col"></th>
-                        <th scope="col">Total number of sections in the grade</th>
-                        <th scope="col"># Total students  onboarded</th>
+                        
                         <th scope="col"># Sections  assigned to the Embibe program</th>
                         <th scope="col"># Students  assigned to the Embibe program</th>
                         <th scope="col"># Students trained by the Embibe team</th>
@@ -516,79 +535,99 @@
                     <tbody>
                       <tr>
                           <td>6</td>
-                          <td><input disabled type="number" class="g6_yes form-inline" id="gra_sec_6th" name="gra_sec_6th"></td> 
-                          <td><input disabled type="number" class="g6_yes form-inline" id="gra_std_6th" name="gra_std_6th"></td> 
-                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_sec_asgn_6th" name="gra_sec_asgn_6th"></td>
+                          
+                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_sec_asgn_6th" name="gra_sec_asgn_6th" onblur="avg_std(this.value, document.getElementById('gra_sec_6th').value, document.getElementById('gra_std_6th').value, 'gra_std_asgn_6th')"></td>
                           <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_std_asgn_6th" name="gra_std_asgn_6th"></td> 
                           <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_std_trn_6th" name="gra_std_trn_6th"></td>             
                       </tr>
                       <tr>
                           <td>7</td>
-                          <td><input disabled type="number" class="g7_yes form-inline" id="gra_sec_7th" name="gra_sec_7th"></td> 
-                          <td><input disabled type="number" class="g7_yes form-inline" id="gra_std_7th" name="gra_std_7th"></td> 
-                          <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_sec_asgn_7th" name="gra_sec_asgn_7th"></td>
+                          
+                          <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_sec_asgn_7th" name="gra_sec_asgn_7th" onblur="avg_std(this.value, document.getElementById('gra_sec_7th').value, document.getElementById('gra_std_7th').value, 'gra_std_asgn_7th')"></td>
                           <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_std_asgn_7th" name="gra_std_asgn_7th"></td> 
                           <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_std_trn_7th" name="gra_std_trn_7th"></td>                  
                       </tr>
                       <tr>
                           <td>8</td>
-                          <td><input disabled type="number" class="g8_yes form-inline" id="gra_sec_8th" name="gra_sec_8th"></td> 
-                          <td><input disabled type="number" class="g8_yes form-inline" id="gra_std_8th" name="gra_std_8th"></td> 
-                          <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_sec_asgn_8th" name="gra_sec_asgn_8th"></td>
+                           
+                          <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_sec_asgn_8th" name="gra_sec_asgn_8th" onblur="avg_std(this.value, document.getElementById('gra_sec_8th').value, document.getElementById('gra_std_8th').value, 'gra_std_asgn_8th')"></td>
                           <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_std_asgn_8th" name="gra_std_asgn_8th"></td> 
                           <td><input disabled type="text" class="g8_yes_yes form-inline" id="gra_std_trn_8th" name="gra_std_trn_8th"></td>                     
                       </tr>
                       <tr>
                           <td>9</td>
-                          <td><input disabled type="number" class="g9_yes form-inline" id="gra_sec_9th" name="gra_sec_9th"></td> 
-                          <td><input disabled type="number" class="g9_yes form-inline" id="gra_std_9th" name="gra_std_9th"></td> 
-                          <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_sec_asgn_9th" name="gra_sec_asgn_9th"></td>
+                           
+                          <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_sec_asgn_9th" name="gra_sec_asgn_9th" onblur="avg_std(this.value, document.getElementById('gra_sec_9th').value, document.getElementById('gra_std_9th').value, 'gra_std_asgn_9th')"></td>
                           <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_std_asgn_9th" name="gra_std_asgn_9th"></td> 
                           <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_std_trn_9th" name="gra_std_trn_9th"></td>                     
                       </tr>
                       <tr>
                           <td>10</td>
-                          <td><input disabled type="number" class="g10_yes form-inline" id="gra_sec_10th" name="gra_sec_10th"></td> 
-                          <td><input disabled type="number" class="g10_yes form-inline" id="gra_std_10th" name="gra_std_10th"></td>
-                          <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_sec_asgn_10th" name="gra_sec_asgn_10th"></td> 
+                          
+                          <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_sec_asgn_10th" name="gra_sec_asgn_10th" onblur="avg_std(this.value, document.getElementById('gra_sec_10th').value, document.getElementById('gra_std_10th').value, 'gra_std_asgn_10th')"></td> 
                           <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_std_asgn_10th" name="gra_std_asgn_10th"></td> 
                           <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_std_trn_10th" name="gra_std_trn_10th"></td>                   
                       </tr>
                       <tr>
                           <td>11</td>
-                          <td><input disabled type="number" class="g11_yes form-inline" id="gra_sec_11th" name="gra_sec_11th"></td> 
-                          <td><input disabled type="number" class="g11_yes form-inline" id="gra_std_11th" name="gra_std_11th"></td>
-                          <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_sec_asgn_11th" name="gra_sec_asgn_11th"></td>
+                          
+                          <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_sec_asgn_11th" name="gra_sec_asgn_11th" onblur="avg_std(this.value, document.getElementById('gra_sec_11th').value, document.getElementById('gra_std_11th').value, 'gra_std_asgn_11th')"></td>
                           <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_std_asgn_11th" name="gra_std_asgn_11th"></td> 
                           <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_std_trn_11th" name="gra_std_trn_11th"></td>                    
                       </tr>
                       <tr>
                           <td>12</td>
-                          <td><input disabled type="number" class="g12_yes form-inline" id="gra_sec_12th" name="gra_sec_12th"></td> 
-                          <td><input disabled type="number" class="g12_yes  form-inline" id="gra_std_12th" name="gra_std_12th"></td>
-                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_sec_asgn_12th" name="gra_sec_asgn_12th"></td>
+                          
+                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_sec_asgn_12th" name="gra_sec_asgn_12th" onblur="avg_std(this.value, document.getElementById('gra_sec_12th').value, document.getElementById('gra_std_12th').value, 'gra_std_asgn_12th')"></td>
                           <td><input disabled type="number" class="g12_yes_yes  form-inline" id="gra_std_asgn_12th" name="gra_std_asgn_12th"></td> 
                           <td><input disabled type="number" class="g12_yes_yes  form-inline" id="gra_std_trn_12th" name="gra_std_trn_12th"></td>                     
                       </tr>
                       <tr>
                           <td>ENGINEERING</td>
-                          <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_sec_eng" name="gra_sec_eng"></td> 
-                          <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_std_eng" name="gra_std_eng"></td>
-                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_sec_asgn_eng" name="gra_sec_asgn_eng"></td> 
+                         
+                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_sec_asgn_eng" name="gra_sec_asgn_eng" onblur="avg_std(this.value, document.getElementById('gra_sec_eng').value, document.getElementById('gra_std_eng').value, 'gra_std_asgn_eng')"></td> 
                           <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_std_asgn_eng" name="gra_std_asgn_eng"></td> 
                           <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_std_trn_eng" name="gra_std_trn_eng"></td>                  
                       </tr>
                       <tr>
                           <td>MEDICAL</td>
-                          <td><input disabled type="number" class="g_med_yes form-inline" id="gra_sec_med" name="gra_sec_med"></td> 
-                          <td><input disabled type="number" class="g_med_yes form-inline" id="gra_std_med" name="gra_std_med"></td> 
-                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_sec_asgn_med" name="gra_sec_asgn_med"></td> 
+                           
+                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_sec_asgn_med" name="gra_sec_asgn_med" onblur="avg_std(this.value, document.getElementById('gra_sec_med').value, document.getElementById('gra_std_med').value, 'gra_std_asgn_med')"></td> 
                           <td><input disabled type="number" class="g_med_yes_yes form-inline" id="gra_std_asgn_med" name="gra_std_asgn_med"></td> 
                           <td><input disabled type="number" class="g_med_yes_yes form-inline" id="gra_std_trn_med" name="gra_std_trn_med"></td>                  
                       </tr>
                     </tbody>
                   </table>
               </div>
+                            
+              <!----> 
+              <br/>
+              <div class="row col">
+                  <b><label>Teachers details with Embibe onboarding info</label></b>
+              </div>
+              <div class="row">
+                  <div class="form-inline col-sm-12">
+                      <label for="inputName">How many teachers does the School/Coaching have? Mention in the grid below: 
+                      </label>
+                  </div>
+                  <table class="table table-bordered table-responsive">
+                    <thead>
+                      <tr>
+                        <th scope="col">Total teachers</th>
+                        <th scope="col">Teachers expected for training</th>
+                        <th scope="col">Teacher trained by the Embibe team</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                          <td><input type="number" class="form-inline" id="tea_tot" name="tea_tot"></td>
+                          <td><input type="number" class="form-inline" id="tea_asign" name="tea_asign"></td> 
+                          <td><input type="number" class="form-inline" id="tea_trained" name="tea_trained"></td>             
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+
                 <br/>
               <div><button class="btn btn-primary float-right" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" onclick="tab_tog('page4-tab')">Next</button>
                 <br/>
@@ -596,8 +635,7 @@
               </div>
               </div>
             <div class="tab-pane fade" id="page4" role="tabpanel" aria-labelledby="home-tab">
-                        
- 
+
 <!---->       
            <br/>
             <div class="row col">
@@ -729,112 +767,9 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
 <!--Access to Devices--> 
             <br/>
             <div class="row col">
-                <b><label>Access to Devices - Teachers and Students (For those enrolled in the Embibe Program)</label></b>
+                <b><label>Access to Devices - Students (For those enrolled in the Embibe Program)</label></b>
             </div>
-             <div class="row">
-                <div class="form-inline col-sm-12">
-                    <label for="inputName">What percentage of teachers have access to devices (when answering consider the teacher of students who are assigned to the Embibe program ) Note: 1. C cannot be greater than B</label>
-                </div>
-                <table class="table table-bordered  table-responsive-sm">
-                  <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                        <th scope="col">In School/Coaching [A]</th>
-                        <th scope="col">At Home [B]</th>
-                        <th scope="col">Shared devices at home [C]</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                        <th rowspan=7>Smartphones</th>
-                        <td><label class="form-check-label" for="defaultCheck1">0 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0%" id="da_per_0" name="da_per_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0%" id="da_hmsmt_0" name="da_hm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0%" id="da_hmshmt_0" name="da_hmsh_smt"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">1-20 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_per_20" name="da_per_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_hmsmt_20" name="da_hm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_hmshmt_20" name="da_hmsh_smt"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">21-40 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_per_40" name="da_per_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_hmsmt_40" name="da_hm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_hmshmt_40" name="da_hmsh_smt"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">41-60 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_per_60" name="da_per_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_hmsmt_60" name="da_hm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_hmshmt_60" name="da_hmsh_smt"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">61-80 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_per_80" name="da_per_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_hmsmt_80" name="da_hm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_hmshmt_80" name="da_hmsh_smt"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">81-99 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_per_99" name="da_per_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_hmsmt_99" name="da_hm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_hmshmt_99" name="da_hmsh_smt"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">100 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_per_100" name="da_per_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_hmsmt_100" name="da_hm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_hmshmt_100" name="da_hmsh_smt"></td>
-                    </tr>
-                    <tr>
-                        <th rowspan=7>Laptops / Desktops /   Tablets</th>
-                        <td><label class="form-check-label" for="defaultCheck1">0 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0 %" id="da_cm_0" name="da_per_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0 %" id="da_hmcm_0" name="da_hm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0 %" id="da_hmshcm_0" name="da_hmsh_cm"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">1-20 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_cm_20" name="da_per_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_hmcm_20" name="da_hm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_hmshcm_20" name="da_hmsh_cm"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">21-40 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_cm_40" name="da_per_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_hmcm_40" name="da_hm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_hmshcm_40" name="da_hmsh_cm"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">41-60 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_cm_60" name="da_per_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_hmcm_60" name="da_hm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_hmshcm_60" name="da_hmsh_cm"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">61-80 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_cm_80" name="da_per_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_hmcm_80" name="da_hm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_hmshcm_80" name="da_hmsh_cm"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">81-99 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_cm_99" name="da_per_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_hmcm_99" name="da_hm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_hmshcm_99" name="da_hmsh_cm"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">100 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_cm_100" name="da_per_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_hmcm_100" name="da_hm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_hmshcm_100" name="da_hmsh_cm"></td>
-                    </tr>
-                  </tbody>
-                </table>
-            </div>
+             
             <div class="row">
                 <div class="form-inline col-sm-12">
                     <label for="inputName">What percentage of students have access to devices (when answering consider the students who are assigned to the Embibe program )  Note: 1. C cannot be greater than B</label>
