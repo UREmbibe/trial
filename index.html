@@ -200,16 +200,20 @@
                   <label class="form-check-label" for="board">Extra Facility: &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="scc_ex_multi" id="scc_ex_multi" value="Multiple Shifts">
-                  <label class="form-check-label" for="inlineRadio1">Multiple Shifts</label>
-                </div>
-                <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" name="scc_ex_boarding" id="scc_ex_boarding" value="Boarding School">
                   <label class="form-check-label" for="inlineRadio2">Boarding School</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" name="scc_ex_after" id="scc_ex_after" value="After Stay">
                   <label class="form-check-label" for="inlineRadio1">After Stay</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="scc_ex_multi" id="scc_ex_multi" value="Multiple Shifts">
+                  <label class="form-check-label" for="inlineRadio1">Multiple Shifts</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="scc_ex_others" id="scc_ex_others" value="Multiple Shifts">
+                  <label class="form-check-label" for="inlineRadio1">Others</label>
                 </div>
             </div>
 
@@ -460,31 +464,31 @@
                         <th>6</th>
                         <td><input disabled type="number" class="g6_yes form-check form-check-inline" id="fee_6th" name="fee_6th"></td> 
                         <td><input disabled type="number" class="g6_yes form-inline" id="gra_sec_6th" name="gra_sec_6th"></td> 
-                          <td><input disabled type="number" class="g6_yes form-inline" id="gra_std_6th" name="gra_std_6th"></td>                   
+                        <td><input disabled type="number" class="g6_yes form-inline" id="gra_std_6th" name="gra_std_6th"></td>                   
                       </tr>
                       <tr>
                         <th>7</th>
                         <td><input disabled type="number" class="g7_yes form-check form-check-inline" id="fee_7th" name="fee_7th"></td>  
                         <td><input disabled type="number" class="g7_yes form-inline" id="gra_sec_7th" name="gra_sec_7th"></td> 
-                          <td><input disabled type="number" class="g7_yes form-inline" id="gra_std_7th" name="gra_std_7th"></td>                  
+                        <td><input disabled type="number" class="g7_yes form-inline" id="gra_std_7th" name="gra_std_7th"></td>                  
                       </tr>
                       <tr>
                         <th>8</th>
                         <td><input disabled type="number" class="g8_yes form-check form-check-inline" id="fee_8th" name="fee_8th"></td>   
                         <td><input disabled type="number" class="g8_yes form-inline" id="gra_sec_8th" name="gra_sec_8th"></td> 
-                          <td><input disabled type="number" class="g8_yes form-inline" id="gra_std_8th" name="gra_std_8th"></td>                
+                        <td><input disabled type="number" class="g8_yes form-inline" id="gra_std_8th" name="gra_std_8th"></td>                
                       </tr>
                       <tr>
                         <th>9</th>
                         <td><input disabled type="number" class="g9_yes form-check form-check-inline" id="fee_9th" name="fee_9th"></td>  
                         <td><input disabled type="number" class="g9_yes form-inline" id="gra_sec_9th" name="gra_sec_9th"></td> 
-                          <td><input disabled type="number" class="g9_yes form-inline" id="gra_std_9th" name="gra_std_9th"></td>                 
+                        <td><input disabled type="number" class="g9_yes form-inline" id="gra_std_9th" name="gra_std_9th"></td>                 
                       </tr>
                       <tr>
                         <th>10</th>
                         <td><input disabled type="number" class="g10_yes form-check form-check-inline" id="fee_10th" name="fee_10th"></td>   
                         <td><input disabled type="number" class="g10_yes form-inline" id="gra_sec_10th" name="gra_sec_10th"></td> 
-                          <td><input disabled type="number" class="g10_yes form-inline" id="gra_std_10th" name="gra_std_10th"></td>                
+                        <td><input disabled type="number" class="g10_yes form-inline" id="gra_std_10th" name="gra_std_10th"></td>                
                       </tr>
                       <tr>
                         <th>11</th>
@@ -496,7 +500,7 @@
                         <th>12</th>
                         <td><input disabled type="number" class="g12_yes form-check form-check-inline" id="fee_12th" name="fee_12th"></td>     
                         <td><input disabled type="number" class="g12_yes form-inline" id="gra_sec_12th" name="gra_sec_12th"></td> 
-                          <td><input disabled type="number" class="g12_yes  form-inline" id="gra_std_12th" name="gra_std_12th"></td>              
+                        <td><input disabled type="number" class="g12_yes  form-inline" id="gra_std_12th" name="gra_std_12th"></td>              
                       </tr>
                       <tr>
                         <th>Engineering</th>
@@ -508,7 +512,7 @@
                         <th>Medical</th>
                         <td><input disabled type="number" class="g_med_yes form-check form-check-inline" id="fee_med" name="fee_med"></td>   
                         <td><input disabled type="number" class="g_med_yes form-inline" id="gra_sec_med" name="gra_sec_med"></td> 
-                          <td><input disabled type="number" class="g_med_yes form-inline" id="gra_std_med" name="gra_std_med"></td>                
+                        <td><input disabled type="number" class="g_med_yes form-inline" id="gra_std_med" name="gra_std_med"></td>                
                       </tr>
                     </tbody>
                   </table>
@@ -528,7 +532,7 @@
                         <th scope="col"></th>
                         
                         <th scope="col"># Sections  assigned to the Embibe program</th>
-                        <th scope="col"># Students  assigned to the Embibe program</th>
+                        <th scope="col"># Students  assigned to the Embibe program (Auto calculated based on Students and Sections values)</th>
                         <th scope="col"># Students trained by the Embibe team</th>
                       </tr>
                     </thead>
@@ -537,63 +541,63 @@
                           <td>6</td>
                           
                           <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_sec_asgn_6th" name="gra_sec_asgn_6th" onblur="avg_std(this.value, document.getElementById('gra_sec_6th').value, document.getElementById('gra_std_6th').value, 'gra_std_asgn_6th')"></td>
-                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_std_asgn_6th" name="gra_std_asgn_6th"></td> 
+                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_std_asgn_6th" name="gra_std_asgn_6th" readonly></td> 
                           <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_std_trn_6th" name="gra_std_trn_6th"></td>             
                       </tr>
                       <tr>
                           <td>7</td>
                           
                           <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_sec_asgn_7th" name="gra_sec_asgn_7th" onblur="avg_std(this.value, document.getElementById('gra_sec_7th').value, document.getElementById('gra_std_7th').value, 'gra_std_asgn_7th')"></td>
-                          <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_std_asgn_7th" name="gra_std_asgn_7th"></td> 
+                          <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_std_asgn_7th" name="gra_std_asgn_7th" readonly></td> 
                           <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_std_trn_7th" name="gra_std_trn_7th"></td>                  
                       </tr>
                       <tr>
                           <td>8</td>
                            
                           <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_sec_asgn_8th" name="gra_sec_asgn_8th" onblur="avg_std(this.value, document.getElementById('gra_sec_8th').value, document.getElementById('gra_std_8th').value, 'gra_std_asgn_8th')"></td>
-                          <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_std_asgn_8th" name="gra_std_asgn_8th"></td> 
-                          <td><input disabled type="text" class="g8_yes_yes form-inline" id="gra_std_trn_8th" name="gra_std_trn_8th"></td>                     
+                          <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_std_asgn_8th" name="gra_std_asgn_8th" readonly></td> 
+                          <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_std_trn_8th" name="gra_std_trn_8th"></td>                     
                       </tr>
                       <tr>
                           <td>9</td>
                            
                           <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_sec_asgn_9th" name="gra_sec_asgn_9th" onblur="avg_std(this.value, document.getElementById('gra_sec_9th').value, document.getElementById('gra_std_9th').value, 'gra_std_asgn_9th')"></td>
-                          <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_std_asgn_9th" name="gra_std_asgn_9th"></td> 
+                          <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_std_asgn_9th" name="gra_std_asgn_9th" readonly></td> 
                           <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_std_trn_9th" name="gra_std_trn_9th"></td>                     
                       </tr>
                       <tr>
                           <td>10</td>
                           
                           <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_sec_asgn_10th" name="gra_sec_asgn_10th" onblur="avg_std(this.value, document.getElementById('gra_sec_10th').value, document.getElementById('gra_std_10th').value, 'gra_std_asgn_10th')"></td> 
-                          <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_std_asgn_10th" name="gra_std_asgn_10th"></td> 
+                          <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_std_asgn_10th" name="gra_std_asgn_10th" readonly></td> 
                           <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_std_trn_10th" name="gra_std_trn_10th"></td>                   
                       </tr>
                       <tr>
                           <td>11</td>
                           
                           <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_sec_asgn_11th" name="gra_sec_asgn_11th" onblur="avg_std(this.value, document.getElementById('gra_sec_11th').value, document.getElementById('gra_std_11th').value, 'gra_std_asgn_11th')"></td>
-                          <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_std_asgn_11th" name="gra_std_asgn_11th"></td> 
+                          <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_std_asgn_11th" name="gra_std_asgn_11th" readonly></td> 
                           <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_std_trn_11th" name="gra_std_trn_11th"></td>                    
                       </tr>
                       <tr>
                           <td>12</td>
                           
                           <td><input disabled type="number" class="g12_yes_yes form-inline" id="gra_sec_asgn_12th" name="gra_sec_asgn_12th" onblur="avg_std(this.value, document.getElementById('gra_sec_12th').value, document.getElementById('gra_std_12th').value, 'gra_std_asgn_12th')"></td>
-                          <td><input disabled type="number" class="g12_yes_yes  form-inline" id="gra_std_asgn_12th" name="gra_std_asgn_12th"></td> 
+                          <td><input disabled type="number" class="g12_yes_yes  form-inline" id="gra_std_asgn_12th" name="gra_std_asgn_12th" readonly></td> 
                           <td><input disabled type="number" class="g12_yes_yes  form-inline" id="gra_std_trn_12th" name="gra_std_trn_12th"></td>                     
                       </tr>
                       <tr>
                           <td>ENGINEERING</td>
                          
                           <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_sec_asgn_eng" name="gra_sec_asgn_eng" onblur="avg_std(this.value, document.getElementById('gra_sec_eng').value, document.getElementById('gra_std_eng').value, 'gra_std_asgn_eng')"></td> 
-                          <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_std_asgn_eng" name="gra_std_asgn_eng"></td> 
+                          <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_std_asgn_eng" name="gra_std_asgn_eng" readonly></td> 
                           <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_std_trn_eng" name="gra_std_trn_eng"></td>                  
                       </tr>
                       <tr>
                           <td>MEDICAL</td>
                            
                           <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_sec_asgn_med" name="gra_sec_asgn_med" onblur="avg_std(this.value, document.getElementById('gra_sec_med').value, document.getElementById('gra_std_med').value, 'gra_std_asgn_med')"></td> 
-                          <td><input disabled type="number" class="g_med_yes_yes form-inline" id="gra_std_asgn_med" name="gra_std_asgn_med"></td> 
+                          <td><input disabled type="number" class="g_med_yes_yes form-inline" id="gra_std_asgn_med" name="gra_std_asgn_med" readonly></td> 
                           <td><input disabled type="number" class="g_med_yes_yes form-inline" id="gra_std_trn_med" name="gra_std_trn_med"></td>                  
                       </tr>
                     </tbody>
