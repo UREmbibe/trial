@@ -47,6 +47,10 @@ function disable_others(id){
     if (document.getElementById(dis[i].id).disabled){
       document.getElementById(dis[i].id).disabled = false
     }else {
+      if (document.getElementById(dis[i].id).checked){
+        document.getElementById(dis[i].id).click()
+        //document.getElementById(dis[i].id).checked = false
+      }
       document.getElementById(dis[i].id).disabled = true
     }
   }
@@ -85,8 +89,6 @@ function disable_field(id){
 function maker(json){
   var first = true
   json.forEach((el)=>{
-    console.log(el)
-    console.log(Object.keys(el));
     var keys = Object.keys(el);
     if (first){
       first = false
@@ -104,7 +106,6 @@ function maker(json){
       ele.textContent = el[key];
       div.append(ele); 
     })
-    console.log(keys);
   })
 }
 
@@ -112,17 +113,53 @@ function loadXMLDoc(val, id){
   names=[]
   for (var i = 0; i < observations.length; i++) {
     if(observations[i].sf_id == val){
+      var a
+      if (a == undefined){
+        var a = observations[i].iteration_no
+      }else if (a != 0){
+        var b = observations[i].iteration_no
+        a = Math.max(a, b)
+      }
       features.forEach((n)=>{
-        names.push(document.getElementsByName(n)[0].getAttribute('id'))
+        try{
+            names.push(document.getElementsByName(n)[0].getAttribute('id'))
+          }catch(e){
+          }
+       
       })
-
       names.forEach((n)=>{
-        document.getElementById(n).setAttribute('value', observations[i][n])
+        try{
+          if (n == "iteration_no"){
+            document.getElementById(n).setAttribute('value', observations[i][n]+1)  
+          }else{
+            document.getElementById(n).setAttribute('value', observations[i][n])
+          }
+          }catch(e){
+          }
       })
     }
   }
 }
 
 function tab_tog(id_nav){
+  window.scrollTo(0, 0);
   document.getElementById(id_nav).click()
+}
+
+
+function contract(years, pps, students){
+  document.getElementById("cd_total").setAttribute("value",years*pps*students)
+}
+
+
+function validateForm() {
+  var valid_vals = document.getElementsByTagName("input")
+  for (var i=0; i<valid_vals.length; i++){
+    if (valid_vals[i].getAttribute("type")=="number"){
+      if (valid_vals[i].value<0){
+        alert(valid_vals[i].value +" assigned to a field. Values cannot be negative")
+        return false;
+      }
+    }
+  }
 }
