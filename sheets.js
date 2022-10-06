@@ -167,9 +167,16 @@ function contract_value(v1, v2){
   var dis = document.getElementsByClassName(v2)
   var nod = document.getElementsByClassName(v1)
   for (var i=0; i<dis.length; i++){
-      document.getElementById(dis[i].id).readOnly = true
+    document.getElementById(dis[i].id).setAttribute("value", 0)
+    document.getElementById(dis[i].id).readOnly = true
   }
   for (var i=0; i<nod.length; i++){
+    document.getElementById(nod[i].id).setAttribute("value", 0)
     document.getElementById(nod[i].id).readOnly = false
   }
+}
+
+
+function avg_std(sec_assigned, total_sec, total_std, avg_std){
+  document.getElementById(avg_std).setAttribute("value", total_std*sec_assigned/total_sec)
 }
