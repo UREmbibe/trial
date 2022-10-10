@@ -112,12 +112,14 @@ function maker(json){
 function loadXMLDoc(val, id){
   names=[]
   for (var i = 0; i < observations.length; i++) {
-    if(observations[i].sf_id == val){
+    if(observations[i].account_org_id == val){
+      console.log(observations[i])
       var a
       if (a == undefined){
-        var a = observations[i].iteration_no
+        console.log(a)
+        var a = observations[i].visit_number
       }else if (a != 0){
-        var b = observations[i].iteration_no
+        var b = observations[i].visit_number
         a = Math.max(a, b)
       }
       features.forEach((n)=>{
@@ -126,12 +128,22 @@ function loadXMLDoc(val, id){
           }catch(e){
           }
       })
+      console.log(names)
       names.forEach((n)=>{
         try{
-          if (n == "iteration_no"){
-            document.getElementById(n).setAttribute('value', observations[i][n]+1)  
+          if (n == "visit_number"){
+            document.getElementById(n).setAttribute('value', observations[i][n]+1)
           }else{
-            document.getElementById(n).setAttribute('value', observations[i][n])
+            var val = document.getElementById(n).getAttribute("name")
+
+            if (document.getElementById(n).getAttribute(type) == "checkbox"){
+              if (document.getElementById(n).getAttribute('value') == observations[i][val]){
+                document.getElementById(n).getAttribute('value').checked = true
+              }  
+            }
+            else{
+            document.getElementById(n).setAttribute('value', observations[i][val])
+            }
           }
           }catch(e){
           }
@@ -179,4 +191,18 @@ function contract_value(v1, v2){
 
 function avg_std(sec_assigned, total_sec, total_std, avg_std){
   document.getElementById(avg_std).setAttribute("value", total_std*sec_assigned/total_sec)
+}
+
+function validate(obj, val)
+{
+  if(!obj.checkValidity())
+  {
+    alert("You have invalid input for "+val+". Correct it!");
+  }
+}
+
+function validateMobile(val, field){
+  if (val>9999999999 || val<6000000000){
+    alert(field+" does not seem right. Please correct it")
+  } 
 }
