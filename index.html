@@ -48,12 +48,12 @@
             <br/>
                 <div class="row">
                   <div class="form-inline col-sm-6">
-                    <label for="inputName">account_org_id: &nbsp;&nbsp;</label>
-                    <input type="text" class="form-control" id="sf_id" name="sf_id" onblur="loadXMLDoc(this.value, this.id)">
+                    <label for="inputName">account_org_id &nbsp;&nbsp;</label>
+                    <input type="text" class="form-control" id="account_org_id" name="account_org_id" onblur="loadXMLDoc(this.value, this.id)">
                     </div>
                     <div class="form-inline col-sm-6">
                       <label for="inputName">Visit Number &nbsp;&nbsp;</label>
-                    <input type="number" class="form-control" id="iteration_no" name="iteration_no" value=1 readonly>
+                    <input type="number" class="form-control" id="visit_number" name="visit_number" value=1 readonly>
                   </div>
                   <div class="form-group col-sm-6"></div>
                 </div>
@@ -72,37 +72,37 @@
               <div class="row">
                 <div class="form-group col-sm-4">
                   <label for="inputName">Name</label>
-                  <input type="text" class="form-control" id="scc_name" name="scc_name">
+                  <input type="text" class="form-control" id="scc_name" name="school_name">
                 </div>
                 <div class="form-group col-sm-4">
                   <label for="inputLocation">Location (State/UT)</label>
-                  <input type="text" class="form-control" id="scc_state" name="scc_state">
+                  <input type="text" class="form-control" id="scc_state" name="school_state">
                 </div>
                 <div class="form-group col-sm-4">
                   <label for="inputLocation">City</label>
-                  <input type="text" class="form-control" id="scc_city" name="scc_city">
+                  <input type="text" class="form-control" id="scc_city" name="school_city">
                 </div>
               </div>
               
               <div class="row">
                 <div class="form-group col-sm-6">
                   <label for="schoolPointOfContact">School Point of Contact</label>
-                  <input type="text" class="form-control" id="scc_poc" name="scc_poc">
+                  <input type="text" class="form-control" id="scc_poc" name="school_point_of_contact">
                 </div>
                 <div class="form-group col-sm-6">
                   <label for="designation">Designation</label>
-                  <input type="text" class="form-control" id="scc_designation" name="scc_designation">
+                  <input type="text" class="form-control" id="scc_designation" name="school_poc_designation">
                 </div>
               </div>
               
               <div class="row">
                 <div class="form-group col-sm-6">
                   <label for="number">Mobile Number</label>
-                  <input type="number" class="form-control" id="scc_mobile" name="scc_mobile">
+                  <input type="number" class="form-control" id="scc_mobile" name="school_poc_mobile" onblur="validateMobile(this.value, 'school poc mobile number')">
                 </div>
                 <div class="form-group col-sm-6">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="scc_email" aria-describedby="emailHelp" placeholder="Enter email" name="scc_email">
+                  <input type="email" class="form-control" id="scc_email" aria-describedby="emailHelp" placeholder="Enter email" name="school_poc_email" onblur="validate(this, 'school poc email')">
                 </div>
               </div>
               
@@ -112,32 +112,32 @@
                     <label class="form-check-label" for="board">Board: &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_board_cbse" id="scc_board_cbse" value="CBSE">
+                    <input class="form-check-input" type="checkbox" name="school_board_cbse" id="scc_board_cbse" value="CBSE">
                     <label class="form-check-label" for="inlineRadio1">CBSE</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_board_icse" id="scc_board_icse" value="ICSE">
+                    <input class="form-check-input" type="checkbox" name="school_board_icse" id="scc_board_icse" value="ICSE">
                     <label class="form-check-label" for="inlineRadio2">ICSE</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_board_state" id="scc_board_state" value="State">
+                    <input class="form-check-input" type="checkbox" name="school_board_state" id="scc_board_state" value="State">
                     <label class="form-check-label" for="inlineRadio3">State</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_board_igcse" id="scc_board_igcse" value="IGCSE">
+                    <input class="form-check-input" type="checkbox" name="school_board_igcse" id="scc_board_igcse" value="IGCSE">
                     <label class="form-check-label" for="inlineRadio1">IGCSE</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_board_cambridge" id="scc_board_cambridge" value="Cambridge">
+                    <input class="form-check-input" type="checkbox" name="school_board_cambridge" id="scc_board_cambridge" value="Cambridge">
                     <label class="form-check-label" for="inlineRadio2">Cambridge</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_board_ib" id="scc_board_ib" value="IB">
+                    <input class="form-check-input" type="checkbox" name="school_board_ib" id="scc_board_ib" value="IB">
                     <label class="form-check-label" for="inlineRadio2">IB</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_board_other" id="scc_board_other">
-                    <label class="form-check-label" for="inlineRadio3">Others&nbsp;<input type="text" class="form-check form-check-inline" id="scc_board_other_blank" name="scc_board_other_blank"></label>
+                    <input class="form-check-input" type="checkbox" name="school_board_other" id="scc_board_other">
+                    <label class="form-check-label" for="inlineRadio3">Others&nbsp;<input type="text" class="form-check form-check-inline" id="scc_board_other_blank" name="school_board"></label>
                   </div>
               </div>
               
@@ -146,28 +146,28 @@
                     <label class="form-check-label" for="board">Exams: &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_exams_jee" id="scc_exams_jee" value="JEE">
+                    <input class="form-check-input" type="checkbox" name="school_exams_jee" id="scc_exams_jee" value="JEE">
                     <label class="form-check-label" for="inlineRadio1">JEE</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_exams_neet" id="scc_exams_neet" value="NEET">
+                    <input class="form-check-input" type="checkbox" name="school_exams_neet" id="scc_exams_neet" value="NEET">
                     <label class="form-check-label" for="inlineRadio2">NEET</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_exams_state" id="scc_exams_state" value="State">
+                    <input class="form-check-input" type="checkbox" name="school_exams_state" id="scc_exams_state" value="State">
                     <label class="form-check-label" for="inlineRadio3">State Engineering</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_exams_ntse" id="scc_exams_ntse" value="NTSE">
+                    <input class="form-check-input" type="checkbox" name="school_exams_ntse" id="scc_exams_ntse" value="NTSE">
                     <label class="form-check-label" for="inlineRadio1">NTSE</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_exams_olympiad" id="scc_exams_olympiad" value="Olympiad">
+                    <input class="form-check-input" type="checkbox" name="school_exams_olympiad" id="scc_exams_olympiad" value="Olympiad">
                     <label class="form-check-label" for="inlineRadio2">Olympiad</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="scc_exams_other" id="scc_exams_other">
-                    <label class="form-check-label" for="inlineRadio3">Others&nbsp;<input type="text" class="form-check form-check-inline" id="scc_exams_other_blank" name="scc_exams_other_blank"></label>
+                    <input class="form-check-input" type="checkbox" name="school_exams_other" id="scc_exams_other">
+                    <label class="form-check-label" for="inlineRadio3">Others&nbsp;<input type="text" class="form-check form-check-inline" id="scc_exams_other_blank" name="school_exams"></label>
                   </div>
               </div>
               
@@ -177,19 +177,19 @@
                     <label class="form-check-label" for="board">School/Coaching Type: &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="scc_type" id="scc_type_sind" value="Individual School">
+                    <input class="form-check-input" type="radio" name="school_type" id="scc_type_sind" value="Individual School">
                     <label class="form-check-label" for="inlineRadio1">Individual School</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="scc_type" id="scc_type_schn" value="Chain School">
+                    <input class="form-check-input" type="radio" name="school_type" id="scc_type_schn" value="Chain School">
                     <label class="form-check-label" for="inlineRadio2">Chain School</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="scc_type" id="scc_type_cind" value="Individual Institute">
+                    <input class="form-check-input" type="radio" name="school_type" id="scc_type_cind" value="Individual Institute">
                     <label class="form-check-label" for="inlineRadio1">Individual Institute</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="scc_type" id="scc_type_cchn" value="Chain Institute">
+                    <input class="form-check-input" type="radio" name="school_type" id="scc_type_cchn" value="Chain Institute">
                     <label class="form-check-label" for="inlineRadio2">Chain Institute</label>
                   </div>
               </div>
@@ -200,19 +200,19 @@
                   <label class="form-check-label" for="board">Extra Facility: &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="scc_ex_boarding" id="scc_ex_boarding" value="Boarding School">
+                  <input class="form-check-input" type="checkbox" name="boarding_school" id="scc_ex_boarding" value="Boarding School">
                   <label class="form-check-label" for="inlineRadio2">Boarding School</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="scc_ex_after" id="scc_ex_after" value="After Stay">
+                  <input class="form-check-input" type="checkbox" name="extended_hours" id="scc_ex_after" value="extended_hours">
                   <label class="form-check-label" for="inlineRadio1">Day Boarding/Extended Hours</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="scc_ex_multi" id="scc_ex_multi" value="Multiple Shifts">
+                  <input class="form-check-input" type="checkbox" name="multiple_shifts" id="scc_ex_multi" value="Multiple Shifts">
                   <label class="form-check-label" for="inlineRadio1">Multiple Shifts</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="scc_ex_others" id="scc_ex_others" value="Others">
+                  <input class="form-check-input" type="checkbox" name="other_facility" id="scc_ex_others" value="Others">
                   <label class="form-check-label" for="inlineRadio1">Others</label>
                 </div>
             </div>
@@ -226,30 +226,30 @@
               <div class="row">
                 <div class="form-group col-sm-4">
                   <label for="inputName">Embibe Academic Ambassador</label>
-                  <input type="text" class="form-control" id="ecd_poc"  name="ecd_poc">
+                  <input type="text" class="form-control" id="ecd_poc"  name="academic_ambassador">
                 </div>
                 <div class="form-group col-sm-4">
                   <label for="number">Mobile Number</label>
-                  <input type="number" class="form-control" id="ecd_mobile"  name="ecd_mobile">
+                  <input type="number" class="form-control" id="ecd_mobile"  name="ambassador_mobile" onblur="validateMobile(this.value, 'ambassador mobile number')">
                 </div>
                 <div class="form-group col-sm-4">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="ecd_email" name="ecd_email" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="email" class="form-control" id="ecd_email" name="ambassador_email" aria-describedby="emailHelp" placeholder="Enter email" onblur="validate(this, 'ambassador email')">
                 </div>
               </div>
               
               <div class="row">
                 <div class="form-group col-sm-4">
                   <label for="text">GCC Name</label>
-                  <input type="text" class="form-control" id="ecd_gcc_name" name="ecd_gcc_name">
+                  <input type="text" class="form-control" id="ecd_gcc_name" name="gcc_name">
                 </div>
                 <div class="form-group col-sm-4">
                   <label for="number">Mobile Number</label>
-                  <input type="number" class="form-control" id="ecd_gcc_mobile"  name="ecd_gcc_mobile">
+                  <input type="number" class="form-control" id="ecd_gcc_mobile"  name="gcc_mobile" onblur="validateMobile(this.value, 'gcc mobile number')">
                 </div>
                 <div class="form-group col-sm-4">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="ecd_gcc_email" name="ecd_gcc_email" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="email" class="form-control" id="ecd_gcc_email" name="gcc_email" aria-describedby="emailHelp" placeholder="Enter email" onblur="validate(this, 'gcc email')">
                 </div>
               </div>
               
@@ -262,30 +262,30 @@
                 <label class="form-check-label" for="board">Contract Type: &nbsp;</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="cd_type" id="cd_type_relative" value="Relative to Number of Students" onclick="contract_value('relative', 'absolute')" checked>
+                <input class="form-check-input" type="radio" name="contract_type" id="cd_type_relative" value="Per Annum Per Student Model" onclick="contract_value('relative', 'absolute')" checked>
                 <label class="form-check-label" for="inlineRadio2">Per Annum Per Student Model</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="cd_type" id="cd_type_absolute" value="Absolute/Fixed Value" onclick="contract_value('absolute', 'relative')">
+                <input class="form-check-input" type="radio" name="contract_type" id="cd_type_absolute" value="Absolute/Fixed Value Model" onclick="contract_value('absolute', 'relative')">
                 <label class="form-check-label" for="inlineRadio1">Absolute/Fixed Value Model</label>
               </div>
               <br/>   
               <div class="row">
                 <div class="form-group col-sm-3">
                   <label for="inputName">Students &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;X</label>
-                  <input type="number" class="relative form-control" id="cd_students" name="cd_students">
+                  <input type="number" class="relative form-control" id="cd_students" name="contract_students">
                 </div>
                 <div class="form-group col-sm-3">
                   <label for="inputLocation">Prices per student per year&emsp;&emsp;X</label>
-                  <input type="number" class="relative form-control" id="cd_price" name="cd_price">
+                  <input type="number" class="relative form-control" id="cd_price" name="contract_price">
                 </div>
                 <div class="form-group col-sm-3">
                   <label for="schoolPointOfContact">No of years&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;=</label>
-                  <input type="number" class="relative form-control" id="cd_years" name="cd_years" onblur="contract(this.value, cd_price.value, cd_students.value)">
+                  <input type="number" class="relative form-control" id="cd_years" name="contract_years" onblur="contract(this.value, cd_price.value, cd_students.value)">
                 </div>
                 <div class="form-group col-sm-3">
                   <label for="designation">Total Contract Value</label>
-                  <input type="number" class="absolute form-control" id="cd_total" name="cd_total" readonly>
+                  <input type="number" class="absolute form-control" id="cd_total" name="contract_total" readonly>
                 </div>
               </div>
               
@@ -296,23 +296,23 @@
                     <label class="form-check-label" for="board">Agreement Model: &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="cd_model" id="cd_model_pdc" value="Partnership form With PDC">
+                    <input class="form-check-input" type="radio" name="contract_model" id="cd_model_pdc" value="Partnership form With PDC">
                     <label class="form-check-label" for="inlineRadio1">Partnership form With PDC</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="cd_model" id="cd_model_cdc" value="Partnership form With CDC">
+                    <input class="form-check-input" type="radio" name="contract_model" id="cd_model_cdc" value="Partnership form With CDC">
                     <label class="form-check-label" for="inlineRadio2">Partnership form With CDC</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="cd_model" id="cd_model_cheque" value="Agreement with Cheque">
+                    <input class="form-check-input" type="radio" name="contract_model" id="cd_model_cheque" value="Agreement with Cheque">
                     <label class="form-check-label" for="inlineRadio3">Agreement with Cheque</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="cd_model" id="cd_model_uncheque" value="Agreement without Cheque">
+                    <input class="form-check-input" type="radio" name="contract_model" id="cd_model_uncheque" value="Agreement without Cheque">
                     <label class="form-check-label" for="inlineRadio1">Agreement without Cheque</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="cd_model" id="cd_model_mou" value="MOU">
+                    <input class="form-check-input" type="radio" name="contract_model" id="cd_model_mou" value="MOU">
                     <label class="form-check-label" for="inlineRadio2">MOU</label>
                   </div>
               </div>
@@ -341,47 +341,47 @@
               </div>
               <div class="row col">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="od_pre-school" value='Pre-School' name="od_pre-school">
+                    <input class="form-check-input" type="checkbox" id="od_pre-school" value='Pre-School' name="pre_school">
                     <label class="form-check-label" for="inlineCheckbox1">Pre-School &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="od_grade_1-5" value="1-5" name="od_grade_1-5">
+                    <input class="form-check-input" type="checkbox" id="od_grade_1-5" value="1-5" name="grade_1_5">
                     <label class="form-check-label" for="inlineCheckbox2">1-5 &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="od_grade_6" name="od_grade_6" value="6" onclick="disable_others('g6_yes')">
+                    <input class="form-check-input" type="checkbox" id="od_grade_6" name="grade_6" value="6" onclick="disable_others('g6_yes')">
                     <label class="form-check-label" for="inlineCheckbox2">6 &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="od_grade_7" name="od_grade_7" value="7" onclick="disable_others('g7_yes')">
+                    <input class="form-check-input" type="checkbox" id="od_grade_7" name="grade_7" value="7" onclick="disable_others('g7_yes')">
                     <label class="form-check-label" for="inlineCheckbox1">7 &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="od_grade_8" name="od_grade_8" value="8" onclick="disable_others('g8_yes')">
+                    <input class="form-check-input" type="checkbox" id="od_grade_8" name="grade_8" value="8" onclick="disable_others('g8_yes')">
                     <label class="form-check-label" for="inlineCheckbox2">8 &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="od_grade_9" name="od_grade_9" value="9" onclick="disable_others('g9_yes')">
+                    <input class="form-check-input" type="checkbox" id="od_grade_9" name="grade_9" value="9" onclick="disable_others('g9_yes')">
                     <label class="form-check-label" for="inlineCheckbox1">9 &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="od_grade_10" name="od_grade_10" value="10" onclick="disable_others('g10_yes')">
+                    <input class="form-check-input" type="checkbox" id="od_grade_10" name="grade_10" value="10" onclick="disable_others('g10_yes')">
                     <label class="form-check-label" for="inlineCheckbox2">10 &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="od_grade_11" name="od_grade_11" value="11" onclick="disable_others('g11_yes')">
+                    <input class="form-check-input" type="checkbox" id="od_grade_11" name="grade_11" value="11" onclick="disable_others('g11_yes')">
                     <label class="form-check-label" for="inlineCheckbox1">11 &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="od_grade_12" name="od_grade_12" value="12" onclick="disable_others('g12_yes')">
+                    <input class="form-check-input" type="checkbox" id="od_grade_12" name="grade_12" value="12" onclick="disable_others('g12_yes')">
                     <label class="form-check-label" for="inlineCheckbox2">12 &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="od_grade_eng" name="od_grade_eng" value="eng" onclick="disable_others('g_eng_yes')">
+                    <input class="form-check-input" type="checkbox" id="od_grade_eng" name="grade_eng" value="eng" onclick="disable_others('g_eng_yes')">
                     <label class="form-check-label" for="inlineCheckbox1">Engineering &nbsp;</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="od_grade_med" name="od_grade_med" value="med" onclick="disable_others('g_med_yes')">
+                    <input class="form-check-input" type="checkbox" id="od_grade_med" name="grade_med" value="med" onclick="disable_others('g_med_yes')">
                     <label class="form-check-label" for="inlineCheckbox2">Medical &nbsp;</label>
                   </div>
               </div><br/>
@@ -394,39 +394,39 @@
             </div>
             <div class="row col">
               <div class="form-check form-check-inline">
-                <input disabled type="checkbox" class="g6_yes form-check form-check-inline" id="gra_asgn_6th" value="6" name="gra_asgn_6th" onclick="disable_others('g6_yes_yes')">
+                <input disabled type="checkbox" class="g6_yes form-check form-check-inline" id="gra_asgn_6th" value="6" name="grade_assign_6" onclick="disable_others('g6_yes_yes')">
                 <label class="form-check-label" for="inlineCheckbox2">6 &nbsp;</label>
               </div>
               <div class="form-check form-check-inline">
-                <input disabled type="checkbox" class="g7_yes form-check form-check-inline" id="gra_asgn_7th" value="7" name="gra_asgn_7th" onclick="disable_others('g7_yes_yes')">
+                <input disabled type="checkbox" class="g7_yes form-check form-check-inline" id="gra_asgn_7th" value="7" name="grade_assign_7" onclick="disable_others('g7_yes_yes')">
                 <label class="form-check-label" for="inlineCheckbox1">7 &nbsp;</label>
               </div>
               <div class="form-check form-check-inline">
-                <input disabled type="checkbox" class="g8_yes form-check form-check-inline" id="gra_asgn_8th" value="8" name="gra_asgn_8th" onclick="disable_others('g8_yes_yes')">
+                <input disabled type="checkbox" class="g8_yes form-check form-check-inline" id="gra_asgn_8th" value="8" name="grade_assign_8" onclick="disable_others('g8_yes_yes')">
                 <label class="form-check-label" for="inlineCheckbox2">8 &nbsp;</label>
               </div>
               <div class="form-check form-check-inline">
-                <input disabled type="checkbox" class="g9_yes form-check form-check-inline" id="gra_asgn_9th" value="9" name="gra_asgn_9th" onclick="disable_others('g9_yes_yes')">
+                <input disabled type="checkbox" class="g9_yes form-check form-check-inline" id="gra_asgn_9th" value="9" name="grade_assign_9" onclick="disable_others('g9_yes_yes')">
                 <label class="form-check-label" for="inlineCheckbox1">9 &nbsp;</label>
               </div>
               <div class="form-check form-check-inline">
-                <input disabled type="checkbox" class="g10_yes form-check form-check-inline" id="gra_asgn_10th" value="10" name="gra_asgn_10th" onclick="disable_others('g10_yes_yes')">
+                <input disabled type="checkbox" class="g10_yes form-check form-check-inline" id="gra_asgn_10th" value="10" name="grade_assign_10" onclick="disable_others('g10_yes_yes')">
                 <label class="form-check-label" for="inlineCheckbox2">10 &nbsp;</label>
               </div>
               <div class="form-check form-check-inline">
-                <input disabled type="checkbox" class="g11_yes form-check form-check-inline" id="gra_asgn_11th" value="11" name="gra_asgn_11th" onclick="disable_others('g11_yes_yes')">
+                <input disabled type="checkbox" class="g11_yes form-check form-check-inline" id="gra_asgn_11th" value="11" name="grade_assign_11" onclick="disable_others('g11_yes_yes')">
                 <label class="form-check-label" for="inlineCheckbox1">11 &nbsp;</label>
               </div>
               <div class="form-check form-check-inline">
-                <input disabled type="checkbox" class="g12_yes  form-check form-check-inline" id="gra_asgn_12th" value="12" name="gra_asgn_12th" onclick="disable_others('g12_yes_yes')">
+                <input disabled type="checkbox" class="g12_yes  form-check form-check-inline" id="gra_asgn_12th" value="12" name="grade_assign_12" onclick="disable_others('g12_yes_yes')">
                 <label class="form-check-label" for="inlineCheckbox2">12 &nbsp;</label>
               </div>
               <div class="form-check form-check-inline">
-                <input disabled type="checkbox" class="g_eng_yes form-check form-check-inline" id="gra_asgn_eng" value="ENGINEERING" name="gra_asgn_eng" onclick="disable_others('g_eng_yes_yes')">
+                <input disabled type="checkbox" class="g_eng_yes form-check form-check-inline" id="gra_asgn_eng" value="ENGINEERING" name="grade_assign_eng" onclick="disable_others('g_eng_yes_yes')">
                 <label class="form-check-label" for="inlineCheckbox1">Engineering &nbsp;</label>
               </div>
               <div class="form-check form-check-inline">
-                <input disabled type="checkbox" class="g_med_yes form-check form-check-inline" id="gra_asgn_med" value="MEDICAL" name="gra_asgn_med" onclick="disable_others('g_med_yes_yes')">
+                <input disabled type="checkbox" class="g_med_yes form-check form-check-inline" id="gra_asgn_med" value="MEDICAL" name="grade_assign_med" onclick="disable_others('g_med_yes_yes')">
                 <label class="form-check-label" for="inlineCheckbox2">Medical &nbsp;</label>
               </div>
           </div><br/>
@@ -450,57 +450,57 @@
                     <tbody>
                       <tr>
                         <th>6</th>
-                        <td><input disabled type="number" class="g6_yes form-check form-check-inline" id="fee_6th" name="fee_6th"></td> 
-                        <td><input disabled type="number" class="g6_yes form-inline" id="gra_sec_6th" name="gra_sec_6th"></td> 
-                        <td><input disabled type="number" class="g6_yes form-inline" id="gra_std_6th" name="gra_std_6th"></td>                   
+                        <td><input disabled type="number" class="g6_yes form-check form-check-inline" id="fee_6th" name="fee_6"></td> 
+                        <td><input disabled type="number" class="g6_yes form-inline" id="gra_sec_6th" name="total_sections_6"></td> 
+                        <td><input disabled type="number" class="g6_yes form-inline" id="gra_std_6th" name="total_students_6"></td>                   
                       </tr>
                       <tr>
                         <th>7</th>
-                        <td><input disabled type="number" class="g7_yes form-check form-check-inline" id="fee_7th" name="fee_7th"></td>  
-                        <td><input disabled type="number" class="g7_yes form-inline" id="gra_sec_7th" name="gra_sec_7th"></td> 
-                        <td><input disabled type="number" class="g7_yes form-inline" id="gra_std_7th" name="gra_std_7th"></td>                  
+                        <td><input disabled type="number" class="g7_yes form-check form-check-inline" id="fee_7th" name="fee_7"></td>  
+                        <td><input disabled type="number" class="g7_yes form-inline" id="gra_sec_7th" name="total_sections_7"></td> 
+                        <td><input disabled type="number" class="g7_yes form-inline" id="gra_std_7th" name="total_students_7"></td>                  
                       </tr>
                       <tr>
                         <th>8</th>
-                        <td><input disabled type="number" class="g8_yes form-check form-check-inline" id="fee_8th" name="fee_8th"></td>   
-                        <td><input disabled type="number" class="g8_yes form-inline" id="gra_sec_8th" name="gra_sec_8th"></td> 
-                        <td><input disabled type="number" class="g8_yes form-inline" id="gra_std_8th" name="gra_std_8th"></td>                
+                        <td><input disabled type="number" class="g8_yes form-check form-check-inline" id="fee_8th" name="fee_8"></td>   
+                        <td><input disabled type="number" class="g8_yes form-inline" id="gra_sec_8th" name="total_sections_8"></td> 
+                        <td><input disabled type="number" class="g8_yes form-inline" id="gra_std_8th" name="total_students_8"></td>                
                       </tr>
                       <tr>
                         <th>9</th>
-                        <td><input disabled type="number" class="g9_yes form-check form-check-inline" id="fee_9th" name="fee_9th"></td>  
-                        <td><input disabled type="number" class="g9_yes form-inline" id="gra_sec_9th" name="gra_sec_9th"></td> 
-                        <td><input disabled type="number" class="g9_yes form-inline" id="gra_std_9th" name="gra_std_9th"></td>                 
+                        <td><input disabled type="number" class="g9_yes form-check form-check-inline" id="fee_9th" name="fee_9"></td>  
+                        <td><input disabled type="number" class="g9_yes form-inline" id="gra_sec_9th" name="total_sections_9"></td> 
+                        <td><input disabled type="number" class="g9_yes form-inline" id="gra_std_9th" name="total_students_9"></td>                 
                       </tr>
                       <tr>
                         <th>10</th>
-                        <td><input disabled type="number" class="g10_yes form-check form-check-inline" id="fee_10th" name="fee_10th"></td>   
-                        <td><input disabled type="number" class="g10_yes form-inline" id="gra_sec_10th" name="gra_sec_10th"></td> 
-                        <td><input disabled type="number" class="g10_yes form-inline" id="gra_std_10th" name="gra_std_10th"></td>                
+                        <td><input disabled type="number" class="g10_yes form-check form-check-inline" id="fee_10th" name="fee_10"></td>   
+                        <td><input disabled type="number" class="g10_yes form-inline" id="gra_sec_10th" name="total_sections_10"></td> 
+                        <td><input disabled type="number" class="g10_yes form-inline" id="gra_std_10th" name="total_students_10"></td>                
                       </tr>
                       <tr>
                         <th>11</th>
-                        <td><input disabled type="number" class="g11_yes form-check form-check-inline" id="fee_11th" name="fee_11th"></td>  
-                        <td><input disabled type="number" class="g11_yes form-inline" id="gra_sec_11th" name="gra_sec_11th"></td> 
-                          <td><input disabled type="number" class="g11_yes form-inline" id="gra_std_11th" name="gra_std_11th"></td>                 
+                        <td><input disabled type="number" class="g11_yes form-check form-check-inline" id="fee_11th" name="fee_11"></td>  
+                        <td><input disabled type="number" class="g11_yes form-inline" id="gra_sec_11th" name="total_sections_11"></td> 
+                          <td><input disabled type="number" class="g11_yes form-inline" id="gra_std_11th" name="total_students_11"></td>                 
                       </tr>
                       <tr>
                         <th>12</th>
-                        <td><input disabled type="number" class="g12_yes form-check form-check-inline" id="fee_12th" name="fee_12th"></td>     
-                        <td><input disabled type="number" class="g12_yes form-inline" id="gra_sec_12th" name="gra_sec_12th"></td> 
-                        <td><input disabled type="number" class="g12_yes  form-inline" id="gra_std_12th" name="gra_std_12th"></td>              
+                        <td><input disabled type="number" class="g12_yes form-check form-check-inline" id="fee_12th" name="fee_12"></td>     
+                        <td><input disabled type="number" class="g12_yes form-inline" id="gra_sec_12th" name="total_sections_12"></td> 
+                        <td><input disabled type="number" class="g12_yes  form-inline" id="gra_std_12th" name="total_students_12"></td>              
                       </tr>
                       <tr>
                         <th>Engineering</th>
                         <td><input disabled type="number" class="g_eng_yes form-check form-check-inline" id="fee_eng" name="fee_eng"></td>   
-                        <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_sec_eng" name="gra_sec_eng"></td> 
-                        <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_std_eng" name="gra_std_eng"></td>                
+                        <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_sec_eng" name="total_sections_eng"></td> 
+                        <td><input disabled type="number" class="g_eng_yes form-inline" id="gra_std_eng" name="total_students_eng"></td>                
                       </tr>
                       <tr>
                         <th>Medical</th>
                         <td><input disabled type="number" class="g_med_yes form-check form-check-inline" id="fee_med" name="fee_med"></td>   
-                        <td><input disabled type="number" class="g_med_yes form-inline" id="gra_sec_med" name="gra_sec_med"></td> 
-                        <td><input disabled type="number" class="g_med_yes form-inline" id="gra_std_med" name="gra_std_med"></td>                
+                        <td><input disabled type="number" class="g_med_yes form-inline" id="gra_sec_med" name="total_sections_med"></td> 
+                        <td><input disabled type="number" class="g_med_yes form-inline" id="gra_std_med" name="total_students_med"></td>                
                       </tr>
                     </tbody>
                   </table>
@@ -528,65 +528,65 @@
                       <tr>
                           <td>6</td>
                           
-                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_sec_asgn_6th" name="gra_sec_asgn_6th" onblur="avg_std(this.value, document.getElementById('gra_sec_6th').value, document.getElementById('gra_std_6th').value, 'gra_std_asgn_6th')"></td>
-                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_std_asgn_6th" name="gra_std_asgn_6th" readonly></td> 
-                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_std_trn_6th" name="gra_std_trn_6th"></td>             
+                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_sec_asgn_6th" name="section_assigned_6" onblur="avg_std(this.value, document.getElementById('gra_sec_6th').value, document.getElementById('gra_std_6th').value, 'gra_std_asgn_6th')"></td>
+                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_std_asgn_6th" name="students_assigned_6" readonly></td> 
+                          <td><input disabled type="number" class="g6_yes_yes form-inline" id="gra_std_trn_6th" name="students_trained_6"></td>             
                       </tr>
                       <tr>
                           <td>7</td>
                           
-                          <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_sec_asgn_7th" name="gra_sec_asgn_7th" onblur="avg_std(this.value, document.getElementById('gra_sec_7th').value, document.getElementById('gra_std_7th').value, 'gra_std_asgn_7th')"></td>
-                          <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_std_asgn_7th" name="gra_std_asgn_7th" readonly></td> 
-                          <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_std_trn_7th" name="gra_std_trn_7th"></td>                  
+                          <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_sec_asgn_7th" name="section_assigned_7" onblur="avg_std(this.value, document.getElementById('gra_sec_7th').value, document.getElementById('gra_std_7th').value, 'gra_std_asgn_7th')"></td>
+                          <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_std_asgn_7th" name="students_assigned_7" readonly></td> 
+                          <td><input disabled type="number" class="g7_yes_yes form-inline" id="gra_std_trn_7th" name="students_trained_7"></td>                  
                       </tr>
                       <tr>
                           <td>8</td>
                            
-                          <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_sec_asgn_8th" name="gra_sec_asgn_8th" onblur="avg_std(this.value, document.getElementById('gra_sec_8th').value, document.getElementById('gra_std_8th').value, 'gra_std_asgn_8th')"></td>
-                          <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_std_asgn_8th" name="gra_std_asgn_8th" readonly></td> 
-                          <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_std_trn_8th" name="gra_std_trn_8th"></td>                     
+                          <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_sec_asgn_8th" name="section_assigned_8" onblur="avg_std(this.value, document.getElementById('gra_sec_8th').value, document.getElementById('gra_std_8th').value, 'gra_std_asgn_8th')"></td>
+                          <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_std_asgn_8th" name="students_assigned_8" readonly></td> 
+                          <td><input disabled type="number" class="g8_yes_yes form-inline" id="gra_std_trn_8th" name="students_trained_8"></td>                     
                       </tr>
                       <tr>
                           <td>9</td>
                            
-                          <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_sec_asgn_9th" name="gra_sec_asgn_9th" onblur="avg_std(this.value, document.getElementById('gra_sec_9th').value, document.getElementById('gra_std_9th').value, 'gra_std_asgn_9th')"></td>
-                          <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_std_asgn_9th" name="gra_std_asgn_9th" readonly></td> 
-                          <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_std_trn_9th" name="gra_std_trn_9th"></td>                     
+                          <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_sec_asgn_9th" name="section_assigned_9" onblur="avg_std(this.value, document.getElementById('gra_sec_9th').value, document.getElementById('gra_std_9th').value, 'gra_std_asgn_9th')"></td>
+                          <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_std_asgn_9th" name="students_assigned_9" readonly></td> 
+                          <td><input disabled type="number" class="g9_yes_yes form-inline" id="gra_std_trn_9th" name="students_trained_9"></td>                     
                       </tr>
                       <tr>
                           <td>10</td>
                           
-                          <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_sec_asgn_10th" name="gra_sec_asgn_10th" onblur="avg_std(this.value, document.getElementById('gra_sec_10th').value, document.getElementById('gra_std_10th').value, 'gra_std_asgn_10th')"></td> 
-                          <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_std_asgn_10th" name="gra_std_asgn_10th" readonly></td> 
-                          <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_std_trn_10th" name="gra_std_trn_10th"></td>                   
+                          <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_sec_asgn_10th" name="section_assigned_10" onblur="avg_std(this.value, document.getElementById('gra_sec_10th').value, document.getElementById('gra_std_10th').value, 'gra_std_asgn_10th')"></td> 
+                          <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_std_asgn_10th" name="students_assigned_10" readonly></td> 
+                          <td><input disabled type="number" class="g10_yes_yes form-inline" id="gra_std_trn_10th" name="students_trained_10"></td>                   
                       </tr>
                       <tr>
                           <td>11</td>
                           
-                          <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_sec_asgn_11th" name="gra_sec_asgn_11th" onblur="avg_std(this.value, document.getElementById('gra_sec_11th').value, document.getElementById('gra_std_11th').value, 'gra_std_asgn_11th')"></td>
-                          <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_std_asgn_11th" name="gra_std_asgn_11th" readonly></td> 
-                          <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_std_trn_11th" name="gra_std_trn_11th"></td>                    
+                          <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_sec_asgn_11th" name="section_assigned_11" onblur="avg_std(this.value, document.getElementById('gra_sec_11th').value, document.getElementById('gra_std_11th').value, 'gra_std_asgn_11th')"></td>
+                          <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_std_asgn_11th" name="students_assigned_11" readonly></td> 
+                          <td><input disabled type="number" class="g11_yes_yes form-inline" id="gra_std_trn_11th" name="students_trained_11"></td>                    
                       </tr>
                       <tr>
                           <td>12</td>
                           
-                          <td><input disabled type="number" class="g12_yes_yes form-inline" id="gra_sec_asgn_12th" name="gra_sec_asgn_12th" onblur="avg_std(this.value, document.getElementById('gra_sec_12th').value, document.getElementById('gra_std_12th').value, 'gra_std_asgn_12th')"></td>
-                          <td><input disabled type="number" class="g12_yes_yes  form-inline" id="gra_std_asgn_12th" name="gra_std_asgn_12th" readonly></td> 
-                          <td><input disabled type="number" class="g12_yes_yes  form-inline" id="gra_std_trn_12th" name="gra_std_trn_12th"></td>                     
+                          <td><input disabled type="number" class="g12_yes_yes form-inline" id="gra_sec_asgn_12th" name="section_assigned_12" onblur="avg_std(this.value, document.getElementById('gra_sec_12th').value, document.getElementById('gra_std_12th').value, 'gra_std_asgn_12th')"></td>
+                          <td><input disabled type="number" class="g12_yes_yes  form-inline" id="gra_std_asgn_12th" name="students_assigned_12" readonly></td> 
+                          <td><input disabled type="number" class="g12_yes_yes  form-inline" id="gra_std_trn_12th" name="students_trained_12"></td>                     
                       </tr>
                       <tr>
                           <td>ENGINEERING</td>
                          
-                          <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_sec_asgn_eng" name="gra_sec_asgn_eng" onblur="avg_std(this.value, document.getElementById('gra_sec_eng').value, document.getElementById('gra_std_eng').value, 'gra_std_asgn_eng')"></td> 
-                          <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_std_asgn_eng" name="gra_std_asgn_eng" readonly></td> 
-                          <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_std_trn_eng" name="gra_std_trn_eng"></td>                  
+                          <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_sec_asgn_eng" name="section_assigned_eng" onblur="avg_std(this.value, document.getElementById('gra_sec_eng').value, document.getElementById('gra_std_eng').value, 'gra_std_asgn_eng')"></td> 
+                          <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_std_asgn_eng" name="students_assigned_eng" readonly></td> 
+                          <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_std_trn_eng" name="students_trained_eng"></td>                  
                       </tr>
                       <tr>
                           <td>MEDICAL</td>
                            
-                          <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_sec_asgn_med" name="gra_sec_asgn_med" onblur="avg_std(this.value, document.getElementById('gra_sec_med').value, document.getElementById('gra_std_med').value, 'gra_std_asgn_med')"></td> 
-                          <td><input disabled type="number" class="g_med_yes_yes form-inline" id="gra_std_asgn_med" name="gra_std_asgn_med" readonly></td> 
-                          <td><input disabled type="number" class="g_med_yes_yes form-inline" id="gra_std_trn_med" name="gra_std_trn_med"></td>                  
+                          <td><input disabled type="number" class="g_eng_yes_yes form-inline" id="gra_sec_asgn_med" name="section_assigned_med" onblur="avg_std(this.value, document.getElementById('gra_sec_med').value, document.getElementById('gra_std_med').value, 'gra_std_asgn_med')"></td> 
+                          <td><input disabled type="number" class="g_med_yes_yes form-inline" id="gra_std_asgn_med" name="students_assigned_med" readonly></td> 
+                          <td><input disabled type="number" class="g_med_yes_yes form-inline" id="gra_std_trn_med" name="students_trained_med"></td>                  
                       </tr>
                     </tbody>
                   </table>
@@ -612,9 +612,9 @@
                     </thead>
                     <tbody>
                       <tr>
-                          <td><input type="number" class="form-inline" id="tea_tot" name="tea_tot"></td>
-                          <td><input type="number" class="form-inline" id="tea_asign" name="tea_asign"></td> 
-                          <td><input type="number" class="form-inline" id="tea_trained" name="tea_trained"></td>             
+                          <td><input type="number" class="form-inline" id="tea_tot" name="total_teachers"></td>
+                          <td><input type="number" class="form-inline" id="tea_asign" name="teachers_assigned"></td> 
+                          <td><input type="number" class="form-inline" id="tea_trained" name="teachers_trained"></td>             
                       </tr>
                     </tbody>
                   </table>
@@ -651,9 +651,9 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
                   </thead>
                   <tbody>
                     <tr>
-                        <td><input type="number" class="form-inline" id="chd_tot_clsr" name="chd_tot_clsr"></td> 
-                        <td><input type="number" class="form-inline" id="chd_rdy_clsr" name="chd_rdy_clsr"></td> 
-                        <td><input type="number" class="form-inline" id="chd_wk_clsr" name="chd_wk_clsr"></td>            
+                        <td><input type="number" class="form-inline" id="chd_tot_clsr" name="total_classrooms"></td> 
+                        <td><input type="number" class="form-inline" id="chd_rdy_clsr" name="ready_classrooms"></td> 
+                        <td><input type="number" class="form-inline" id="chd_wk_clsr" name="working_classrooms"></td>            
                     </tr>
                   </tbody>
                 </table>
@@ -668,27 +668,27 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
             </div>
             <div class="row">
                 <div class="form-inline col-sm-12">
-                    <label for="inputName">What type of internet access does the School/Coaching /Coaching /Coaching have &nbsp;&nbsp;</label>
+                    <label for="inputName">What type of internet access does the School/Coaching have &nbsp;&nbsp;</label>
                 </div>
                 <div class="col">
                     <div class="form-check">
-                      <input class="HW_disable form-check-input" type="checkbox" value="Broadband (Wifi)" id="ht_brd" name="ht_brd">
+                      <input class="HW_disable form-check-input" type="checkbox" value="Broadband (Wifi)" id="ht_brd" name="broadband">
                       <label class="form-check-label" for="defaultCheck1">Broadband (Wifi)</label>
                     </div>
                     <div class="form-check">
-                      <input class="HW_disable form-check-input" type="checkbox" value="Data cards / Dongles" id="ht_dc" name="ht_dc">
+                      <input class="HW_disable form-check-input" type="checkbox" value="Data cards / Dongles" id="ht_dc" name="data_card">
                       <label class="form-check-label" for="defaultCheck2">Data cards / Dongles</label>
                     </div>
                     <div class="form-check">
-                      <input class="HW_disable form-check-input" type="checkbox" value="Lease Lines" id="ht_lin" name="ht_lin">
+                      <input class="HW_disable form-check-input" type="checkbox" value="LAN" id="ht_lin" name="lan">
                       <label class="form-check-label" for="defaultCheck1">LAN</label>
                     </div>
                     <div class="form-check">
-                      <input class="HW_disable form-check-input" type="checkbox" id="ht_ot" name="ht_ot">
-                      <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="HW_disable form-check form-check-inline" id="ht_other" name="ht_other"></label>
+                      <input class="HW_disable form-check-input" type="checkbox" id="ht_ot" name="other_mode">
+                      <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="HW_disable form-check form-check-inline" id="ht_other" name="other_internet_mode"></label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="No Internet" id="ht_no" name="ht_no" onclick="disable_others('HW_disable')">
+                      <input class="form-check-input" type="checkbox" value="No Internet" id="ht_no" name="no_internet" onclick="disable_others('HW_disable')">
                       <label class="form-check-label" for="defaultCheck2">No Internet</label>
                     </div>
                 </div>
@@ -700,23 +700,23 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
                 </div>
                 <div class="row col">
                     <div class="form-check">
-                      <input class="form-check-inline" type="radio" value="No Labs" id="ht_lab_no" name="ht_lab" onclick="disable_labs('no_labs')">
+                      <input class="form-check-inline" type="radio" value="No Labs" id="ht_lab_no" name="labs" onclick="disable_labs('no_labs')">
                       <label class="form-check-label" for="defaultCheck1">No Labs</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-inline" type="radio" value="1" id="ht_lab_1" name="ht_lab" onclick="disable_labs('labs')">
+                      <input class="form-check-inline" type="radio" value="1" id="ht_lab_1" name="labs" onclick="disable_labs('labs')">
                       <label class="form-check-label" for="defaultCheck2">1</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-inline" type="radio" value="2" id="ht_lab_2" name="ht_lab" onclick="disable_labs('labs')">
+                      <input class="form-check-inline" type="radio" value="2" id="ht_lab_2" name="labs" onclick="disable_labs('labs')">
                       <label class="form-check-label" for="defaultCheck1">2</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-inline" type="radio" value="3" id="ht_lab_3" name="ht_lab" onclick="disable_labs('labs')">
+                      <input class="form-check-inline" type="radio" value="3" id="ht_lab_3" name="labs" onclick="disable_labs('labs')">
                       <label class="form-check-label" for="defaultCheck2">3</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-inline" type="radio" value="3+" id="ht_lab_m5" name="ht_lab" onclick="disable_labs('labs')">
+                      <input class="form-check-inline" type="radio" value="3+" id="ht_lab_m5" name="labs" onclick="disable_labs('labs')">
                       <label class="form-check-label" for="defaultCheck1">3+</label>
                     </div>
                 </div>
@@ -733,18 +733,18 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
                   <tbody>
                     <tr>
                         <td>1</td>
-                        <td><input type="number" class="no_labs form-inline" id="ht_lab1_hd" name="ht_lab1_hd"></td> 
-                        <td><input type="number" class="no_labs form-inline" id="ht_lab1_wk" name="ht_lab1_wk"></td>           
+                        <td><input type="number" class="no_labs form-inline" id="ht_lab1_hd" name="computers_lab1"></td> 
+                        <td><input type="number" class="no_labs form-inline" id="ht_lab1_wk" name="working_computers_lab1"></td>           
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td><input type="number" class="no_labs form-inline" id="ht_lab2_hd" name="ht_lab2_hd"></td> 
-                        <td><input type="number" class="no_labs form-inline" id="ht_lab2_wk" name="ht_lab2_wk"></td>                  
+                        <td><input type="number" class="no_labs form-inline" id="ht_lab2_hd" name="computers_lab2"></td> 
+                        <td><input type="number" class="no_labs form-inline" id="ht_lab2_wk" name="working_computers_lab2"></td>                  
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td><input type="number" class="no_labs form-inline" id="ht_lab3_hd" name="ht_lab3_hd"></td> 
-                        <td><input type="number" class="no_labs form-inline" id="ht_lab3_wk" name="ht_lab3_wk"></td>                 
+                        <td><input type="number" class="no_labs form-inline" id="ht_lab3_hd" name="computers_lab3"></td> 
+                        <td><input type="number" class="no_labs form-inline" id="ht_lab3_wk" name="working_computers_lab3"></td>                 
                     </tr>
                   </tbody>
                 </table>
@@ -778,90 +778,47 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
                   </thead>
                   <tbody>
                     <tr>
-                        <th rowspan=7>Smartphones</th>
+                        <th rowspan=7>Smartphones / Laptops / Desktops /   Tablets</th>
                         <td><label class="form-check-label" for="defaultCheck1">0 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0 %" id="da_stper_0" name="da_stper_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0 %" id="da_sthmsmt_0" name="da_sthm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0 %" id="da_sthmshmt_0" name="da_sthmsh_smt"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="0 %" id="da_stcm_0" name="devices_in_school"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="0 %" id="da_sthmcm_0" name="devices_at_home"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="0 %" id="da_sthmshcm_0" name="shared_devices"></td>
                     </tr>
                     <tr>
                         <td><label class="form-check-label" for="defaultCheck1">1-20 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_stper_20" name="da_stper_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_sthmsmt_20" name="da_sthm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_sthmshmt_20" name="da_sthmsh_smt"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_stcm_20" name="devices_in_school"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_sthmcm_20" name="devices_at_home"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_sthmshcm_20" name="shared_devices"></td>
                     </tr>
                     <tr>
                         <td><label class="form-check-label" for="defaultCheck1">21-40 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_stper_40" name="da_stper_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_sthmsmt_40" name="da_sthm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_sthmshmt_40" name="da_sthmsh_smt"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_stcm_40" name="devices_in_school"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_sthmcm_40" name="devices_at_home"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_sthmshcm_40" name="shared_devices"></td>
                     </tr>
                     <tr>
                         <td><label class="form-check-label" for="defaultCheck1">41-60 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_stper_60" name="da_stper_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_sthmsmt_60" name="da_sthm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_sthmshmt_60" name="da_sthmsh_smt"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_stcm_60" name="devices_in_school"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_sthmcm_60" name="devices_at_home"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_sthmshcm_60" name="shared_devices"></td>
                     </tr>
                     <tr>
                         <td><label class="form-check-label" for="defaultCheck1">61-80 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_stper_80" name="da_stper_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_sthmsmt_80" name="da_sthm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_sthmshmt_80" name="da_sthmsh_smt"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_stcm_80" name="devices_in_school"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_sthmcm_80" name="devices_at_home"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_sthmshcm_80" name="shared_devices"></td>
                     </tr>
                     <tr>
                         <td><label class="form-check-label" for="defaultCheck1">81-99 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_stper_99" name="da_stper_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_sthmsmt_99" name="da_sthm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_sthmshmt_99" name="da_sthmsh_smt"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_stcm_99" name="devices_in_school"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_sthmcm_99" name="devices_at_home"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_sthmshcm_99" name="shared_devices"></td>
                     </tr>
                     <tr>
                         <td><label class="form-check-label" for="defaultCheck1">100 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_stper_100" name="da_stper_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_sthmsmt_100" name="da_sthm_smt"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_sthmshmt_100" name="da_sthmsh_smt"></td>
-                    </tr>
-                    <tr>
-                        <th rowspan=7>Laptops / Desktops /   Tablets</th>
-                        <td><label class="form-check-label" for="defaultCheck1">0 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0 %" id="da_stcm_0" name="da_stper_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0 %" id="da_sthmcm_0" name="da_sthm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="0 %" id="da_sthmshcm_0" name="da_sthmsh_cm"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">1-20 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_stcm_20" name="da_stper_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_sthmcm_20" name="da_sthm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="1-20 %" id="da_sthmshcm_20" name="da_sthmsh_cm"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">21-40 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_stcm_40" name="da_stper_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_sthmcm_40" name="da_sthm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="21-40 %" id="da_sthmshcm_40" name="da_sthmsh_cm"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">41-60 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_stcm_60" name="da_stper_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_sthmcm_60" name="da_sthm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="41-60 %" id="da_sthmshcm_60" name="da_sthmsh_cm"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">61-80 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_stcm_80" name="da_stper_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_sthmcm_80" name="da_sthm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="61-80 %" id="da_sthmshcm_80" name="da_sthmsh_cm"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">81-99 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_stcm_99" name="da_stper_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_sthmcm_99" name="da_sthm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="81-99 %" id="da_sthmshcm_99" name="da_sthmsh_cm"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-check-label" for="defaultCheck1">100 %</label></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_stcm_100" name="da_stper_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_sthmcm_100" name="da_sthm_cm"></td>
-                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_sthmcm_100" name="da_sthmsh_cm"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_stcm_100" name="devices_in_school"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_sthmcm_100" name="devices_at_home"></td>
+                        <td>&emsp;<input class="form-check-input" type="radio" value="100 %" id="da_sthmcm_100" name="shared_devices"></td>
                     </tr>
                   </tbody>
                 </table>
@@ -885,15 +842,15 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
                 </div>
                 <div class="col">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" value="Using currently" id="cp_usage_use"  name="cp_usage" onclick="disable_all_fields('cp_name')">
+                      <input class="form-check-input" type="radio" value="Using currently" id="cp_usage_use"  name="competitor_lms" onclick="disable_all_fields('cp_name')">
                       <label class="form-check-label" for="defaultCheck1">Using currently</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" value="Used previously but not using now" id="cp_usage_usep"  name="cp_usage" onclick="disable_all_fields('cp_name')">
+                      <input class="form-check-input" type="radio" value="Used previously but not using now" id="cp_usage_usep"  name="competitor_lms" onclick="disable_all_fields('cp_name')">
                       <label class="form-check-label" for="defaultCheck2">Used previously but not using now</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" value="Never used" id="cp_usage_nuse"  name="cp_usage" onclick="disable_all_fields('cp_no_name')">
+                      <input class="form-check-input" type="radio" value="Never used" id="cp_usage_nuse"  name="competitor_lms" onclick="disable_all_fields('cp_no_name')">
                       <label class="form-check-label" for="defaultCheck1">Never used</label>
                     </div>
                 </div>
@@ -903,22 +860,22 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
             <div class="row">
                 <div class="form-inline col-sm-12">
                     <label for="inputName">What LMS did you / Do you have ? &nbsp;&nbsp;</label>
-                    <input type="text" class="cp_no_name form-control" id="cp_lms_name"  name="cp_lms_name">
+                    <input type="text" class="cp_no_name form-control" id="cp_lms_name"  name="lms_name">
                 </div>
                 <div class="form-inline col-sm-12">
                     <label for="inputName">What is the total deal size (Before taxes) Rs &nbsp;&nbsp;</label>
-                    <input type="number" class="cp_no_name form-control" id="cp_lms_deal"  name="cp_lms_deal">
+                    <input type="number" class="cp_no_name form-control" id="cp_lms_deal"  name="deal_size">
                 </div>
                 <div class="form-inline col-sm-12">
                     <label for="inputName">How much is the School/Coaching paying for per student per year (Before taxes)? &nbsp;&nbsp;</label>
-                    <input type="number" class="cp_no_name form-control" id="cp_lms_cost"  name="cp_lms_cost">
+                    <input type="number" class="cp_no_name form-control" id="cp_lms_cost"  name="cost_for_school">
                 </div>
                 <div class="form-inline col-sm-12">
                     <label for="inputName">How many students are enrolled in the competition program: &nbsp;&nbsp;</label>
-                    <input type="number" class="cp_no_name form-control" id="cp_lms_enrol"  name="cp_lms_enrol">
+                    <input type="number" class="cp_no_name form-control" id="cp_lms_enrol"  name="number_of_students_enrolled">
                 </div>
                 <div class="form-inline col-sm-12">
-                    <label for="inputName">What is the duration of the contract &nbsp;&nbsp;<input type="number" class="cp_no_name form-control" id="cp_lms_mon"  name="cp_lms_mon"> Months</label>
+                    <label for="inputName">What is the duration of the contract &nbsp;&nbsp;<input type="number" class="cp_no_name form-control" id="cp_lms_mon"  name="contract_duration"> Months</label>
                 </div>
             </div>
             <br/>
@@ -928,24 +885,24 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
                 </div>
                 <div class="col">
                     <div class="form-check">
-                      <input class="cp_no_name form-check-input" type="checkbox" value="Smart TV for reception" id="cp_rec_tv"  name="cp_rec_tv">
+                      <input class="cp_no_name form-check-input" type="checkbox" value="Smart TV for reception" id="cp_rec_tv"  name="assets_reception_tv">
                       <label class="form-check-label" for="defaultCheck1">Smart TV for reception</label>
                     </div>
                     <div class="form-check">
-                      <input class="cp_no_name form-check-input" type="checkbox" value="Smart TV for all the classrooms" id="cp_cla_tv"  name="cp_cla_tv">
+                      <input class="cp_no_name form-check-input" type="checkbox" value="Smart TV for all the classrooms" id="cp_cla_tv"  name="assets_class_tv">
                       <label class="form-check-label" for="defaultCheck2">Smart TV for all the classrooms</label>
                     </div>
                     <div class="form-check">
-                      <input class="cp_no_name form-check-input" type="checkbox" value="Printed study material" id="cp_stdy"  name="cp_stdy">
+                      <input class="cp_no_name form-check-input" type="checkbox" value="Printed study material" id="cp_stdy"  name="assets_printed_study_material">
                       <label class="form-check-label" for="defaultCheck1">Printed study material</label>
                     </div>
                     <div class="form-check">
-                      <input class="cp_no_name form-check-input" type="checkbox" value="Hardware Installation in each classroom" id="cp_cla_hw"  name="cp_cla_hw">
+                      <input class="cp_no_name form-check-input" type="checkbox" value="Hardware Installation in each classroom" id="cp_cla_hw"  name="assets_class_hardware">
                       <label class="form-check-label" for="defaultCheck2">Hardware Installation in each classroom</label>
                     </div>
                     <div class="form-check">
-                      <input class="cp_no_name form-check-input" type="checkbox" value="Other" id="cp_others"  name="cp_others">
-                      <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_other" name="cp_other"></label>
+                      <input class="cp_no_name form-check-input" type="checkbox" value="Other" id="cp_others"  name="assets_others">
+                      <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_other" name="assets_other"></label>
                     </div>
                 </div>
             </div>
@@ -955,59 +912,59 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
             </div>
             <div class="row col">
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_1" value="1"  name="cp_lms_1">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_1" value="1"  name="lms_grade_1">
                   <label class="form-check-label" for="inlineCheckbox1">1 &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_2" value="2"  name="cp_lms_2">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_2" value="2"  name="lms_grade_2">
                   <label class="form-check-label" for="inlineCheckbox2">2 &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_3" value="3"  name="cp_lms_3">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_3" value="3"  name="lms_grade_3">
                   <label class="form-check-label" for="inlineCheckbox1">3 &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_4" value="4"  name="cp_lms_4">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_4" value="4"  name="lms_grade_4">
                   <label class="form-check-label" for="inlineCheckbox2">4 &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_5" value="5"  name="cp_lms_5">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_5" value="5"  name="lms_grade_5">
                   <label class="form-check-label" for="inlineCheckbox1">5 &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_6" value="6"  name="cp_lms_6">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_6" value="6"  name="lms_grade_6">
                   <label class="form-check-label" for="inlineCheckbox2">6 &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_7" value="7"  name="cp_lms_7">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_7" value="7"  name="lms_grade_7">
                   <label class="form-check-label" for="inlineCheckbox1">7 &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_8" value="8"  name="cp_lms_8">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_8" value="8"  name="lms_grade_8">
                   <label class="form-check-label" for="inlineCheckbox2">8 &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_9" value="9"  name="cp_lms_9">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_9" value="9"  name="lms_grade_9">
                   <label class="form-check-label" for="inlineCheckbox1">9 &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_10" value="10"  name="cp_lms_10">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_10" value="10"  name="lms_grade_10">
                   <label class="form-check-label" for="inlineCheckbox2">10 &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_11" value="11"  name="cp_lms_11">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_11" value="11"  name="lms_grade_11">
                   <label class="form-check-label" for="inlineCheckbox1">11 &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_12" value="12"  name="cp_lms_12">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_12" value="12"  name="lms_grade_12">
                   <label class="form-check-label" for="inlineCheckbox2">12 &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_eng" value="Engineering"  name="cp_lms_eng">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_eng" value="Engineering"  name="lms_grade_eng">
                   <label class="form-check-label" for="inlineCheckbox1">Engineering &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_med" value="Medical"  name="cp_lms_med">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_med" value="Medical"  name="lms_grade_med">
                   <label class="form-check-label" for="inlineCheckbox2">Medical &nbsp;</label>
                 </div>
             </div>
@@ -1017,56 +974,56 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
             </div>
             <div class="row col">
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_math" value="Math"  name="cp_sub_math">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_math" value="Math"  name="competition_sub_math">
                   <label class="form-check-label" for="inlineCheckbox1">Math &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_sci" value="Science"  name="cp_sub_sci">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_sci" value="Science"  name="competition_subject_sci">
                   <label class="form-check-label" for="inlineCheckbox2">Science &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_soc" value="Social Science"  name="cp_sub_soc">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_soc" value="Social Science"  name="competition_subject_soc">
                   <label class="form-check-label" for="inlineCheckbox1">Social Science&nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_eng" value="English"  name="cp_sub_eng">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_eng" value="English"  name="competition_subject_eng">
                   <label class="form-check-label" for="inlineCheckbox2">English &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_bst" value="Business Studies"  name="cp_sub_bst">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_bst" value="Business Studies"  name="competition_subject_bst">
                   <label class="form-check-label" for="inlineCheckbox1">Business Studies &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_phy" value="Physics"  name="cp_sub_phy">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_phy" value="Physics"  name="competition_subject_phy">
                   <label class="form-check-label" for="inlineCheckbox2">Physics &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_che" value="Chemistry"  name="cp_sub_che">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_che" value="Chemistry"  name="competition_subject_che">
                   <label class="form-check-label" for="inlineCheckbox1">Chemistry &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_bio" value="Biology"  name="cp_sub_bio">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_bio" value="Biology"  name="competition_subject_bio">
                   <label class="form-check-label" for="inlineCheckbox2">Biology &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_lan" value="Languages"  name="cp_sub_lan">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_lan" value="Languages"  name="competition_subject_lan">
                   <label class="form-check-label" for="inlineCheckbox1">Languages &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_com" value="Commerce"  name="cp_sub_com">
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_com" value="Commerce"  name="competition_subject_com">
                   <label class="form-check-label" for="inlineCheckbox2">Commerce &nbsp;</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_o1" value="Other 1"  name="cp_sub_o1">
-                  <label class="form-check-label" for="defaultCheck1">Other 1 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_oth1" name="cp_sub_oth1"></label>
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_o1" value="Other 1"  name="competition_subject_o1">
+                  <label class="form-check-label" for="defaultCheck1">Other 1 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_oth1" name="competition_subject_oth1"></label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_o2" value="Other 2"  name="cp_sub_o2">
-                  <label class="form-check-label" for="defaultCheck1">Other 2 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_oth2" name="cp_sub_oth2"></label>
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_o2" value="Other 2"  name="competition_subject_o2">
+                  <label class="form-check-label" for="defaultCheck1">Other 2 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_oth2" name="competition_subject_oth2"></label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_o3" value="Other 3"  name="cp_sub_o3">
-                  <label class="form-check-label" for="defaultCheck1">Other 3 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_oth3" name="cp_sub_oth3"></label>
+                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_o3" value="Other 3"  name="competition_subject_o3">
+                  <label class="form-check-label" for="defaultCheck1">Other 3 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_oth3" name="competition_subject_oth3"></label>
                 </div>
             </div>
             <br/>
@@ -1076,20 +1033,20 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
                 </div>
                 <div class="col">
                     <div class="form-check">
-                      <input class="cp_no_name form-check-input" type="checkbox" value="Contract to end soon (within the next three months)" id="cp_reason_con" name="cp_reason_con">
+                      <input class="cp_no_name form-check-input" type="checkbox" value="Contract to end soon (within the next three months)" id="cp_reason_con" name="competition_reason_contract_ending">
                       <label class="form-check-label" for="defaultCheck1">Contract to end soon (within the next three months)</label>
                     </div>
                     <div class="form-check">
-                      <input class="cp_no_name form-check-input" type="checkbox" value="They have features that are not part of Embibe program" id="cp_reason_fea" name="cp_reason_fea">
+                      <input class="cp_no_name form-check-input" type="checkbox" value="They have features that are not part of Embibe program" id="cp_reason_fea" name="competition_reason_additional_features">
                       <label class="form-check-label" for="defaultCheck2">They have features that are not part of Embibe program </label>
                     </div>
                     <div class="form-check">
-                      <input class="cp_no_name form-check-input" type="checkbox" value="They have features that are part of the Embibe program but are better" id="cp_reason_bet" name="cp_reason_bet">
+                      <input class="cp_no_name form-check-input" type="checkbox" value="They have features that are part of the Embibe program but are better" id="cp_reason_bet" name="competition_reason_better_features">
                       <label class="form-check-label" for="defaultCheck1">They have features that are part of the Embibe program but are better</label>
                     </div>
                     <div class="form-check">
-                      <input class="cp_no_name form-check-input" type="checkbox" value="Other" id="cp_reason_oth" name="cp_reason_oth">
-                      <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_oth" name="cp_oth"></label>
+                      <input class="cp_no_name form-check-input" type="checkbox" value="Other" id="cp_reason_oth" name="competition_reason_other">
+                      <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_oth" name="competition_reason"></label>
                     </div>
                 </div>
             </div>
@@ -1097,21 +1054,21 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
             <div class="row">
                 <div class="form-group col-sm-12">
                     <label for="inputName">As per your observation (don't ask) What are the key features used by the teachers of the competitor product? &nbsp;&nbsp;</label>
-                    <textarea class="cp_no_name form-control" id="cp_obs_fea" name="cp_obs_fea" rows="3"></textarea>
+                    <textarea class="cp_no_name form-control" id="cp_obs_fea" name="competition_observation_teacher_used_features" rows="3"></textarea>
                 </div>
             </div>
             <br/>
             <div class="row">
                 <div class="form-group col-sm-12">
                     <label for="inputName">Which are the features of the competitive product that the teachers struggle with most? &nbsp;&nbsp;</label>
-                    <textarea class="cp_no_name form-control" id="cp_obs_str" name="cp_obs_str" rows="3"></textarea>
+                    <textarea class="cp_no_name form-control" id="cp_obs_str" name="competition_observation_teacher_struggles" rows="3"></textarea>
                 </div>
             </div>
             <br/>
             <div class="row">
                 <div class="form-group col-sm-12">
                     <label for="inputName">Any other observations about the competitor &nbsp;&nbsp;</label>
-                    <textarea class="cp_no_name form-control" id="cp_obs_oth" name="cp_obs_oth" rows="3"></textarea>
+                    <textarea class="cp_no_name form-control" id="cp_obs_oth" name="competition_observation_any_other" rows="3"></textarea>
                 </div>
             </div>
             <br/>
@@ -1121,15 +1078,15 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
                 </div>
                 <div class="col">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" value="Using currently" id="erp_usage_use" name="erp_usage" onclick="disable_field('erp')">
+                      <input class="form-check-input" type="radio" value="Using currently" id="erp_usage_use" name="competition_erp" onclick="disable_field('erp')">
                       <label class="form-check-label" for="defaultCheck1">Using currently</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" value="Used previously but not using now" id="erp_usage_usep" name="erp_usage"  onclick="disable_field('erp')">
+                      <input class="form-check-input" type="radio" value="Used previously but not using now" id="erp_usage_usep" name="competition_erp"  onclick="disable_field('erp')">
                       <label class="form-check-label" for="defaultCheck2">Used previously but not using now</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" value="Never used" id="erp_usage_nuse" name="erp_usage" onclick="disable_field('erp_name')">
+                      <input class="form-check-input" type="radio" value="Never used" id="erp_usage_nuse" name="competition_erp" onclick="disable_field('erp_name')">
                       <label class="form-check-label" for="defaultCheck1">Never used</label>
                     </div>
                 </div>
@@ -1157,28 +1114,28 @@ Note: Embibe Ready classroom ( Information can be projected / displayed, interne
                         <label for="inputName"><b>Management Questionnaire [THIS WILL BE A MIX OF YOUR OBSERVATION &amp; DISCUSSION WITH KEY PERSONNELS] &nbsp;&nbsp;</b></label>
                 </div>
                 <div class="form-group col-sm-12">
-                        <label for="inputName">Where do they see themselves in the next one year Technology wise? (Note : in terms of improving on infrastructure) &nbsp;&nbsp;</label>
+                        <label for="inputName">What is the school management view with regards to infrastructure? (Note : in terms of improving on infrastructure) &nbsp;&nbsp;</label>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" value="Not interested to any infra upgrade" id="mq_infra_1" name="mq_infra">
+                          <input class="form-check-input" type="radio" value="Not interested to any infra upgrade" id="mq_infra_1" name="management_view_on_infra">
                           <label class="form-check-label" for="defaultCheck1">Not interested to any infra upgrade</label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" value="Interested but not shown any concrete signs" id="mq_infra_2" name="mq_infra">
+                          <input class="form-check-input" type="radio" value="Interested but not shown any concrete signs" id="mq_infra_2" name="management_view_on_infra">
                           <label class="form-check-label" for="defaultCheck2">
 Interested but not shown any concrete signs </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" value="Have concrete plans to update" id="mq_infra_3" name="mq_infra">
+                          <input class="form-check-input" type="radio" value="Have concrete plans to update" id="mq_infra_3" name="management_view_on_infra">
                           <label class="form-check-label" for="defaultCheck1">
 Have concrete plans to update </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" value="Have started upgrading the infrastructure" id="mq_infra_4" name="mq_infra">
+                          <input class="form-check-input" type="radio" value="Have started upgrading the infrastructure" id="mq_infra_4" name="management_view_on_infra">
                           <label class="form-check-label" for="defaultCheck1">
 Have started upgrading the infrastructure </label>
                         </div>
                     <div class="form-check">
-                          <input class="form-check-input" type="radio" value="Already have a Great Infrastructure Setup" id="mq_infra_5" name="mq_infra">
+                          <input class="form-check-input" type="radio" value="Already have a Great Infrastructure Setup" id="mq_infra_5" name="management_view_on_infra">
                           <label class="form-check-label" for="defaultCheck1">
 Already have a Great Infrastructure Setup </label>
                         </div>
@@ -1191,19 +1148,19 @@ Already have a Great Infrastructure Setup </label>
                 </div>
                 <div class="col">
                     <div class="form-check">
-                      <input class="mgt_inter form-check-input" type="checkbox" value="Embibe Ambassador to participate and present the Embibe program in PTM" id="mq_inter_rppptm" name="mq_inter_rppptm">
-                      <label class="form-check-label" for="defaultCheck1">Embibe Ambassador to participate and present the Embibe program in PTM</label>
+                      <input class="mgt_inter form-check-input" type="radio" value="Embibe Ambassador to presents the Embibe program in PTM" id="mq_inter_rppptm" name="management_comfort_interaction">
+                      <label class="form-check-label" for="defaultCheck1">Embibe Ambassador to presents the Embibe program in PTM</label>
                     </div>
                     <div class="form-check">
-                      <input class="mgt_inter form-check-input" type="checkbox" value="Embibe Reports are used by School/Coaching in PTM and Embibe personnel participates in the PTM" id="mq_inter_rpptm" name="mq_inter_rpptm">
-                      <label class="form-check-label" for="defaultCheck1">Embibe Reports are used by School/Coaching in PTM and Embibe personnel participates in the PTM</label>
+                      <input class="mgt_inter form-check-input" type="radio" value="Embibe Ambassador to participate and the Embibe Reports are used by School/Coaching in PTM" id="mq_inter_rpptm" name="management_comfort_interaction">
+                      <label class="form-check-label" for="defaultCheck1">Embibe Ambassador to participate and the Embibe Reports are used by School/Coaching in PTM</label>
                     </div>
                     <div class="form-check">
-                      <input class="mgt_inter form-check-input" type="checkbox" value="Embibe Reports are used by School/Coaching in PTM but Embibe personnel not allowed" id="mq_inter_rptm" name="mq_inter_rptm">
-                      <label class="form-check-label" for="defaultCheck2">Embibe Reports are used by School/Coaching in PTM but Embibe personnel not allowed </label>
+                      <input class="mgt_inter form-check-input" type="radio" value="Embibe Reports are used by School/Coaching in PTM but Embibe Ambassador does not participate in PTM" id="mq_inter_rptm" name="management_comfort_interaction">
+                      <label class="form-check-label" for="defaultCheck2">Embibe Reports are used by School/Coaching in PTM but Embibe Ambassador does not participate in PTM </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="Embibe Ambassador is not allowed in PTM neither are Embibe reports discussed in PTM" id="mq_inter_ptm" name="mq_inter_ptm" onclick="disable_others('mgt_inter')">
+                      <input class="form-check-input" type="radio" value="Embibe Ambassador is not allowed in PTM neither are Embibe reports discussed in PTM" id="mq_inter_ptm" name="management_comfort_interaction">
                       <label class="form-check-label" for="defaultCheck1">Embibe Ambassador is not allowed in PTM neither are Embibe reports discussed in PTM</label>
                     </div>
                 </div>
@@ -1215,23 +1172,27 @@ Already have a Great Infrastructure Setup </label>
                 </div>
                 <div class="col">
                     <div class="form-check">
-                      <input class="mgt_com form-check-input" type="checkbox" value="Management allows Students/parents to get communication from Embibe on Whatsapp BOT" id="mq_comm_spw" name="mq_comm_spw">
+                      <input class="mgt_com form-check-input" type="checkbox" value="Management allows Students/parents to get communication from Embibe on Whatsapp BOT" id="mq_comm_spw" name="management_communication_students_whatsapp">
                       <label class="form-check-label" for="defaultCheck1">Management allows Students/parents to get communication from Embibe on Whatsapp BOT</label>
                     </div>
                     <div class="form-check">
-                      <input class="mgt_com form-check-input" type="checkbox" value="School/Coaching Management allowed creation of WhatsApp group with the faculties" id="mq_comm_fw" name="mq_comm_fw">
+                      <input class="mgt_com form-check-input" type="checkbox" value="School/Coaching Management allowed creation of WhatsApp group with the faculties" id="mq_comm_fw" name="management_communication_teachers_whatsapp">
                       <label class="form-check-label" for="defaultCheck2">School/Coaching Management allowed creation of WhatsApp group with the faculties</label>
                     </div>
                     <div class="form-check">
-                      <input class="mgt_com form-check-input" type="checkbox" value="Management will Implement White Labeled BOT with Embibe Communication" id="mq_comm_bot" name="mq_comm_bot">
+                      <input class="mgt_com form-check-input" type="checkbox" value="Management will Implement White Labeled BOT with Embibe Communication" id="mq_comm_bot" name="management_communication_white_labeled">
                       <label class="form-check-label" for="defaultCheck1">Management will Implemented White Labeled BOT with Embibe Communication</label>
                     </div>
                     <div class="form-check">
-                      <input class="mgt_com form-check-input" type="checkbox" value="Management will send SMS from School for downloading Parent App" id="mq_comm_sms" name="mq_comm_sms">
+                      <input class="mgt_com form-check-input" type="checkbox" value="Management will send SMS from School for downloading Parent App" id="mq_comm_sms" name="management_communication_sms_parent">
                       <label class="form-check-label" for="defaultCheck2">Management will send SMS from School for downloading Parent App</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="No independent communication allowed" id="mq_comm_no" name="mq_comm_no" onclick="disable_others('mgt_com')">
+                      <input class="mgt_com form-check-input" type="checkbox" value="The school / coaching Institute will use Embibe videos and marketing material in Admission Process" id="mq_comm_video" name="management_communication_video_marketing">
+                      <label class="form-check-label" for="defaultCheck2">The school / coaching Institute will use Embibe videos and marketing material in Admission Process</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="No independent communication allowed" id="mq_comm_no" name="no_management_communication" onclick="disable_others('mgt_com')">
                       <label class="form-check-label" for="defaultCheck1">No independent communication allowed</label>
                     </div>
                 </div>
@@ -1239,25 +1200,37 @@ Already have a Great Infrastructure Setup </label>
             <br/>
             <div class="row">
                 <div class="form-inline col-sm-12">
-                    <label for="inputName">Which of the following will the management do for the successful implementation of the Embibe Program?&nbsp;&nbsp;</label>
+                    <label for="inputName">Which of the following is committed to the timetable?&nbsp;&nbsp;</label>
                 </div>
-                <div class="col">
-                    <div class="form-check">
-                      <input class="mgt_imp form-check-input" type="checkbox" value="Teach is Committed fully in the Timetable" id="mq_imple_tf" name="mq_imple_tf">
-                      <label class="form-check-label" for="defaultCheck1">Teach is Committed fully in the Timetable</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="mgt_imp form-check-input" type="checkbox" value="Test is Committed in Timetable / Teach is partially Committed in Timetable" id="mq_imple_tftp" name="mq_imple_tftp">
-                      <label class="form-check-label" for="defaultCheck2">Test is Committed in Timetable / Teach is partially Committed in Timetable</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="mgt_imp form-check-input" type="checkbox" value="Teach  & Test is Committed in TimetableNo" id="mq_imple_tftf" name="mq_imple_tftf">
-                      <label class="form-check-label" for="defaultCheck1">Teach  & Test is Committed in Timetable </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="No Feature Committed in Timetable" id="mq_imple_no" name="mq_imple_no" onclick="disable_others('mgt_imp')">
-                      <label class="form-check-label" for="defaultCheck1">No Feature Committed in Timetable</label>
-                    </div>
+              </div>
+              <div class="row col form-inline">
+                  <label for="inputName"> For the teach module:&nbsp;&nbsp;</label>
+                  <div class="form-check">
+                    <input class="form-check-inline" type="radio" value="Committed fully" id="teach_commitment_full" name="teach_commitment">
+                    <label class="form-check-label" for="defaultCheck1">Committed fully &nbsp;&nbsp;</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-inline" type="radio" value="Committed Partially" id="teach_commitment_partial" name="teach_commitment">
+                    <label class="form-check-label" for="defaultCheck2">Committed Partially &nbsp;&nbsp;</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-inline" type="radio" value="Not Committed" id="teach_commitment_no" name="teach_commitment">
+                    <label class="form-check-label" for="defaultCheck1">Not Committed &nbsp;&nbsp;</label>
+                  </div>
+              </div>
+              <div class="row col form-inline">
+                <label for="inputName"> For the test module:&nbsp;&nbsp;</label>
+                <div class="form-check">
+                  <input class="form-check-inline" type="radio" value="Committed fully" id="test_commitment_full" name="test_commitment">
+                  <label class="form-check-label" for="defaultCheck1">Committed fully &nbsp;&nbsp;</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-inline" type="radio" value="Committed Partially" id="test_commitment_partial" name="test_commitment">
+                  <label class="form-check-label" for="defaultCheck2">Committed Partially &nbsp;&nbsp;</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-inline" type="radio" value="Not Committed" id="test_commitment_no" name="test_commitment">
+                  <label class="form-check-label" for="defaultCheck1">Not Committed &nbsp;&nbsp;</label>
                 </div>
             </div>
             <br/>
@@ -1266,22 +1239,31 @@ Already have a Great Infrastructure Setup </label>
                     <label for="inputName">Which of the following collateral is the management willing to display in the School/Coaching premises?&nbsp;&nbsp;</label>
                 </div>
                 <div class="col">
-                    <div class="form-check">
-                      <input class="mgt_will form-check-input" type="checkbox" value="The initial position of Embibe Marketing Board in School/Coaching Premises is placed properly" id="mq_will_pp" name="mq_will_pp">
-                      <label class="form-check-label" for="defaultCheck1">The initial position of Embibe Marketing Board in School/Coaching Premises is placed properly</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="mgt_will form-check-input" type="checkbox" value="The School/Coaching has removed or replaced the Embibe Board from the reception or Front" id="mq_will_rr" name="mq_will_rr">
-                      <label class="form-check-label" for="defaultCheck2">The School/Coaching has removed or replaced the Embibe Board from the reception or Front</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="mgt_will form-check-input" type="checkbox" value="The school / coaching Institute will use Embibe videos and marketing material in Admission Process" id="mq_will_mm" name="mq_will_mm">
-                      <label class="form-check-label" for="defaultCheck1">The school / coaching Institute will use Embibe videos and marketing material in Admission Process</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="No collateral is allowed" id="mq_will_no" name="mq_will_no" onclick="disable_others('mgt_will')">
-                      <label class="form-check-label" for="defaultCheck1">No collateral is allowed</label>
-                    </div>
+                  <label for="inputName">What is the school management view with regards to infrastructure? (Note : in terms of improving on infrastructure) &nbsp;&nbsp;</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Embibe Marketing Board is placed at the reception or front office" id="mq_will_1" name="management_willingness">
+                    <label class="form-check-label" for="defaultCheck1">Embibe Marketing Board is placed at the reception or front office</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Embibe Marketing Board is placed at a prominent location in the school  but not at the reception or front office" id="mq_will_2" name="management_willingness">
+                    <label class="form-check-label" for="defaultCheck2">
+                      Embibe Marketing Board is placed at a prominent location in the school  but not at the reception or front office </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Embibe Marketing Board is placed the school but not at a prominent location" id="mq_will_3" name="management_willingness">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Embibe Marketing Board is placed the school but not at a prominent location </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="No collateral is allowed" id="mq_will_4" name="management_willingness">
+                    <label class="form-check-label" for="defaultCheck1">
+                      No collateral is allowed </label>
+                  </div>
+              <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Collateral was there but has been removed" id="mq_will_5" name="management_willingness">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Collateral was there but has been removed  </label>
+                  </div>
                 </div>
             </div>
             <br/>
