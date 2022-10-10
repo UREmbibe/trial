@@ -136,7 +136,7 @@ function loadXMLDoc(val, id){
           }else{
             var val = document.getElementById(n).getAttribute("name")
 
-            if (document.getElementById(n).getAttribute(type) == "checkbox"){
+            if (document.getElementById(n).getAttribute('type') == "checkbox"){
               if (document.getElementById(n).getAttribute('value') == observations[i][val]){
                 document.getElementById(n).getAttribute('value').checked = true
               }  
