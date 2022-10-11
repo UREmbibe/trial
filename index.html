@@ -240,7 +240,7 @@
               
               <div class="row">
                 <div class="form-group col-sm-4">
-                  <label for="text">GCC Name</label>
+                  <label for="text">Sales Person Name</label>
                   <input type="text" class="form-control" id="ecd_gcc_name" name="gcc_name">
                 </div>
                 <div class="form-group col-sm-4">
@@ -1148,10 +1148,6 @@ Already have a Great Infrastructure Setup </label>
                 </div>
                 <div class="col">
                     <div class="form-check">
-                      <input class="mgt_inter form-check-input" type="radio" value="Embibe Ambassador to presents the Embibe program in PTM" id="mq_inter_rppptm" name="management_comfort_interaction">
-                      <label class="form-check-label" for="defaultCheck1">Embibe Ambassador to presents the Embibe program in PTM</label>
-                    </div>
-                    <div class="form-check">
                       <input class="mgt_inter form-check-input" type="radio" value="Embibe Ambassador to participate and the Embibe Reports are used by School/Coaching in PTM" id="mq_inter_rpptm" name="management_comfort_interaction">
                       <label class="form-check-label" for="defaultCheck1">Embibe Ambassador to participate and the Embibe Reports are used by School/Coaching in PTM</label>
                     </div>
@@ -1168,7 +1164,7 @@ Already have a Great Infrastructure Setup </label>
             <br/>
             <div class="row">
                 <div class="form-inline col-sm-12">
-                    <label for="inputName">Is Embibe allowed to do the following:&nbsp;&nbsp;</label>
+                    <label for="inputName">Is Embibe allowed to communicate in the following manner: &nbsp;&nbsp;</label>
                 </div>
                 <div class="col">
                     <div class="form-check">
@@ -1181,15 +1177,15 @@ Already have a Great Infrastructure Setup </label>
                     </div>
                     <div class="form-check">
                       <input class="mgt_com form-check-input" type="checkbox" value="Management will Implement White Labeled BOT with Embibe Communication" id="mq_comm_bot" name="management_communication_white_labeled">
-                      <label class="form-check-label" for="defaultCheck1">Management will Implemented White Labeled BOT with Embibe Communication</label>
+                      <label class="form-check-label" for="defaultCheck1">Management will Implement White Labeled BOT with Embibe Communication</label>
                     </div>
                     <div class="form-check">
                       <input class="mgt_com form-check-input" type="checkbox" value="Management will send SMS from School for downloading Parent App" id="mq_comm_sms" name="management_communication_sms_parent">
-                      <label class="form-check-label" for="defaultCheck2">Management will send SMS from School for downloading Parent App</label>
+                      <label class="form-check-label" for="defaultCheck2">Management will send written communication to the parents from School for downloading the Parent App</label>
                     </div>
                     <div class="form-check">
-                      <input class="mgt_com form-check-input" type="checkbox" value="The school / coaching Institute will use Embibe videos and marketing material in Admission Process" id="mq_comm_video" name="management_communication_video_marketing">
-                      <label class="form-check-label" for="defaultCheck2">The school / coaching Institute will use Embibe videos and marketing material in Admission Process</label>
+                      <input class="mgt_com form-check-input" type="checkbox" value="Embibe Ambassador to presents the Embibe program in a meeting to the parents" id="mq_comm_meet" name="management_communication_parent_meeting">
+                      <label class="form-check-label" for="defaultCheck2">Embibe Ambassador to presents the Embibe program in a meeting to the parents</label>
                     </div>
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="No independent communication allowed" id="mq_comm_no" name="no_management_communication" onclick="disable_others('mgt_com')">
@@ -1200,37 +1196,54 @@ Already have a Great Infrastructure Setup </label>
             <br/>
             <div class="row">
                 <div class="form-inline col-sm-12">
-                    <label for="inputName">Which of the following is committed to the timetable?&nbsp;&nbsp;</label>
+                    <label for="inputName">Is the following statement True?<br/>
+                      “The school / coaching Institute will use Embibe videos and marketing material in Admission Process”
+                      &nbsp;&nbsp;</label>
                 </div>
+            </div>
+            <div class="form-check">
+              <input class="form-check-inline" type="radio" value="Yes Video Marketing" id="video_marketing_yes" name="video_marketing">
+              <label class="form-check-label" for="defaultCheck1">Yes &nbsp;&nbsp;</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-inline" type="radio" value="No Video Marketing" id="video_marketing_no" name="video_marketing">
+              <label class="form-check-label" for="defaultCheck2">No &nbsp;&nbsp;</label>
+            </div>
+            <br/>
+            <div class="row">
+              <div class="form-inline col-sm-12">
+                  <label for="inputName">Which of the following is committed to the timetable?</label>
               </div>
-              <div class="row col form-inline">
-                  <label for="inputName"> For the teach module:&nbsp;&nbsp;</label>
+            </div>
+            <div class="row col form-check">
+                    <label for="inputName"><u> For the teach module</u></label>
                   <div class="form-check">
-                    <input class="form-check-inline" type="radio" value="Committed fully" id="teach_commitment_full" name="teach_commitment">
-                    <label class="form-check-label" for="defaultCheck1">Committed fully &nbsp;&nbsp;</label>
+                    <input class="form-check-input" type="radio" value="Has mandated the use of Embibe through a written circular/notice" id="teach_commitment_full" name="teach_commitment">
+                    <label class="form-check-label" for="defaultCheck1">Has mandated the use of Embibe <b><u>through a written circular/notice</u></b>&nbsp;&nbsp;</label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-inline" type="radio" value="Committed Partially" id="teach_commitment_partial" name="teach_commitment">
-                    <label class="form-check-label" for="defaultCheck2">Committed Partially &nbsp;&nbsp;</label>
+                    <input class="form-check-input" type="radio" value="Management has mandated the use of Embibe through a verbal communication in a meeting" id="teach_commitment_partial" name="teach_commitment">
+                    <label class="form-check-label" for="defaultCheck2">Management has mandated the use of Embibe through a verbal communication in a meeting  &nbsp;&nbsp;</label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-inline" type="radio" value="Not Committed" id="teach_commitment_no" name="teach_commitment">
-                    <label class="form-check-label" for="defaultCheck1">Not Committed &nbsp;&nbsp;</label>
+                    <input class="form-check-input" type="radio" value="Management has not mandated the use of Embibe" id="teach_commitment_no" name="teach_commitment">
+                    <label class="form-check-label" for="defaultCheck1">Management has not mandated the use of Embibe &nbsp;&nbsp;</label>
                   </div>
               </div>
-              <div class="row col form-inline">
-                <label for="inputName"> For the test module:&nbsp;&nbsp;</label>
+              <br/>
+              <div class="row col form-check">
+                <label for="inputName"><u>For the test module:</u></label>
                 <div class="form-check">
-                  <input class="form-check-inline" type="radio" value="Committed fully" id="test_commitment_full" name="test_commitment">
-                  <label class="form-check-label" for="defaultCheck1">Committed fully &nbsp;&nbsp;</label>
+                  <input class="form-check-input" type="radio" value="Has mandated the use of Embibe through a written circular/notice" id="test_commitment_full" name="test_commitment">
+                  <label class="form-check-label" for="defaultCheck1">Has mandated the use of Embibe <b><u>through a written circular/notice</u></b> &nbsp;&nbsp;</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-inline" type="radio" value="Committed Partially" id="test_commitment_partial" name="test_commitment">
-                  <label class="form-check-label" for="defaultCheck2">Committed Partially &nbsp;&nbsp;</label>
+                  <input class="form-check-input" type="radio" value="Management has mandated the use of Embibe through a verbal communication in a meeting " id="test_commitment_partial" name="test_commitment">
+                  <label class="form-check-label" for="defaultCheck2">Management has mandated the use of Embibe through a verbal communication in a meeting  &nbsp;&nbsp;</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-inline" type="radio" value="Not Committed" id="test_commitment_no" name="test_commitment">
-                  <label class="form-check-label" for="defaultCheck1">Not Committed &nbsp;&nbsp;</label>
+                  <input class="form-check-input" type="radio" value="Management has not mandated the use of Embibe" id="test_commitment_no" name="test_commitment">
+                  <label class="form-check-label" for="defaultCheck1"> Management has not mandated the use of Embibe &nbsp;&nbsp;</label>
                 </div>
             </div>
             <br/>
@@ -1239,7 +1252,6 @@ Already have a Great Infrastructure Setup </label>
                     <label for="inputName">Which of the following collateral is the management willing to display in the School/Coaching premises?&nbsp;&nbsp;</label>
                 </div>
                 <div class="col">
-                  <label for="inputName">What is the school management view with regards to infrastructure? (Note : in terms of improving on infrastructure) &nbsp;&nbsp;</label>
                   <div class="form-check">
                     <input class="form-check-input" type="radio" value="Embibe Marketing Board is placed at the reception or front office" id="mq_will_1" name="management_willingness">
                     <label class="form-check-label" for="defaultCheck1">Embibe Marketing Board is placed at the reception or front office</label>
