@@ -1,0 +1,1374 @@
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Bootstrap CSS -->
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Survey Form</title>
+    </head>
+    <body >
+        <div class="shadow-lg p-3 mt-4 bg-white rounded container">
+            <form class="card-body" method="POST" onsubmit="return validateForm()" action="https://script.google.com/macros/s/AKfycbzpbDJ-6F9Xw9v5G76IVq902qUFX74TLPkh3r3Wst4dT5cC1D_KGZJQDW37nkY2qUu6/exec"> 
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h3>EMBIBE School/Coaching Readiness &amp; Competitive landscape Form</h3>
+                    </div>
+                    <div class="col-sm-2"><img class="img-fluid rounded" style="max-height: 100px; width:auto;" src="logo.png"/>
+                    </div>
+                    <br/>
+                    <div class="col-sm-9"><p>This form has to be filled by the Embibe Academic Ambassador team for each school. This form has 7 tabs with different information that will be very important to understand the health of the school. Please take the time out to fill this in as much detail as possible.</p></div>
+                </div>
+                <br/>
+                <ul class="nav sticky-top justify-content-center bg-white nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="salesforce-tab" data-toggle="tab" href="#salesforce" role="tab">SalesForce Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="aal_infra-tab" data-toggle="tab" href="#aal_infra" role="tab">AAL Infra</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="aal_teachers-tab" data-toggle="tab" href="#aal_teachers" role="tab">AAL Teachers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="aal_books-tab" data-toggle="tab" href="#aal_books" role="tab">AAL Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="first_visit-tab" data-toggle="tab" href="#first_visit" role="tab">1st Visit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="second_visit-tab" data-toggle="tab" href="#second_visit" role="tab">2nd Visit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="competitors-tab" data-toggle="tab" href="#competitors">Competitors</a>
+                    </li>
+                </ul>
+
+
+
+
+                <div class="tab-content" id="myTabContent">   
+                    
+                    <div class="tab-pane fade show active" id="salesforce" role="tabpanel">
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-6">
+                                <label for="inputName">account_org_id &nbsp;&nbsp;</label>
+                                <input type="text" class="form-control" id="account_org_id" name="account_org_id" onblur="loadXMLDoc(this.value, this.id)">
+                            </div>
+                            <div class="form-inline col-sm-6">
+                                <label for="inputName">Form Iteration &nbsp;&nbsp;</label>
+                                <input type="number" class="form-control" id="iteration_no" name="iteration_no" value=1 readonly>
+                            </div>
+                            <br/>
+                        </div>
+                        <div>
+                            <div class="form-inline col-sm-6">
+                                <input type="datetime-local" class="form-control" id="timestamp" name="timestamp" value=1 hidden>
+                            </div>
+                            <button class="btn btn-primary float-right" data-toggle="tab" role="tab" onclick="tab_tog('page2-tab')">Next</button>
+                        </div>
+                        <br/>
+                    </div>
+
+<!--AAL INFRA-->
+                    <div class="tab-pane fade show" id="aal_infra" role="tabpanel">
+                        <div class="row col">
+                            <b><label>SCHOOL DETAILS</label></b>
+                        </div> 
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                              <label for="inputName">Name</label>
+                              <input type="text" class="form-control" id="scc_name" name="School Name">
+                            </div>
+                            <div class="form-group col-sm-4">
+                              <label for="inputLocation">City</label>
+                              <input type="text" class="form-control" id="scc_city" name="City">
+                            </div>
+                            <div class="form-group col-sm-4">
+                              <label for="inputLocation">Location (State/UT)</label>
+                              <input type="text" class="form-control" id="scc_state" name="State">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                              <label for="inputName">Zone</label>
+                              <input type="text" class="form-control" id="scc_zone" name="Sales Zone">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                              <label for="inputName">Embibe sales person name</label>
+                              <input type="text" class="form-control" id="gcc_name" name="GCC Name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                              <label for="inputName">Est. Student Annual Fees</label>
+                              <input type="number" class="form-control" id="annual_fees" name="Est.Student Annual Fees">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                              <label for="inputName">School App Creation Date</label>
+                              <input type="date" class="form-control" id="school_app_created" name="School App Created">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="inputName">Kick-off Call Date</label>
+                                <input type="date" class="form-control" id="handshake_call_date" name="Handshake Call Date">
+                              </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                              <label for="inputName">Training Start Date</label>
+                              <input type="date" class="form-control" id="training_start" name="Training Start">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="inputName">Training End Date</label>
+                                <input type="date" class="form-control" id="training_end" name="Training End">
+                              </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                              <label for="inputName">Training Start Date</label>
+                              <input type="text" class="form-control" id="agreement_type" name="Agreement Type" hidden>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="inputName">Training End Date</label>
+                                <input type="text" class="form-control" id="contract_model" name="Contract Model" hidden>
+                              </div>
+                        </div>
+                        <div class="row col">
+                            <b><label>EMBIBE ACADEMIC AMBASSADOR DETAILS</label></b>
+                        </div> 
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                              <label for="inputName">Embibe Academic Ambassador</label>
+                              <input type="text" class="form-control" id="ecd_poc"  name="Academic Ambassador">
+                            </div>
+                            <div class="form-group col-sm-4">
+                              <label for="number">Mobile Number</label>
+                              <input type="number" class="form-control" id="ecd_mobile"  name="Ambassador Mobile" onblur="validateMobile(this.value, 'ambassador mobile number')">
+                            </div>
+                            <div class="form-group col-sm-4">
+                              <label for="exampleInputEmail1">Email address</label>
+                              <input type="email" class="form-control" id="ecd_email" name="Ambassador Email" onblur="validate(this, 'ambassador email')">
+                            </div>
+                        </div>
+                        <div class="row col">
+                            <b><label>SCHOOL CONTACT DETAILS</label></b>
+                        </div> 
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                              <label for="schoolPointOfContact">School Point of Contact</label>
+                              <input type="text" class="form-control" id="scc_poc" name="School point of contact">
+                            </div>
+                            <div class="form-group col-sm-6">
+                              <label for="designation">Designation</label>
+                              <input type="text" class="form-control" id="scc_designation" name="School poc designation">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                              <label for="number">Mobile Number</label>
+                              <input type="number" class="form-control" id="scc_mobile" name="school poc mobile" onblur="validateMobile(this.value, 'school poc mobile number')">
+                            </div>
+                            <div class="form-group col-sm-6">
+                              <label for="exampleInputEmail1">Email address</label>
+                              <input type="email" class="form-control" id="scc_email" name="school poc email" onblur="validate(this, 'school poc email')">
+                            </div>
+                        </div>
+                        <div class="row col">
+                            <b><label>ACCOUNT DETAILS</label></b>
+                        </div> 
+                        <ol>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                              <li><label>Go Live Date</label></li>
+                              <input type="date" class="form-control" id="go_live_date" name="Go Live Date">
+                            </div>
+                            <div class="form-group  col-sm-6">
+                              <li><label>Academic Review Date</label></li>
+                              <input type="date" class="form-control" id="academic_review_date" name="Academic Review Date">
+                            </div>
+                        </div>
+                        <div class="row col form-group">
+                            <div class="form-check form-check-inline">
+                              <li><label class="form-check-label" for="board">School/Coaching Type: &nbsp;</label></li>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="School Type" id="scc_type_sind" value="Individual School">
+                              <label class="form-check-label" for="inlineRadio1">Individual School</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="School Type" id="scc_type_schn" value="Chain School">
+                              <label class="form-check-label" for="inlineRadio2">Chain School</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="School Type" id="scc_type_cind" value="Individual Institute">
+                              <label class="form-check-label" for="inlineRadio1">Individual Institute</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="School Type" id="scc_type_cchn" value="Chain Institute">
+                              <label class="form-check-label" for="inlineRadio2">Chain Institute</label>
+                            </div>
+                        </div>
+                        <div class="row col form-group">
+                            <div class="form-check form-check-inline">
+                              <li><label class="form-check-label" for="board">School Setup &nbsp;</label></li>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="Boarding School" id="scc_ex_boarding" value="Boarding School">
+                              <label class="form-check-label" for="inlineRadio2">Boarding School</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="Extended Hours" id="scc_ex_after" value="extended_hours">
+                              <label class="form-check-label" for="inlineRadio1">Day Boarding/Extended Hours</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="Multiple Shifts" id="scc_ex_multi" value="Multiple Shifts">
+                              <label class="form-check-label" for="inlineRadio1">Multiple Shifts</label>
+                            </div>.
+                        </div>
+                        <div class="row col form-group">
+                            <div class="form-check form-check-inline">
+                              <li><label class="form-check-label" for="board">Board: &nbsp;</label></li>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_board_cbse" id="scc_board_cbse" value="CBSE">
+                              <label class="form-check-label" for="inlineRadio1">CBSE</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_board_icse" id="scc_board_icse" value="ICSE">
+                              <label class="form-check-label" for="inlineRadio2">ICSE</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_board_state" id="scc_board_state" value="State">
+                              <label class="form-check-label" for="inlineRadio3">State</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_board_igcse" id="scc_board_igcse" value="IGCSE">
+                              <label class="form-check-label" for="inlineRadio1">IGCSE</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_board_cambridge" id="scc_board_cambridge" value="Cambridge">
+                              <label class="form-check-label" for="inlineRadio2">Cambridge</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_board_ib" id="scc_board_ib" value="IB">
+                              <label class="form-check-label" for="inlineRadio2">IB</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_board_other" id="scc_board_other">
+                              <label class="form-check-label" for="inlineRadio3">Others&nbsp;<input type="text" class="form-check form-check-inline" id="scc_board_other_blank" name="school_board"></label>
+                            </div>
+                        </div>
+                        <div class="row col form-group">
+                            <div class="form-check form-check-inline">
+                              <li><label class="form-check-label" for="board">Exams: &nbsp;</label></li>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_exams_jee" id="scc_exams_jee" value="JEE">
+                              <label class="form-check-label" for="inlineRadio1">JEE</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_exams_neet" id="scc_exams_neet" value="NEET">
+                              <label class="form-check-label" for="inlineRadio2">NEET</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_exams_state" id="scc_exams_state" value="State">
+                              <label class="form-check-label" for="inlineRadio3">State Engineering</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_exams_ntse" id="scc_exams_ntse" value="NTSE">
+                              <label class="form-check-label" for="inlineRadio1">NTSE</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_exams_olympiad" id="scc_exams_olympiad" value="Olympiad">
+                              <label class="form-check-label" for="inlineRadio2">Olympiad</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="school_exams_other" id="scc_exams_other">
+                              <label class="form-check-label" for="inlineRadio3">Others&nbsp;<input type="text" class="form-check form-check-inline" id="scc_exams_other_blank" name="school_exams"></label>
+                            </div>
+                        </div>
+                        <div class="row col">
+                            <div class="form-check form-check-inline">
+                              <li><label class="form-check-label" for="board">Grades available in the school: &nbsp;</label></li>
+                            </div>
+                        </div>
+                        <div class="row col">
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="od_pre-school" value='Pre-School' name="pre_school">
+                              <label class="form-check-label" for="inlineCheckbox1">Pre-School &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="od_grade_1-5" value="1-5" name="grade_1_5">
+                              <label class="form-check-label" for="inlineCheckbox2">1-5 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="od_grade_6" name="grade_6" value="6" onclick="disable_others('g6_yes')">
+                              <label class="form-check-label" for="inlineCheckbox2">6 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="od_grade_7" name="grade_7" value="7" onclick="disable_others('g7_yes')">
+                              <label class="form-check-label" for="inlineCheckbox1">7 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="od_grade_8" name="grade_8" value="8" onclick="disable_others('g8_yes')">
+                              <label class="form-check-label" for="inlineCheckbox2">8 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="od_grade_9" name="grade_9" value="9" onclick="disable_others('g9_yes')">
+                              <label class="form-check-label" for="inlineCheckbox1">9 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="od_grade_10" name="grade_10" value="10" onclick="disable_others('g10_yes')">
+                              <label class="form-check-label" for="inlineCheckbox2">10 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="od_grade_11" name="grade_11" value="11" onclick="disable_others('g11_yes')">
+                              <label class="form-check-label" for="inlineCheckbox1">11 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="od_grade_12" name="grade_12" value="12" onclick="disable_others('g12_yes')">
+                              <label class="form-check-label" for="inlineCheckbox2">12 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="od_grade_eng" name="grade_eng" value="eng" onclick="disable_others('g_eng_yes')">
+                              <label class="form-check-label" for="inlineCheckbox1">Engineering &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" id="od_grade_med" name="grade_med" value="med" onclick="disable_others('g_med_yes')">
+                              <label class="form-check-label" for="inlineCheckbox2">Medical &nbsp;</label>
+                            </div>
+                        </div><br/>
+                        <div class="row col">
+                            <div class="form-check form-check-inline">
+                                <li><label class="form-check-label" for="board">Grades assigned to Embibe: &nbsp;</label></li>
+                            </div>
+                        </div>
+                        <div class="row col">
+                            <div class="form-check form-check-inline">
+                            <input  type="checkbox" class="g6_yes form-check form-check-inline" id="gra_asgn_6th" value="6" name="grade_assign_6" onclick="disable_others('g6_yes_yes')">
+                            <label class="form-check-label" for="inlineCheckbox2">6 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input  type="checkbox" class="g7_yes form-check form-check-inline" id="gra_asgn_7th" value="7" name="grade_assign_7" onclick="disable_others('g7_yes_yes')">
+                            <label class="form-check-label" for="inlineCheckbox1">7 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input  type="checkbox" class="g8_yes form-check form-check-inline" id="gra_asgn_8th" value="8" name="grade_assign_8" onclick="disable_others('g8_yes_yes')">
+                            <label class="form-check-label" for="inlineCheckbox2">8 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input  type="checkbox" class="g9_yes form-check form-check-inline" id="gra_asgn_9th" value="9" name="grade_assign_9" onclick="disable_others('g9_yes_yes')">
+                            <label class="form-check-label" for="inlineCheckbox1">9 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input  type="checkbox" class="g10_yes form-check form-check-inline" id="gra_asgn_10th" value="10" name="grade_assign_10" onclick="disable_others('g10_yes_yes')">
+                            <label class="form-check-label" for="inlineCheckbox2">10 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input  type="checkbox" class="g11_yes form-check form-check-inline" id="gra_asgn_11th" value="11" name="grade_assign_11" onclick="disable_others('g11_yes_yes')">
+                            <label class="form-check-label" for="inlineCheckbox1">11 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input  type="checkbox" class="g12_yes  form-check form-check-inline" id="gra_asgn_12th" value="12" name="grade_assign_12" onclick="disable_others('g12_yes_yes')">
+                            <label class="form-check-label" for="inlineCheckbox2">12 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input  type="checkbox" class="g_eng_yes form-check form-check-inline" id="gra_asgn_eng" value="ENGINEERING" name="grade_assign_eng" onclick="disable_others('g_eng_yes_yes')">
+                            <label class="form-check-label" for="inlineCheckbox1">Engineering &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input  type="checkbox" class="g_med_yes form-check form-check-inline" id="gra_asgn_med" value="MEDICAL" name="grade_assign_med" onclick="disable_others('g_med_yes_yes')">
+                            <label class="form-check-label" for="inlineCheckbox2">Medical &nbsp;</label>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row col">
+                            <div class="form-check form-check-inline"><label class="form-check-label" for="board">PLEASE ANSWER THE QUESTIONS FROM 9  to      CONSIDERING CLASSROOMS / TEACHERS / STUDENTS IN THE EMBIBE ASSIGNED GRADE &nbsp;
+                            <br/><br/>
+                            <li>Subjects for grades assigned to the Embibe programme &nbsp;</li>    
+                            </label>
+                            </div>
+                            <div class="row col">
+                                <div class="form-check form-check-inline">
+                                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_math" value="Math"  name="competition_sub_math">
+                                  <label class="form-check-label" for="inlineCheckbox1">Math &nbsp;</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_sci" value="Science"  name="competition_subject_sci">
+                                  <label class="form-check-label" for="inlineCheckbox2">Science &nbsp;</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_soc" value="Social Science"  name="competition_subject_soc">
+                                  <label class="form-check-label" for="inlineCheckbox1">Social Science&nbsp;</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_phy" value="Physics"  name="competition_subject_phy">
+                                  <label class="form-check-label" for="inlineCheckbox2">Physics &nbsp;</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_che" value="Chemistry"  name="competition_subject_che">
+                                  <label class="form-check-label" for="inlineCheckbox1">Chemistry &nbsp;</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_bio" value="Biology"  name="competition_subject_bio">
+                                  <label class="form-check-label" for="inlineCheckbox2">Biology &nbsp;</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row col">
+                            <li><label>How many Students does the School/Coaching Institute have? </label></li>
+                        </div>
+                        <div class="form-inline col-sm-12">
+                            <label for="inputName">Please fill in the details of sections and students assigned to Embibe for the grades mentioned below:</label>
+                        </div>
+                        <div class="row">
+                            <table class="table table-bordered table-responsive">
+                                <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    
+                                    <th scope="col"># Sections  assigned to the Embibe programme</th>
+                                    <th scope="col"># Students  assigned to the Embibe programme</th>
+                                    <th scope="col">Is the section active?</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>6</td>
+                                    
+                                    <td><input  type="number" class="g6_yes_yes form-inline" id="gra_sec_asgn_6th" name="section_assigned_6"></td>
+                                    <td><input  type="number" class="g6_yes_yes form-inline" id="gra_std_asgn_6th" name="students_assigned_6" readonly></td> 
+                                    <td><select>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select></td>             
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    
+                                    <td><input  type="number" class="g7_yes_yes form-inline" id="gra_sec_asgn_7th" name="section_assigned_7"></td>
+                                    <td><input  type="number" class="g7_yes_yes form-inline" id="gra_std_asgn_7th" name="students_assigned_7" readonly></td> 
+                                    <td><select>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select></td>                  
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    
+                                    <td><input  type="number" class="g8_yes_yes form-inline" id="gra_sec_asgn_8th" name="section_assigned_8"></td>
+                                    <td><input  type="number" class="g8_yes_yes form-inline" id="gra_std_asgn_8th" name="students_assigned_8" readonly></td> 
+                                    <td><select>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select></td>                     
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    
+                                    <td><input  type="number" class="g9_yes_yes form-inline" id="gra_sec_asgn_9th" name="section_assigned_9"></td>
+                                    <td><input  type="number" class="g9_yes_yes form-inline" id="gra_std_asgn_9th" name="students_assigned_9" readonly></td> 
+                                    <td><select>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select></td>                     
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    
+                                    <td><input  type="number" class="g10_yes_yes form-inline" id="gra_sec_asgn_10th" name="section_assigned_10"></td> 
+                                    <td><input  type="number" class="g10_yes_yes form-inline" id="gra_std_asgn_10th" name="students_assigned_10" readonly></td> 
+                                    <td><select>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select></td>                   
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    
+                                    <td><input  type="number" class="g11_yes_yes form-inline" id="gra_sec_asgn_11th" name="section_assigned_11" ></td>
+                                    <td><input  type="number" class="g11_yes_yes form-inline" id="gra_std_asgn_11th" name="students_assigned_11" readonly></td> 
+                                    <td><select>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select></td>                    
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    
+                                    <td><input  type="number" class="g12_yes_yes form-inline" id="gra_sec_asgn_12th" name="section_assigned_12"></td>
+                                    <td><input  type="number" class="g12_yes_yes  form-inline" id="gra_std_asgn_12th" name="students_assigned_12" readonly></td> 
+                                    <td><select>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select></td>                     
+                                </tr>
+                                <tr>
+                                    <td>ENGINEERING</td>
+                                    
+                                    <td><input  type="number" class="g_eng_yes_yes form-inline" id="gra_sec_asgn_eng" name="section_assigned_eng"></td> 
+                                    <td><input  type="number" class="g_eng_yes_yes form-inline" id="gra_std_asgn_eng" name="students_assigned_eng" readonly></td> 
+                                    <td><select>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select></td>                  
+                                </tr>
+                                <tr>
+                                    <td>MEDICAL</td>
+                                    
+                                    <td><input  type="number" class="g_eng_yes_yes form-inline" id="gra_sec_asgn_med" name="section_assigned_med"></td> 
+                                    <td><input  type="number" class="g_med_yes_yes form-inline" id="gra_std_asgn_med" name="students_assigned_med" readonly></td> 
+                                    <td><select>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select></td>                  
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br/>
+                        <div class="row col">
+                            <b><label>CLASSROOM & CLASSROOM HARDWARE DETAILS</label></b>
+                        </div>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName">What is the total number of physical classrooms in the School/Coaching:</label></li>
+                                <br/>
+            NOTE: Classrooms with Embibe Ready Infrastucture: Information can be projected / displayed, internet is available (not hotspots) and there is a sound system to play videos etc.
+            NOTE: Classrooms with Embibe Ready Infrastucture that is working: Information can be projected / displayed, internet is available (not hotspots) and there is a sound system to play videos etc. All of it is in working condition currently
+            <br/>
+            </label>
+                            </div>
+                            <div>
+                                <table class="table table-bordered table-responsive">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col"># Physical Classrooms</th>
+                                        <th scope="col"># Classrooms with Embibe Ready Infrastucture </th>
+                                        <th scope="col"># Classrooms with Embibe Ready Infrastucture that is working</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="number" class="form-inline" id="chd_tot_clsr" name="total_classrooms"></td> 
+                                            <td><input type="number" class="form-inline" id="chd_rdy_clsr" name="ready_classrooms"></td> 
+                                            <td><input type="number" class="form-inline" id="chd_wk_clsr" name="working_classrooms"></td>            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="form-inline col-sm-12">
+                                    <li><label for="inputName"> Are there devices available for the children in the classrooms? What type of device ?&nbsp;&nbsp;</label></li>
+                                </div>
+                                <div class="row col">
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="Yes" id="w1_y" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">Desktop</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">Laptop</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">Smartphone</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">Tablet</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">No Device</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="form-inline col-sm-12">
+                                    <li><label for="inputName"> How many students have Smartphone  / Laptops / Desktops /   Tablets / Smart Phone at home&nbsp;&nbsp;</label></li>
+                                </div>
+                                <div class="row col">
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="Yes" id="w1_y" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">0</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">1-20%</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">21-40%</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">61-80%</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">81-99%</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">100%</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="form-inline col-sm-12">
+                                    <li><label for="inputName"> How many Parents have Smartphone ?&nbsp;&nbsp;</label></li>
+                                </div>
+                                <div class="row col">
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="Yes" id="w1_y" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">0</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">1-20%</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">21-40%</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">61-80%</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">81-99%</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">100%</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="form-inline col-sm-12">
+                                    <li><label for="inputName"> Does the School/Coaching have ICT / Computer Lab(s)?&nbsp;&nbsp;</label></li>
+                                </div>
+                                <div class="row col">
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="Yes" id="w1_y" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">1 or more</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                        <label class="form-check-label" for="defaultCheck1">None</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br/>
+                        <div class="row col">
+                            <table class="table table-bordered table-responsive">
+                              <thead>
+                                <tr>
+                                  <th scope="col">ICT Lab</th>
+                                  <th scope="col">Lab Available</th>
+                                  <th scope="col">Digital Display System</th>
+                                  <th scope="col">Type of Systems</th>
+                                  <th scope="col"># working systems with internet</th>
+                                  <th scope="col">Connectivity</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                    <td><input type="checkbox" class="form-check"></td>
+                                    <td><select name = "grade1">
+                                        <option value = "A" selected>Smart TV</option>
+                                        <option value = "B" selected>Projector</option>
+                                        <option value = "C" selected>Smart Board</option>
+                                        <option value = "D" selected>No Digital Display</option></select>
+                                    </td>
+                                    <td><select name = "grade1">
+                                        <option value = "Math" selected>Computer</option>
+                                        <option value = "Science" selected>Laptop</option>
+                                        <option value = "Social" selected>Tablet</option>
+                                     </select></td>
+                                    <td><input  type="number" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td> 
+                                    <td><select name = "grade1">
+                                        <option value = "6" selected>Wireless</option>
+                                        <option value = "7" selected>LAN</option>
+                                        <option value = "8" selected>No Connectivity</option>
+                                     </select></td>  
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="form-check"></td>
+                                    <td><select name = "grade1">
+                                        <option value = "A" selected>Smart TV</option>
+                                        <option value = "B" selected>Projector</option>
+                                        <option value = "C" selected>Smart Board</option>
+                                        <option value = "D" selected>No Digital Display</option></select>
+                                    </td>
+                                    <td><select name = "grade1">
+                                        <option value = "Math" selected>Computer</option>
+                                        <option value = "Science" selected>Laptop</option>
+                                        <option value = "Social" selected>Tablet</option>
+                                     </select></td>
+                                    <td><input  type="number" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td> 
+                                    <td><select name = "grade1">
+                                        <option value = "6" selected>Wireless</option>
+                                        <option value = "7" selected>LAN</option>
+                                        <option value = "8" selected>No Connectivity</option>
+                                     </select></td>  
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="form-check"></td>
+                                    <td><select name = "grade1">
+                                        <option value = "A" selected>Smart TV</option>
+                                        <option value = "B" selected>Projector</option>
+                                        <option value = "C" selected>Smart Board</option>
+                                        <option value = "D" selected>No Digital Display</option></select>
+                                    </td>
+                                    <td><select name = "grade1">
+                                        <option value = "Math" selected>Computer</option>
+                                        <option value = "Science" selected>Laptop</option>
+                                        <option value = "Social" selected>Tablet</option>
+                                     </select></td>
+                                    <td><input  type="number" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td> 
+                                    <td><select name = "grade1">
+                                        <option value = "6" selected>Wireless</option>
+                                        <option value = "7" selected>LAN</option>
+                                        <option value = "8" selected>No Connectivity</option>
+                                     </select></td>  
+                                </tr>
+                                <!-- <tr>
+                                    <td>Total</td>
+                                    <td>Count of check box automatically and cannot be edited</td>
+                                    <td></td>
+                                    <td>Sum of lab 1,2,3 calculated automatically and  cannot be edited</td> 
+                                    <td></td>  
+                                </tr> -->
+                                
+                              </tbody>
+                            </table>
+                        </div>         
+                    </div>
+                    
+
+<!--AAL TEACHER-->
+                    <div class="tab-pane fade show" id="aal_teachers" role="tabpanel">
+                        <br/>
+                        <div class="row">
+                            <div class="col-sm-4">
+                              <label for="inputName">Teacher 1 First Name &nbsp;&nbsp;</label>
+                              <input type="text" class="form-control" id="t1_fname" name="first_name">
+                            </div>
+                            <div class="col-sm-4">
+                              <label for="inputName">Teacher 1 Last Name &nbsp;&nbsp;</label>
+                              <input type="text" class="form-control" id="t1_lname" name="last_name">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="inputName">Mobile Number &nbsp;&nbsp;</label>
+                                <input type="number" class="form-control" id="t1_lname" name="last_name">
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row col">
+                            <table class="table table-bordered table-responsive">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Grade</th>
+                                  <th scope="col">Section</th>
+                                  <th scope="col">Subject</th>
+                                  <th scope="col">Desktop/Laptop with internet connectivity / at home</th>
+                                  <th scope="col"># Weekly Classes as per Timetable</th>
+                                  <th scope="col"># Weekly Classes Committed on Embibe</th>
+                                  <th scope="col">Planned Weekly HW Assignments</th>
+                                  <th scope="col">Committed Weekly HW Assignments on Embibe</th>
+                                  <th scope="col">Planned Weekly Test Assignments</th>
+                                  <th scope="col">Committed Weekly Test Assignments on Embibe</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                    <td><select name = "grade1">
+                                            <option value = "6" selected>6</option>
+                                            <option value = "7" selected>7</option>
+                                            <option value = "8" selected>8</option>
+                                            <option value = "9" selected>9</option>
+                                            <option value = "10" selected>10</option>
+                                            <option value = "11" selected>11</option>
+                                            <option value = "12" selected>12</option>
+                                            <option value = "Eng" selected>Eng</option>
+                                            <option value = "Med" selected>Med</option>
+                                            <option value = "Foundation" selected>Foundation</option>
+                                         </select></td>
+                                    <td><select name = "grade1">
+                                        <option value = "A" selected>A</option>
+                                        <option value = "B" selected>B</option>
+                                        <option value = "C" selected>C</option>
+                                        <option value = "D" selected>D</option>
+                                        <option value = "E" selected>E</option>
+                                        <option value = "F" selected>F</option>
+                                     </select></td>
+                                    <td><select name = "grade1">
+                                        <option value = "Math" selected>Math</option>
+                                        <option value = "Science" selected>Science</option>
+                                        <option value = "Social" selected>Social Science</option>
+                                     </select></td>
+                                    <td><input  type="text" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td> 
+                                    <td><input  type="number" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td> 
+                                    <td><input  type="number" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td> 
+                                    <td><input  type="number" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td> 
+                                    <td><input  type="number" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td> 
+                                    <td><input  type="number" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td> 
+                                    <td><input  type="number" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td>             
+                                </tr>
+                                <tr><td><button class = "btn btn-primary">Add Row</button></td></tr>
+                                
+                              </tbody>
+                            </table>
+                            <button class = "btn btn-primary">Add Teacher</button>
+                        </div>                     
+                    </div>
+
+<!--AAL BOOKS-->
+                    <div class="tab-pane fade show" id="aal_books" role="tabpanel">
+                        <br/>
+                        <div class="row col">
+                            <table class="table table-bordered table-responsive">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Grade</th>
+                                  <th scope="col">Board</th>
+                                  <th scope="col">Subject</th>
+                                  <th scope="col">Book Name</th>
+                                  <th scope="col">Author</th>
+                                  <th scope="col">Publisher</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                    <td><select name = "grade1">
+                                            <option value = "6" selected>6</option>
+                                            <option value = "7" selected>7</option>
+                                            <option value = "8" selected>8</option>
+                                            <option value = "9" selected>9</option>
+                                            <option value = "10" selected>10</option>
+                                            <option value = "11" selected>11</option>
+                                            <option value = "12" selected>12</option>
+                                            <option value = "Eng" selected>Eng</option>
+                                            <option value = "Med" selected>Med</option>
+                                            <option value = "Foundation" selected>Foundation</option>
+                                         </select></td>
+                                    <td><select name = "grade1">
+                                        <option value = "A" selected>CBSE</option>
+                                        <option value = "B" selected>ICSE</option>
+                                        <option value = "C" selected>IGCSE</option>
+                                        <option value = "D" selected>State</option>
+                                     </select></td>
+                                    <td><select name = "grade1">
+                                        <option value = "Math" selected>Math</option>
+                                        <option value = "Science" selected>Science</option>
+                                        <option value = "Social" selected>Social Science</option>
+                                     </select></td>
+                                    <td><input  type="number" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td> 
+                                    <td><input  type="number" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td> 
+                                    <td><input  type="number" class="t1_g6_yes form-inline" id="t1_g6" name="Grade6_sections"></td>              
+                                </tr>
+                                <tr><td><button class = "btn btn-primary">Add Book</button></td></tr>
+                                
+                              </tbody>
+                            </table>
+                        </div>                  
+                    </div>
+
+<!--FIRST VISIT-->
+                    <div class="tab-pane fade show" id="first_visit" role="tabpanel">
+                    <br/>
+                    <ol>
+                        <div class="row col">
+                            <b><label>AFFORDABILITY &emsp; INFRASTRUCTURE</label></b>
+                        </div>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> What is the Avg. Annual School Fees (in Rs.)<br/>
+                                Try to get fees of 9th /10th Grade Fees. If you are able to get fees of 11th or 12th then reduce it 10% and if you have fees of 6th to 8th increase the fees by 10%.
+                                </label></li>
+                                <div class="form-check">
+                                    <input class="form-control" type="number" id="a1" name="What is the Avg. Annual School Fees (in Rs.)">
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> Please enter the number of classrooms where the Embibe School App Teach module is possible.<br/>
+                                Embibe ready classrooms - With projector/Smart Class and internet connectivity.
+                                </label></li>
+                                <div class="form-check">
+                                    <input class="form-control" type="number" id="i1" name="Please enter the number of classrooms where the Embibe School App Teach module is possible.">
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> Please enter the number of classrooms where the smart board/projector/LCD TV is present but internet connectivity is not there or some technical issue in devices<br/>
+                                Embibe ready classrooms - With projector/Smart Class but no internet connectivity 
+                                </label></li>
+                                <div class="form-check">
+                                    <input class="form-control" type="number" id="i2" name="Please enter the number of classrooms where the smart board/projector/LCD TV is present but internet connectivity is not there or some technical issue in devices">
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> Please enter the number of Working Computers with internet in Lab
+                                </label></li>
+                                <div class="form-check">
+                                    <input class="form-control" type="number" id="i3" name="Please enter the number of Working Computers with internet in Lab">
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> Please enter the number of Non-Working Computers in Lab
+                                </label></li>
+                                <div class="form-check">
+                                    <input class="form-control" type="number" id="i4" name="Please enter the number of Non-Working Computers in Lab">
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> Please enter the % of Teachers with Devices (Laptop/Desktop/Tablet) at home or School
+                                </label></li>
+                                <div class="form-check">
+                                    <input class="form-control" type="number" id="i5" name="Please enter the % of Teachers with Devices (Laptop/Desktop/Tablet) at home or School">
+                                </div>
+                            </div>
+                        </div>
+                    </ol>
+                    </div> 
+
+<!--SECOND VISIT-->
+                    <div class="tab-pane fade show" id="second_visit" role="tabpanel">
+                        <br/>
+                        <ol>
+                        <div class="row col">
+                            <b><label>WILLINGNESS</label></b>
+                        </div>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe?&nbsp;&nbsp;</label></li>
+                            </div>
+                            <div class="row col">
+                                <div class="form-check">
+                                    <input class="form-check-inline" type="radio" value="Yes" id="w1_y" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                    <label class="form-check-label" for="defaultCheck1">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-inline" type="radio" value="No" id="w1_n" name="Is the management willing to send Parents a Letter from School's side announcing partnership with Embibe">
+                                    <label class="form-check-label" for="defaultCheck1">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> Is the management willing to embed Embibe in School Time Table?&nbsp;&nbsp;</label></li>
+                            </div>
+                            <div class="row col">
+                                <div class="form-check">
+                                    <input class="form-check-inline" type="radio" value="Yes" id="w2_y" name="Is the management willing to embed Embibe in School Time Table">
+                                    <label class="form-check-label" for="defaultCheck1">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-inline" type="radio" value="No" id="w2_n" name="Is the management willing to embed Embibe in School Time Table">
+                                    <label class="form-check-label" for="defaultCheck1">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> Does the management allow WhatsApp Groups with Teachers for Engagement with the Embibe Ambassador?&nbsp;&nbsp;</label></li>
+                            </div>
+                            <div class="row col">
+                                <div class="form-check">
+                                    <input class="form-check-inline" type="radio" value="Yes" id="w3_y" name="Does the management allow WhatsApp Groups with Teachers for Engagement with the Embibe Ambassador">
+                                    <label class="form-check-label" for="defaultCheck1">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-inline" type="radio" value="No" id="w3_n" name="Does the management allow WhatsApp Groups with Teachers for Engagement with the Embibe Ambassador">
+                                    <label class="form-check-label" for="defaultCheck1">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> Please enter the number of teachers that attended the training for the grades assigned to Embibe?&nbsp;&nbsp;</label></li>
+                                <div class="form-check">
+                                    <input class="form-control" type="number" id="w4" name="Please enter the number of teachers that attended the training for the grades assigned to Embibe">
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> Did the management directly Indicate that the management is still not sure if they to go with Embibe?&nbsp;&nbsp;</label></li>
+                            </div>
+                            <div class="row col">
+                                <div class="form-check">
+                                    <input class="form-check-inline" type="radio" value="Yes" id="w5_y" name="Did the management directly Indicate that the management is still not sure if they to go with Embibe">
+                                    <label class="form-check-label" for="defaultCheck1">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-inline" type="radio" value="No" id="w5_n" name="Did the management directly Indicate that the management is still not sure if they to go with Embibe">
+                                    <label class="form-check-label" for="defaultCheck1">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> Did the Teachers/Principal clearly say that they will not assign as parents are resisting?&nbsp;&nbsp;</label></li>
+                            </div>
+                            <div class="row col">
+                                <div class="form-check">
+                                    <input class="form-check-inline" type="radio" value="Yes" id="w6_y" name="Did the Teachers/Principal clearly say that they will not assign as parents are resisting">
+                                    <label class="form-check-label" for="defaultCheck1">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-inline" type="radio" value="No" id="w6_n" name="Did the Teachers/Principal clearly say that they will not assign as parents are resisting">
+                                    <label class="form-check-label" for="defaultCheck1">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> What % of the teacher who participated in the training were active and involved during the training?&nbsp;&nbsp;</label></li>
+                                <div class="form-check">
+                                    <input class="form-control" type="number" id="w7" name="What % of the teacher who participated in the training were active and involved during the training?">
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName"> Are the teachers using some other platform (Other than Embibe)? &nbsp;&nbsp;</label></li>
+                            </div>
+                            <div class="row col">
+                                <div class="form-check">
+                                    <input class="form-check-inline" type="radio" value="Yes" id="w8_y" name="Are the teachers using some other platform (Other than Embibe)?">
+                                    <label class="form-check-label" for="defaultCheck1">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-inline" type="radio" value="No" id="w8_n" name="Are the teachers using some other platform (Other than Embibe)?">
+                                    <label class="form-check-label" for="defaultCheck1">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        </ol>
+                    </div>
+
+<!--COMPETITORS-->
+                    <div class="tab-pane fade show" id="competitors" role="tabpanel">
+                        <br/>
+                        <ol>
+                        <div class="row col">
+                            <b><label>COMPETITION PRESENCE</label></b>
+                        </div>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName">Is there an LMS in School/Coaching currently? </label></li>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="Using currently" id="cp_usage_use"  name="competitor_lms" onclick="disable_all_fields('cp_name')">
+                                    <label class="form-check-label" for="defaultCheck1">Using currently</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="Used previously but not using now" id="cp_usage_usep"  name="competitor_lms" onclick="disable_all_fields('cp_name')">
+                                    <label class="form-check-label" for="defaultCheck2">Used previously but not using now</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="Never used" id="cp_usage_nuse"  name="competitor_lms" onclick="disable_all_fields('cp_no_name')">
+                                    <label class="form-check-label" for="defaultCheck1">Never used</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row col">
+                            <label><b>Answer the rest of the section only if “Currently Used” or “Used previously” is selected</b></label>
+                        </div>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName">What LMS did/do you have ? &nbsp;&nbsp;</label></li>
+                                <input type="text" class="cp_no_name form-control" id="cp_lms_name"  name="lms_name">
+                            </div>
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName">What is the total deal size (before taxes) &nbsp;&nbsp;</label></li>
+                                &#8377;<input type="number" class="cp_no_name form-control" id="cp_lms_deal"  name="deal_size">
+                            </div>
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName">How much is the School/Coaching paying the competitor annually (before taxes)? &nbsp;&nbsp;</label></li>
+                                &#8377;<input type="number" class="cp_no_name form-control" id="cp_lms_cost"  name="cost_for_school">
+                            </div>
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName">How many students are enrolled in the programme offered by the competitor: &nbsp;&nbsp;</label></li>
+                                <input type="number" class="cp_no_name form-control" id="cp_lms_enrol"  name="number_of_students_enrolled">
+                            </div>
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName">What is the duration of the contract &nbsp;&nbsp;<input type="number" class="cp_no_name form-control" id="cp_lms_mon"  name="contract_duration"> Months</label></li>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName">Did the contract include any tangible assets? &nbsp;&nbsp;</label></li>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="cp_no_name form-check-input" type="checkbox" value="Smart TV for reception" id="cp_rec_tv"  name="assets_reception_tv">
+                                    <label class="form-check-label" for="defaultCheck1">Smart TV for reception</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="cp_no_name form-check-input" type="checkbox" value="Smart TV for all the classrooms" id="cp_cla_tv"  name="assets_class_tv">
+                                    <label class="form-check-label" for="defaultCheck2">Smart TV for all the classrooms</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="cp_no_name form-check-input" type="checkbox" value="Printed study material" id="cp_stdy"  name="assets_printed_study_material">
+                                    <label class="form-check-label" for="defaultCheck1">Printed study material</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="cp_no_name form-check-input" type="checkbox" value="Hardware Installation in each classroom" id="cp_cla_hw"  name="assets_class_hardware">
+                                    <label class="form-check-label" for="defaultCheck2">Hardware Installation in each classroom</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="cp_no_name form-check-input" type="checkbox" value="Other" id="cp_others"  name="assets_others">
+                                    <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_other" name="assets_other"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="form-check form-check-inline">
+                            <li><label class="form-check-label" for="board">Grades where competitor&#39;s LMS is implemented: &nbsp;</label></li>
+                        </div>
+                        <div class="row col">
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_1" value="1"  name="lms_grade_1">
+                                <label class="form-check-label" for="inlineCheckbox1">1 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_2" value="2"  name="lms_grade_2">
+                                <label class="form-check-label" for="inlineCheckbox2">2 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_3" value="3"  name="lms_grade_3">
+                                <label class="form-check-label" for="inlineCheckbox1">3 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_4" value="4"  name="lms_grade_4">
+                                <label class="form-check-label" for="inlineCheckbox2">4 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_5" value="5"  name="lms_grade_5">
+                                <label class="form-check-label" for="inlineCheckbox1">5 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_6" value="6"  name="lms_grade_6">
+                                <label class="form-check-label" for="inlineCheckbox2">6 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_7" value="7"  name="lms_grade_7">
+                                <label class="form-check-label" for="inlineCheckbox1">7 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_8" value="8"  name="lms_grade_8">
+                                <label class="form-check-label" for="inlineCheckbox2">8 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_9" value="9"  name="lms_grade_9">
+                                <label class="form-check-label" for="inlineCheckbox1">9 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_10" value="10"  name="lms_grade_10">
+                                <label class="form-check-label" for="inlineCheckbox2">10 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_11" value="11"  name="lms_grade_11">
+                                <label class="form-check-label" for="inlineCheckbox1">11 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_12" value="12"  name="lms_grade_12">
+                                <label class="form-check-label" for="inlineCheckbox2">12 &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_eng" value="Engineering"  name="lms_grade_eng">
+                                <label class="form-check-label" for="inlineCheckbox1">Engineering &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_lms_med" value="Medical"  name="lms_grade_med">
+                                <label class="form-check-label" for="inlineCheckbox2">Medical &nbsp;</label>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="form-check form-check-inline">
+                            <li><label class="form-check-label" for="board">What subjects are offered by the competitor&#39;s LMS systems? &nbsp;</label></li>
+                        </div>
+                        <div class="row col">
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_math" value="Math"  name="competition_sub_math">
+                                <label class="form-check-label" for="inlineCheckbox1">Math &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_sci" value="Science"  name="competition_subject_sci">
+                                <label class="form-check-label" for="inlineCheckbox2">Science &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_soc" value="Social Science"  name="competition_subject_soc">
+                                <label class="form-check-label" for="inlineCheckbox1">Social Science&nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_eng" value="English"  name="competition_subject_eng">
+                                <label class="form-check-label" for="inlineCheckbox2">English &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_bst" value="Business Studies"  name="competition_subject_bst">
+                                <label class="form-check-label" for="inlineCheckbox1">Business Studies &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_phy" value="Physics"  name="competition_subject_phy">
+                                <label class="form-check-label" for="inlineCheckbox2">Physics &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_che" value="Chemistry"  name="competition_subject_che">
+                                <label class="form-check-label" for="inlineCheckbox1">Chemistry &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_bio" value="Biology"  name="competition_subject_bio">
+                                <label class="form-check-label" for="inlineCheckbox2">Biology &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_lan" value="Languages"  name="competition_subject_lan">
+                                <label class="form-check-label" for="inlineCheckbox1">Languages &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_com" value="Commerce"  name="competition_subject_com">
+                                <label class="form-check-label" for="inlineCheckbox2">Commerce &nbsp;</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_o1" value="Other 1"  name="competition_subject_o1">
+                                <label class="form-check-label" for="defaultCheck1">Other 1 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_oth1" name="competition_subject_oth1"></label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_o2" value="Other 2"  name="competition_subject_o2">
+                                <label class="form-check-label" for="defaultCheck1">Other 2 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_oth2" name="competition_subject_oth2"></label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="cp_no_name form-check-input" type="checkbox" id="cp_sub_o3" value="Other 3"  name="competition_subject_o3">
+                                <label class="form-check-label" for="defaultCheck1">Other 3 &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_sub_oth3" name="competition_subject_oth3"></label>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName">(If yes) Why does the school have a competitor&#39;s LMS system along with Embibe School App&nbsp;&nbsp;</label></li>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="cp_no_name form-check-input" type="checkbox" value="Contract to end soon (within the next three months)" id="cp_reason_con" name="competition_reason_contract_ending">
+                                    <label class="form-check-label" for="defaultCheck1">Contract to end soon (within the next three months)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="cp_no_name form-check-input" type="checkbox" value="They have features that are not part of Embibe programme" id="cp_reason_fea" name="competition_reason_additional_features">
+                                    <label class="form-check-label" for="defaultCheck2">They have features that are not part of Embibe programme </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="cp_no_name form-check-input" type="checkbox" value="They have features that are part of the Embibe programme but are better" id="cp_reason_bet" name="competition_reason_better_features">
+                                    <label class="form-check-label" for="defaultCheck1">They have features that are part of the Embibe programme but are better</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="cp_no_name form-check-input" type="checkbox" value="Other" id="cp_reason_oth" name="competition_reason_other">
+                                    <label class="form-check-label" for="defaultCheck1">Other &nbsp;<input type="text" class="cp_no_name form-check form-check-inline" id="cp_oth" name="competition_reason"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <li><label for="inputName">As per your observation (don't ask) What are the key features used by the teachers of the competitor&#39;s product? &nbsp;&nbsp;</label></li>
+                                <textarea class="cp_no_name form-control" id="cp_obs_fea" name="competition_observation_teacher_used_features" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <li><label for="inputName">Which are the features of the competitor&#39;s product that the teachers struggle with most? &nbsp;&nbsp;</label></li>
+                                <textarea class="cp_no_name form-control" id="cp_obs_str" name="competition_observation_teacher_struggles" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <li><label for="inputName">Any other observations about the competitor &nbsp;&nbsp;</label></li>
+                                <textarea class="cp_no_name form-control" id="cp_obs_oth" name="competition_observation_any_other" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName">Is there an ERP in School/Coaching currently? &nbsp;&nbsp;</label></li>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="Using currently" id="erp_usage_use" name="competition_erp" onclick="disable_field('erp')">
+                                    <label class="form-check-label" for="defaultCheck1">Using currently</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="Used previously but not using now" id="erp_usage_usep" name="competition_erp"  onclick="disable_field('erp')">
+                                    <label class="form-check-label" for="defaultCheck2">Used previously but not using now</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="Never used" id="erp_usage_nuse" name="competition_erp" onclick="disable_field('erp_name')">
+                                    <label class="form-check-label" for="defaultCheck1">Never used</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <br/>
+                        <div class="row">
+                            <div class="form-inline col-sm-12">
+                                <li><label for="inputName">(If Currently Used or Used previously )What ERP  did you / Do you have ? &nbsp;&nbsp;</label></li>
+                                <input type="text" class="form-control" id="erp_name" name="erp_name">
+                            </div>
+                        </div>
+                        
+                        <br/>
+                        </ol>
+                    </div> 
+
+                </div>
+            </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src = ""></script>
+    </body>
+</html>
