@@ -64,18 +64,22 @@ function loadXMLDoc(val, id){
             }
             features.forEach((n)=>{
               try{
-                        
-                        for(var y=0; y<101; y++){
-                                if(n == ('teacher_grade'+y)){
-                                        if(observations[i][n]!== ""){
-                                                document.getElementById('add_class_btn').click()
+                        try{
+                                for(var y=0; y<101; y++){
+                                        if(n == ('teacher_grade'+y)){
+                                                if(observations[i][n]!== ""){
+                                                        document.getElementById('add_class_btn').click()
+                                                }
+                                        }
+                                        else if(n == ('grade_book'+y)){
+                                                if(observations[i][n]!== ""){
+                                                        document.getElementById('add_book_btn').click()
+                                                }
                                         }
                                 }
-                                else if(n == ('grade_book'+y)){
-                                        if(observations[i][n]!== ""){
-                                                document.getElementById('add_book_btn').click()
-                                        }
-                                }
+                        }
+                        catch(e){
+
                         }
                         names.push(document.getElementsByName(n)[0].getAttribute('id'))
                         
