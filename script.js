@@ -53,7 +53,6 @@ function loadXMLDoc(val, id){
         names=[]
         for (var i = 0; i < observations.length; i++) {
           if(observations[i].account_org_id == val){
-            console.log(observations[i])
             var a
             if (a == undefined){
               var a = observations[i].visit_number
@@ -78,19 +77,15 @@ function loadXMLDoc(val, id){
                                         }
                                 }
                         }
-                        catch(e){
-
-                        }
+                        catch(e){}
                         names.push(document.getElementsByName(n)[0].getAttribute('id'))
                         
-                }catch(e){
-                }
+                }catch(e){}
             })
-            console.log(names)
             names.forEach((n)=>{
               try{
                 if (n == "visit_number"){
-                  document.getElementById(n).setAttribute('value', observations[i][n]+1)
+                        document.getElementById(n).setAttribute('value', observations[i][n]+1)
                 }else{
                   var val = document.getElementById(n).getAttribute("name")
                   if (document.getElementById(n).getAttribute('type') == "checkbox"){
@@ -130,15 +125,8 @@ function loadXMLDoc(val, id){
                         document.getElementById(n).setAttribute('value', observations[i][val])
                   }
                 }
-                }catch(e){
-                }
+                }catch(e){}
             })
-          }
-          else{
-                try{
-                        document.getElementById('visit_number').setAttribute('value', 1)
-                }catch(e){
-                }                
           }
           dateAndTime()
         }
