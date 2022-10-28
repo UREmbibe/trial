@@ -67,12 +67,16 @@ function loadXMLDoc(val, id){
                                 for(var y=0; y<101; y++){
                                         if(n == ('teacher_grade'+y)){
                                                 if(observations[i][n]!== ""){
-                                                        document.getElementById('add_class_btn').click()
+                                                        if(document.getElementById('add_class_btn').parentNode.parentNode.getAttribute("id") == "t"+(y+1)){
+                                                                document.getElementById('add_class_btn').click()
+                                                        }
                                                 }
                                         }
                                         else if(n == ('grade_book'+y)){
                                                 if(observations[i][n]!== ""){
-                                                        document.getElementById('add_book_btn').click()
+                                                        if(document.getElementById('add_book_btn').parentNode.parentNode.getAttribute("id") == "t"+(y+1)){
+                                                                document.getElementById('add_book_btn').click()
+                                                        }
                                                 }
                                         }
                                 }
@@ -181,17 +185,17 @@ function addClass(i,id){
         var cell11 = ta.insertCell(10)
         var cell12 = ta.insertCell(11)
 
-        cell1.innerHTML = '<td><select id="grade_t'+i+'" type="List" name="teacher_grade'+i+'">        <option id="6_t'+i+'" value = "6">6</option>        <option  id="7_t'+i+'"  value = "7">7</option>        <option  id="8_t'+i+'"  value = "8">8</option>        <option  id="9_t'+i+'"  value = "9">9</option>        <option  id="10_t'+i+'"  value = "10">10</option>        <option id="11_t'+i+'"  value = "11">11</option>        <option id="12_t'+i+'" value = "12">12</option>        <option id="eng_t'+i+'"  value = "Eng">Engineering</option>        <option id="med_t'+i+'" value = "Med">Medical</option>        <option id="fou_t'+i+'" value = "Foundation">Foundation</option></select></td>'
+        cell1.innerHTML = '<td><select id="grade_t'+i+'" type="List" name="teacher_grade'+i+'"> <option disabled selected value> -- select an option -- </option>       <option id="6_t'+i+'" value = "6">6</option>        <option  id="7_t'+i+'"  value = "7">7</option>        <option  id="8_t'+i+'"  value = "8">8</option>        <option  id="9_t'+i+'"  value = "9">9</option>        <option  id="10_t'+i+'"  value = "10">10</option>        <option id="11_t'+i+'"  value = "11">11</option>        <option id="12_t'+i+'" value = "12">12</option>        <option id="eng_t'+i+'"  value = "Eng">Engineering</option>        <option id="med_t'+i+'" value = "Med">Medical</option>        <option id="fou_t'+i+'" value = "Foundation">Foundation</option></select></td>'
 
-        cell2.innerHTML = '<td><select id="section_t'+i+'" type="List" name="teacher_section'+i+'">        <option id="a_t'+i+'" value = "A">A</option>        <option id="b_t'+i+'" value = "B">B</option>        <option id="c_t'+i+'" value = "C">C</option>        <option id="d_t'+i+'" value = "D">D</option>        <option id="e_t'+i+'" value = "E">E</option>        <option id="f_t'+i+'" value = "F">F</option>    </select></td>'
+        cell2.innerHTML = '<td><select id="section_t'+i+'" type="List" name="teacher_section'+i+'">  <option disabled selected value> -- select an option -- </option>      <option id="a_t'+i+'" value = "A">A</option>        <option id="b_t'+i+'" value = "B">B</option>        <option id="c_t'+i+'" value = "C">C</option>        <option id="d_t'+i+'" value = "D">D</option>        <option id="e_t'+i+'" value = "E">E</option>        <option id="f_t'+i+'" value = "F">F</option>    </select></td>'
 
-        cell3.innerHTML = '<td><select id="subject_t'+i+'" type="List" name = "teacher_subject'+i+'">        <option id="math_t'+i+'" value = "Math">Math</option>        <option id="sci_t'+i+'" value = "Science">Science</option>        <option id="soc_t'+i+'" value = "Social">Social Science</option>        <option id="phy_t'+i+'" value = "Physics">Physics</option>        <option id="chem_t'+i+'" value = "Chemistry">Chemistry</option>        <option id="bio_t'+i+'" value = "Biology">Biology</option>    </select></td>'
+        cell3.innerHTML = '<td><select id="subject_t'+i+'" type="List" name = "teacher_subject'+i+'">  <option disabled selected value> -- select an option -- </option>      <option id="math_t'+i+'" value = "Math">Math</option>        <option id="sci_t'+i+'" value = "Science">Science</option>        <option id="soc_t'+i+'" value = "Social">Social Science</option>        <option id="phy_t'+i+'" value = "Physics">Physics</option>        <option id="chem_t'+i+'" value = "Chemistry">Chemistry</option>        <option id="bio_t'+i+'" value = "Biology">Biology</option>    </select></td>'
 
         cell4.innerHTML = '<td>        <input  type="text" class="form-inline" id="tname'+i+'" name="teacher_name'+i+'">    </td>'
 
         cell5.innerHTML = '<td><input  type="number" class="form-inline" id="tmobile'+i+'" name="mobile_number'+i+'"></td>'
 
-        cell6.innerHTML = '<td>        <select id="internet_t'+i+'" type="List" name="home_internet'+i+'"><option id="hi_y_t'+i+'" value="Yes">Yes</option><option id="hi_n_t'+i+'" value="No">No</option></select>    </td>'
+        cell6.innerHTML = '<td>        <select id="internet_t'+i+'" type="List" name="home_internet'+i+'"><option disabled selected value> -- select an option -- </option><option id="hi_y_t'+i+'" value="Yes">Yes</option><option id="hi_n_t'+i+'" value="No">No</option></select>    </td>'
 
         cell7.innerHTML = '<td>                                        <input  type="number" class="form-inline" id="ttclasses'+i+'" name="weekly_classes_tt'+i+'">                                    </td>'
 
@@ -238,11 +242,11 @@ function addBook(i,id){
         var cell5 = ta.insertCell(4)
         var cell6 = ta.insertCell(5)
 
-        cell1.innerHTML = '<td><select id="grade_b'+i+'" type="List" name = "grade_book'+i+'">        <option id="6_b'+i+'" value = "6">6</option>        <option id="7_b'+i+'" value = "7">7</option>        <option id="8_b'+i+'" value = "8">8</option>        <option id="9_b'+i+'" value = "9">9</option>        <option id="10_b'+i+'" value = "10">10</ption>        <option id="11_b'+i+'" value = "11">11</option>        <option id="12_b'+i+'" value = "12">12</option>        <option id="eng_b'+i+'" value = "Eng">Eng</option>        <option id="med_b'+i+'" value = "Med">Med</option>        <option id="fou_b'+i+'" value = "Foundation">Foundation</option>     </select></td>'
+        cell1.innerHTML = '<td><select id="grade_b'+i+'" type="List" name = "grade_book'+i+'">    <option disabled selected value> -- select an option -- </option>    <option id="6_b'+i+'" value = "6">6</option>        <option id="7_b'+i+'" value = "7">7</option>        <option id="8_b'+i+'" value = "8">8</option>        <option id="9_b'+i+'" value = "9">9</option>        <option id="10_b'+i+'" value = "10">10</ption>        <option id="11_b'+i+'" value = "11">11</option>        <option id="12_b'+i+'" value = "12">12</option>        <option id="eng_b'+i+'" value = "Eng">Eng</option>        <option id="med_b'+i+'" value = "Med">Med</option>        <option id="fou_b'+i+'" value = "Foundation">Foundation</option>     </select></td>'
 
-        cell2.innerHTML = '<td><select id="board_b'+i+'" type="List" name = "board_book'+i+'">       <option id="cbse_b'+i+'" value = "CBSE">CBSE</option>        <option id="icse_b'+i+'" value = "ICSE">ICSE</option>        <option id="igcse_b'+i+'" value = "IGCSE">IGCSE</option>        <option id="state_b'+i+'" value = "State">State</option>        <option id="camb_b'+i+'" value = "Cambridge">Cambridge</option>        <option id="ib_b'+i+'" value = "IB">IB</option>     </select></td>'
+        cell2.innerHTML = '<td><select id="board_b'+i+'" type="List" name = "board_book'+i+'">  <option disabled selected value> -- select an option -- </option>     <option id="cbse_b'+i+'" value = "CBSE">CBSE</option>        <option id="icse_b'+i+'" value = "ICSE">ICSE</option>        <option id="igcse_b'+i+'" value = "IGCSE">IGCSE</option>        <option id="state_b'+i+'" value = "State">State</option>        <option id="camb_b'+i+'" value = "Cambridge">Cambridge</option>        <option id="ib_b'+i+'" value = "IB">IB</option>     </select></td>'
 
-        cell3.innerHTML = '<td><select id="subject_b'+i+'" name = "subject_book'+i+'">        <option id="math_b'+i+'" value = "Math">Math</option>        <option id="sci_b'+i+'" value = "Science">Science</option>        <option id="soc_b'+i+'" value = "Social">Social Science</option>        <option id="phy_b'+i+'" value = "Physics">Physics</option>        <option id="chem_b'+i+'" value = "Chemistry">Chemistry</option>        <option id="bio_b'+i+'" value = "Biology">Biology</option>     </select></td>'
+        cell3.innerHTML = '<td><select id="subject_b'+i+'" name = "subject_book'+i+'"> <option disabled selected value> -- select an option -- </option>       <option id="math_b'+i+'" value = "Math">Math</option>        <option id="sci_b'+i+'" value = "Science">Science</option>        <option id="soc_b'+i+'" value = "Social">Social Science</option>        <option id="phy_b'+i+'" value = "Physics">Physics</option>        <option id="chem_b'+i+'" value = "Chemistry">Chemistry</option>        <option id="bio_b'+i+'" value = "Biology">Biology</option>     </select></td>'
 
         cell4.innerHTML = '<td><input  type="text" class="form-inline" id="name_b'+i+'" name="name_book'+i+'"></td>'
 
